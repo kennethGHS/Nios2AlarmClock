@@ -1,0 +1,35 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/software/NiosCode/obj/default/runtime/sim/mentor
+vProjectFile_RAM
+!s110 1619405905
+!i10b 1
+!s100 oVE]:HemiW_gzB_US1cbd2
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+I[<EZ[nAzEDg]jWfRAlVf?2
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1619403828
+8C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v
+FC:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v
+!i122 0
+L0 21 68
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1619405905.000000
+!s107 C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v|
+!s90 -reportprogress|300|C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v|-work|RAM|
+!i113 1
+o-work RAM
+tCvgOpt 0
+n@project@file_@r@a@m

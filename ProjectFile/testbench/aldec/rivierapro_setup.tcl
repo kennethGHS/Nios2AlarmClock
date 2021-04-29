@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 20.1 720 win32 2021.04.25.20:23:53
+# ACDS 20.1 720 win32 2021.04.28.19:41:40
 # ----------------------------------------
 # Auto-generated simulation script rivierapro_setup.tcl
 # ----------------------------------------
@@ -234,10 +234,14 @@ ensure_lib                                       ./libraries/irq_mapper
 vmap       irq_mapper                            ./libraries/irq_mapper                           
 ensure_lib                                       ./libraries/mm_interconnect_0                    
 vmap       mm_interconnect_0                     ./libraries/mm_interconnect_0                    
+ensure_lib                                       ./libraries/Timer                                
+vmap       Timer                                 ./libraries/Timer                                
 ensure_lib                                       ./libraries/REG                                  
 vmap       REG                                   ./libraries/REG                                  
 ensure_lib                                       ./libraries/RAM                                  
 vmap       RAM                                   ./libraries/RAM                                  
+ensure_lib                                       ./libraries/PioButtom                            
+vmap       PioButtom                             ./libraries/PioButtom                            
 ensure_lib                                       ./libraries/JTAG                                 
 vmap       JTAG                                  ./libraries/JTAG                                 
 ensure_lib                                       ./libraries/CPU                                  
@@ -307,8 +311,10 @@ alias com {
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v"                                                                     -work rst_controller                       
   eval  vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_irq_mapper.sv"                                          -l altera_common_sv_packages -work irq_mapper                           
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0.v"                                                                 -work mm_interconnect_0                    
+  eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v"                                                                             -work Timer                                
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_REG.v"                                                                               -work REG                                  
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v"                                                                               -work RAM                                  
+  eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v"                                                                         -work PioButtom                            
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v"                                                                              -work JTAG                                 
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v"                                                                               -work CPU                                  
   eval  vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv"                                      -l altera_common_sv_packages -work ProjectFile_inst_reset_bfm           
@@ -322,14 +328,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim +access +r -t ps $ELAB_OPTIONS -L work -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L REG -L RAM -L JTAG -L CPU -L ProjectFile_inst_reset_bfm -L ProjectFile_inst_regs_bfm -L ProjectFile_inst_clk_bfm -L ProjectFile_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim +access +r -t ps $ELAB_OPTIONS -L work -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L Timer -L REG -L RAM -L PioButtom -L JTAG -L CPU -L ProjectFile_inst_reset_bfm -L ProjectFile_inst_regs_bfm -L ProjectFile_inst_clk_bfm -L ProjectFile_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with -dbg -O2 option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -dbg -O2 +access +r -t ps $ELAB_OPTIONS -L work -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L REG -L RAM -L JTAG -L CPU -L ProjectFile_inst_reset_bfm -L ProjectFile_inst_regs_bfm -L ProjectFile_inst_clk_bfm -L ProjectFile_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -dbg -O2 +access +r -t ps $ELAB_OPTIONS -L work -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L Timer -L REG -L RAM -L PioButtom -L JTAG -L CPU -L ProjectFile_inst_reset_bfm -L ProjectFile_inst_regs_bfm -L ProjectFile_inst_clk_bfm -L ProjectFile_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

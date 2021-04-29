@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 20.1 720 win32 2021.04.25.20:23:53
+# ACDS 20.1 720 win32 2021.04.28.19:41:40
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 20.1 720 win32 2021.04.25.20:23:53
+# ACDS 20.1 720 win32 2021.04.28.19:41:40
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="ProjectFile_tb"
@@ -186,8 +186,10 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_irq_mapper.sv \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0.v \
+  $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_REG.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v \
+  $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv \

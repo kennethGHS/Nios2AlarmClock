@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 20.1 720 win32 2021.04.25.20:23:53
+# ACDS 20.1 720 win32 2021.04.28.19:41:40
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 20.1 720 win32 2021.04.25.20:23:53
+# ACDS 20.1 720 win32 2021.04.28.19:41:40
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="ProjectFile_tb"
@@ -171,8 +171,10 @@ mkdir -p ./libraries/cpu/
 mkdir -p ./libraries/rst_controller/
 mkdir -p ./libraries/irq_mapper/
 mkdir -p ./libraries/mm_interconnect_0/
+mkdir -p ./libraries/Timer/
 mkdir -p ./libraries/REG/
 mkdir -p ./libraries/RAM/
+mkdir -p ./libraries/PioButtom/
 mkdir -p ./libraries/JTAG/
 mkdir -p ./libraries/CPU/
 mkdir -p ./libraries/ProjectFile_inst_reset_bfm/
@@ -257,8 +259,10 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                       
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_irq_mapper.sv"                                          -work irq_mapper                           
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0.v"                                    -work mm_interconnect_0                    
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v"                                                -work Timer                                
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_REG.v"                                                  -work REG                                  
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v"                                                  -work RAM                                  
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v"                                            -work PioButtom                            
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v"                                                 -work JTAG                                 
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v"                                                  -work CPU                                  
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv"                                      -work ProjectFile_inst_reset_bfm           

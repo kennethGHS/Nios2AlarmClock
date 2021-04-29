@@ -79,7 +79,6 @@
  */
 
 #include "sys/alt_stdio.h"
-
 int main()
 { 
   alt_putstr("Hello from Nios II!\n");
@@ -87,5 +86,5 @@ int main()
   /* Event loop never exits. */
   while (1);
 
-  return 0;
+  return 10%5;
 }

@@ -186,6 +186,10 @@
    type="VERILOG"
    library="mm_interconnect_0" />
  <file
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v"
+   type="VERILOG"
+   library="Timer" />
+ <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_REG.v"
    type="VERILOG"
    library="REG" />
@@ -197,6 +201,10 @@
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v"
    type="VERILOG"
    library="RAM" />
+ <file
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v"
+   type="VERILOG"
+   library="PioButtom" />
  <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v"
    type="VERILOG"

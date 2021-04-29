@@ -223,9 +223,9 @@ alt_after_alt_main:
     1058:	003fff06 	br	1058 <alt_after_alt_main>
 
 0000105c <main>:
+ */
 
 #include "sys/alt_stdio.h"
-
 int main()
 { 
   alt_putstr("Hello from Nios II!\n");

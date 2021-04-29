@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/software/NiosCode/obj/default/runtime/sim/mentor
 vProjectFile_REG
-!s110 1619405905
+!s110 1619561195
 !i10b 1
 !s100 a>^mafV;DWlH92KNXFEVe3
 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ R0
 w1619403828
 8C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_REG.v
 FC:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_REG.v
-!i122 0
+!i122 1
 L0 21 46
 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1619405905.000000
+!s108 1619561194.000000
 !s107 C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_REG.v|
 !s90 -reportprogress|300|C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_REG.v|-work|REG|
 !i113 1

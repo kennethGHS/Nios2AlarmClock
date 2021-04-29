@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/software/NiosCode/obj/default/runtime/sim/mentor
 valtera_reset_controller
-Z1 !s110 1619405904
+Z1 !s110 1619561194
 !i10b 1
 !s100 AbYPDDXoUZYQzY_kQ2LCk2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ R0
 Z4 w1619403830
 8C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_reset_controller.v
 FC:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_reset_controller.v
-!i122 0
+!i122 2
 L0 42 278
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1619405904.000000
+Z6 !s108 1619561194.000000
 !s107 C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_reset_controller.v|
 !s90 -reportprogress|300|C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
 !i113 1
@@ -43,7 +43,7 @@ R0
 R4
 8C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v
 FC:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v
-!i122 1
+!i122 3
 L0 24 63
 R5
 r1

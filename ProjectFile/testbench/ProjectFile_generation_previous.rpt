@@ -14,6 +14,8 @@ Progress: Adding RAM [altera_avalon_onchip_memory2 20.1]
 Progress: Parameterizing module RAM
 Progress: Adding REG [altera_avalon_pio 20.1]
 Progress: Parameterizing module REG
+Progress: Adding timer_0 [altera_avalon_timer 20.1]
+Progress: Parameterizing module timer_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
@@ -33,28 +35,31 @@ Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/ip_component_categories.ip
 Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ip/**/* matched 0 files in 0.00 seconds
 Info: Reading index C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile\testbench\ProjectFile.ipx
 Progress: Loading Nios2AlarmClock/ProjectFile.qsys
-Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/* matched 9 files in 0.00 seconds
+Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/* matched 10 files in 0.00 seconds
 Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ip/**/* matched 0 files in 0.00 seconds
-Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/*/* matched 21 files in 0.00 seconds
+Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/*/* matched 30 files in 0.00 seconds
 Info: C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile\testbench\ProjectFile.ipx described 0 plugins, 3 paths, in 0.00 seconds
 Progress: Loading testbench/ProjectFile_tb.qsys
-Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/* matched 12 files in 0.01 seconds
+Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/* matched 12 files in 0.02 seconds
 Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/*/* matched 9 files in 0.00 seconds
-Info: C:/Users/kenne/.altera.quartus/ip/20.1/**/* matched 0 files in 0.00 seconds
+Info: Reading index C:\Users\kenne\.altera.quartus\ip\20.1\ip_search_path\user_components.ipx
+Info: C:/eclipse/**/* matched 3956 files in 0.22 seconds
+Info: C:\Users\kenne\.altera.quartus\ip\20.1\ip_search_path\user_components.ipx described 0 plugins, 1 paths, in 0.22 seconds
+Info: C:/Users/kenne/.altera.quartus/ip/20.1/**/* matched 2 files in 0.22 seconds
 Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0.00 seconds
 Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0.00 seconds
 Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0.00 seconds
 Info: Reading index C:\intelfpga_lite\20.1\ip\altera\altera_components.ipx
-Info: C:\intelfpga_lite\20.1\ip\altera\altera_components.ipx described 1971 plugins, 0 paths, in 0.09 seconds
-Info: C:/intelfpga_lite/20.1/ip/**/* matched 109 files in 0.09 seconds
+Info: C:\intelfpga_lite\20.1\ip\altera\altera_components.ipx described 1971 plugins, 0 paths, in 0.07 seconds
+Info: C:/intelfpga_lite/20.1/ip/**/* matched 109 files in 0.07 seconds
 Info: C:/intelfpga_lite/ip/**/* matched 0 files in 0.00 seconds
 Info: Reading index C:\intelfpga_lite\20.1\quartus\sopc_builder\builtin.ipx
 Info: C:\intelfpga_lite\20.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0.00 seconds
-Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/**/* matched 8 files in 0.01 seconds
+Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/**/* matched 8 files in 0.00 seconds
 Info: C:/intelfpga_lite/20.1/quartus/common/librarian/factories/**/* matched 0 files in 0.00 seconds
 Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
-Info: C:\intelfpga_lite\20.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0.11 seconds
-Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.11 seconds
+Info: C:\intelfpga_lite\20.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0.31 seconds
+Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.31 seconds
 Progress: 
 Progress: 
 Progress: 
@@ -187,33 +192,38 @@ Info: ProjectFile_inst_reset_bfm: "ProjectFile_tb" instantiated altera_avalon_re
 Info: Reusing file C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/verbosity_pkg.sv
 Info: CPU: "ProjectFile_inst" instantiated altera_nios2_gen2 "CPU"
 Info: JTAG: Starting RTL generation for module 'ProjectFile_JTAG'
-Info: JTAG:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=ProjectFile_JTAG --dir=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0033_JTAG_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0033_JTAG_gen//ProjectFile_JTAG_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0033_JTAG_gen/  ]
+Info: JTAG:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=ProjectFile_JTAG --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0005_JTAG_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0005_JTAG_gen//ProjectFile_JTAG_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0005_JTAG_gen/  ]
 Info: JTAG: Done RTL generation for module 'ProjectFile_JTAG'
 Info: JTAG: "ProjectFile_inst" instantiated altera_avalon_jtag_uart "JTAG"
 Info: RAM: Starting RTL generation for module 'ProjectFile_RAM'
-Info: RAM:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ProjectFile_RAM --dir=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0034_RAM_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0034_RAM_gen//ProjectFile_RAM_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0034_RAM_gen/  ]
+Info: RAM:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ProjectFile_RAM --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0006_RAM_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0006_RAM_gen//ProjectFile_RAM_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0006_RAM_gen/  ]
 Info: RAM: Done RTL generation for module 'ProjectFile_RAM'
 Info: RAM: "ProjectFile_inst" instantiated altera_avalon_onchip_memory2 "RAM"
 Info: REG: Starting RTL generation for module 'ProjectFile_REG'
-Info: REG:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ProjectFile_REG --dir=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0035_REG_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0035_REG_gen//ProjectFile_REG_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0035_REG_gen/  ]
+Info: REG:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ProjectFile_REG --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0007_REG_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0007_REG_gen//ProjectFile_REG_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0007_REG_gen/  ]
 Info: REG: Done RTL generation for module 'ProjectFile_REG'
 Info: REG: "ProjectFile_inst" instantiated altera_avalon_pio "REG"
+Info: timer_0: Starting RTL generation for module 'ProjectFile_timer_0'
+Info: timer_0:   Generation command is [exec C:/intelFPGA_lite/20.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/20.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=ProjectFile_timer_0 --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0008_timer_0_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0008_timer_0_gen//ProjectFile_timer_0_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0008_timer_0_gen/  ]
+Info: timer_0: Done RTL generation for module 'ProjectFile_timer_0'
+Info: timer_0: "ProjectFile_inst" instantiated altera_avalon_timer "timer_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "ProjectFile_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "ProjectFile_inst" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "ProjectFile_inst" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'ProjectFile_CPU_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/20.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/20.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.pl --name=ProjectFile_CPU_cpu --dir=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0038_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/20.1/quartus/bin64/ --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0038_cpu_gen//ProjectFile_CPU_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0038_cpu_gen/  ]
-Info: cpu: # 2021.04.25 20:03:16 (*) Starting Nios II generation
-Info: cpu: # 2021.04.25 20:03:16 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2021.04.25 20:03:16 (*)   Creating all objects for CPU
-Info: cpu: # 2021.04.25 20:03:17 (*)   Creating 'C:/Users/kenne/AppData/Local/Temp/alt8743_3181954565639182629.dir/0038_cpu_gen//ProjectFile_CPU_cpu_nios2_waves.do'
-Info: cpu: # 2021.04.25 20:03:17 (*)   Generating RTL from CPU objects
-Info: cpu: # 2021.04.25 20:03:17 (*)   Creating plain-text RTL
-Info: cpu: # 2021.04.25 20:03:18 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/20.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/20.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.pl --name=ProjectFile_CPU_cpu --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0011_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/20.1/quartus/bin64/ --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0011_cpu_gen//ProjectFile_CPU_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0011_cpu_gen/  ]
+Info: cpu: # 2021.04.27 21:55:44 (*) Starting Nios II generation
+Info: cpu: # 2021.04.27 21:55:44 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2021.04.27 21:55:44 (*)   Creating all objects for CPU
+Info: cpu: # 2021.04.27 21:55:45 (*)   Creating 'C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0011_cpu_gen//ProjectFile_CPU_cpu_nios2_waves.do'
+Info: cpu: # 2021.04.27 21:55:45 (*)   Generating RTL from CPU objects
+Info: cpu: # 2021.04.27 21:55:45 (*)   Creating plain-text RTL
+Info: cpu: # 2021.04.27 21:55:45 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'ProjectFile_CPU_cpu'
 Info: cpu: "CPU" instantiated altera_nios2_gen2_unit "cpu"
 Info: CPU_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "CPU_data_master_translator"
@@ -238,7 +248,7 @@ Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "r
 Info: Reusing file C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: ProjectFile_tb: Done "ProjectFile_tb" with 32 modules, 53 files
+Info: ProjectFile_tb: Done "ProjectFile_tb" with 33 modules, 54 files
 Info: qsys-generate succeeded.
 Info: sim-script-gen --spd=C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile_tb.spd --output-directory=C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ --use-relative-paths=true
 Info: Doing: ip-make-simscript --spd=C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile_tb.spd --output-directory=C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ --use-relative-paths=true
@@ -253,7 +263,7 @@ Info: Generating the following file(s) for NCSIM simulator in C:/Users/kenne/One
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
-Info: 	32 .cds.lib files in cadence/cds_libs/ directory
+Info: 	33 .cds.lib files in cadence/cds_libs/ directory
 Info: Generating the following file(s) for RIVIERA simulator in C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ directory:
 Info: 	aldec/rivierapro_setup.tcl
 Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/.

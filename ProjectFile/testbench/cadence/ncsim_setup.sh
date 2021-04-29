@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 20.1 720 win32 2021.04.25.20:23:53
+# ACDS 20.1 720 win32 2021.04.28.19:41:40
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -106,7 +106,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 20.1 720 win32 2021.04.25.20:23:53
+# ACDS 20.1 720 win32 2021.04.28.19:41:40
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="ProjectFile_tb"
@@ -170,8 +170,10 @@ mkdir -p ./libraries/cpu/
 mkdir -p ./libraries/rst_controller/
 mkdir -p ./libraries/irq_mapper/
 mkdir -p ./libraries/mm_interconnect_0/
+mkdir -p ./libraries/Timer/
 mkdir -p ./libraries/REG/
 mkdir -p ./libraries/RAM/
+mkdir -p ./libraries/PioButtom/
 mkdir -p ./libraries/JTAG/
 mkdir -p ./libraries/CPU/
 mkdir -p ./libraries/ProjectFile_inst_reset_bfm/
@@ -256,8 +258,10 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                        -cdslib ./cds_libs/rst_controller.cds.lib                       
   ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_irq_mapper.sv"                                          -work irq_mapper                            -cdslib ./cds_libs/irq_mapper.cds.lib                           
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0.v"                                    -work mm_interconnect_0                     -cdslib ./cds_libs/mm_interconnect_0.cds.lib                    
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v"                                                -work Timer                                 -cdslib ./cds_libs/Timer.cds.lib                                
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_REG.v"                                                  -work REG                                   -cdslib ./cds_libs/REG.cds.lib                                  
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v"                                                  -work RAM                                   -cdslib ./cds_libs/RAM.cds.lib                                  
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v"                                            -work PioButtom                             -cdslib ./cds_libs/PioButtom.cds.lib                            
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v"                                                 -work JTAG                                  -cdslib ./cds_libs/JTAG.cds.lib                                 
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v"                                                  -work CPU                                   -cdslib ./cds_libs/CPU.cds.lib                                  
   ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv"                                      -work ProjectFile_inst_reset_bfm            -cdslib ./cds_libs/ProjectFile_inst_reset_bfm.cds.lib           

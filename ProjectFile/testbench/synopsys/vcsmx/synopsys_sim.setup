@@ -26,8 +26,10 @@ cpu:                                   ./libraries/cpu/
 rst_controller:                        ./libraries/rst_controller/                       
 irq_mapper:                            ./libraries/irq_mapper/                           
 mm_interconnect_0:                     ./libraries/mm_interconnect_0/                    
+Timer:                                 ./libraries/Timer/                                
 REG:                                   ./libraries/REG/                                  
 RAM:                                   ./libraries/RAM/                                  
+PioButtom:                             ./libraries/PioButtom/                            
 JTAG:                                  ./libraries/JTAG/                                 
 CPU:                                   ./libraries/CPU/                                  
 ProjectFile_inst_reset_bfm:            ./libraries/ProjectFile_inst_reset_bfm/           

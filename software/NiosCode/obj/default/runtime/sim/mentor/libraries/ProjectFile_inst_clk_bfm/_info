@@ -12,7 +12,7 @@ Z0 dC:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/software/
 valtera_avalon_clock_source
 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
 DXx25 altera_common_sv_packages 13 verbosity_pkg 0 22 V0g6:DX<AGe`L7C76iWPL2
-!s110 1619405906
+!s110 1619561195
 !i10b 1
 !s100 hG8?1HC?N8:D5VgTfFPH]0
 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -23,13 +23,13 @@ R0
 w1619403827
 8C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv
 FC:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv
-!i122 0
+!i122 1
 L0 23 70
 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1619405905.000000
+!s108 1619561195.000000
 !s107 C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv|
 !s90 -reportprogress|300|-sv|C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv|-L|altera_common_sv_packages|-work|ProjectFile_inst_clk_bfm|
 !i113 1

@@ -8,7 +8,8 @@ module ProjectFile (
 	segment3_export,
 	segment4_export,
 	segment5_export,
-	segment6_export);	
+	segment6_export,
+	leds_export);	
 
 	input		clk_clk;
 	input		interrupbutton_export;
@@ -19,4 +20,5 @@ module ProjectFile (
 	output	[7:0]	segment4_export;
 	output	[7:0]	segment5_export;
 	output	[7:0]	segment6_export;
+	output	[9:0]	leds_export;
 endmodule

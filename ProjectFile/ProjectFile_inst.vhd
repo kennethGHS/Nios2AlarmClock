@@ -8,7 +8,8 @@
 			segment3_export       : out std_logic_vector(7 downto 0);        -- export
 			segment4_export       : out std_logic_vector(7 downto 0);        -- export
 			segment5_export       : out std_logic_vector(7 downto 0);        -- export
-			segment6_export       : out std_logic_vector(7 downto 0)         -- export
+			segment6_export       : out std_logic_vector(7 downto 0);        -- export
+			leds_export           : out std_logic_vector(9 downto 0)         -- export
 		);
 	end component ProjectFile;
 
@@ -22,6 +23,7 @@
 			segment3_export       => CONNECTED_TO_segment3_export,       --       segment3.export
 			segment4_export       => CONNECTED_TO_segment4_export,       --       segment4.export
 			segment5_export       => CONNECTED_TO_segment5_export,       --       segment5.export
-			segment6_export       => CONNECTED_TO_segment6_export        --       segment6.export
+			segment6_export       => CONNECTED_TO_segment6_export,       --       segment6.export
+			leds_export           => CONNECTED_TO_leds_export            --           leds.export
 		);
 

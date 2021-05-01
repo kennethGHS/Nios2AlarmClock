@@ -1,0 +1,35 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dA:/Nios2AlarmClock/software/alarm-clock/obj/default/runtime/sim/mentor
+vProjectFile_PioButtom
+!s110 1619757909
+!i10b 1
+!s100 @22?6z]dNWjiGNY^nmWTZ3
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+IVl=GW1Q<0LW_ih7I_TbfG3
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1619755783
+8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v
+FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v
+!i122 1
+L0 21 98
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1619757909.000000
+!s107 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v|
+!s90 -reportprogress|300|A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v|-work|PioButtom|
+!i113 1
+o-work PioButtom
+tCvgOpt 0
+n@project@file_@pio@buttom

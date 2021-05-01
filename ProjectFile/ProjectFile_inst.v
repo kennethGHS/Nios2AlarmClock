@@ -7,6 +7,7 @@
 		.segment3_export       (<connected-to-segment3_export>),       //       segment3.export
 		.segment4_export       (<connected-to-segment4_export>),       //       segment4.export
 		.segment5_export       (<connected-to-segment5_export>),       //       segment5.export
-		.segment6_export       (<connected-to-segment6_export>)        //       segment6.export
+		.segment6_export       (<connected-to-segment6_export>),       //       segment6.export
+		.leds_export           (<connected-to-leds_export>)            //           leds.export
 	);
 

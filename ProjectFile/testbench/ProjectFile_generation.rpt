@@ -1,0 +1,282 @@
+Info: Starting: Create testbench Platform Designer system
+Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile.ipx
+Info: qsys-generate C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile.qsys --testbench=STANDARD --output-directory=C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock --family="Cyclone V" --part=5CEBA2F17A7
+Progress: Loading Nios2AlarmClock/ProjectFile.qsys
+Progress: Reading input file
+Warning: Invalid device family name in input file: Cyclone V
+Progress: Adding CLK [clock_source 20.1]
+Progress: Parameterizing module CLK
+Progress: Adding CPU [altera_nios2_gen2 20.1]
+Progress: Parameterizing module CPU
+Progress: Adding JTAG [altera_avalon_jtag_uart 20.1]
+Progress: Parameterizing module JTAG
+Progress: Adding PioButtom [altera_avalon_pio 20.1]
+Progress: Parameterizing module PioButtom
+Progress: Adding RAM [altera_avalon_onchip_memory2 20.1]
+Progress: Parameterizing module RAM
+Progress: Adding REG [altera_avalon_pio 20.1]
+Progress: Parameterizing module REG
+Progress: Adding Timer [altera_avalon_timer 20.1]
+Progress: Parameterizing module Timer
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ProjectFile.JTAG: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: ProjectFile.PioButtom: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: ProjectFile.PioButtom: PioButtom.external_connection must be exported, or connected to a matching conduit.
+Info: qsys-generate succeeded.
+Info: Loading IP catalog for testbench.
+Progress: 
+Progress: 
+Progress: 
+Progress: (2) searching C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/root_components.ipx (ipx file)
+Info: Reading index C:\intelfpga_lite\20.1\quartus\sopc_builder\bin\root_components.ipx
+Info: C:\intelfpga_lite\20.1\quartus\sopc_builder\bin\root_components.ipx: Loading now from components.ipx
+Info: Reading index C:\intelfpga_lite\20.1\quartus\sopc_builder\bin\ip_component_categories.ipx
+Info: C:\intelfpga_lite\20.1\quartus\sopc_builder\bin\ip_component_categories.ipx described 0 plugins, 0 paths, in 0.00 seconds
+Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0.00 seconds
+Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ip/**/* matched 0 files in 0.00 seconds
+Info: Reading index C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile\testbench\ProjectFile.ipx
+Progress: Loading Nios2AlarmClock/ProjectFile.qsys
+Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/* matched 10 files in 0.00 seconds
+Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ip/**/* matched 0 files in 0.00 seconds
+Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/*/* matched 30 files in 0.00 seconds
+Info: C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile\testbench\ProjectFile.ipx described 0 plugins, 3 paths, in 0.00 seconds
+Progress: Loading testbench/ProjectFile_tb.qsys
+Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/* matched 12 files in 0.01 seconds
+Info: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/*/* matched 9 files in 0.00 seconds
+Info: Reading index C:\Users\kenne\.altera.quartus\ip\20.1\ip_search_path\user_components.ipx
+Info: C:/eclipse/**/* matched 3956 files in 0.19 seconds
+Info: C:\Users\kenne\.altera.quartus\ip\20.1\ip_search_path\user_components.ipx described 0 plugins, 1 paths, in 0.19 seconds
+Info: C:/Users/kenne/.altera.quartus/ip/20.1/**/* matched 2 files in 0.19 seconds
+Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0.00 seconds
+Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0.00 seconds
+Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0.00 seconds
+Info: Reading index C:\intelfpga_lite\20.1\ip\altera\altera_components.ipx
+Info: C:\intelfpga_lite\20.1\ip\altera\altera_components.ipx described 1971 plugins, 0 paths, in 0.08 seconds
+Info: C:/intelfpga_lite/20.1/ip/**/* matched 109 files in 0.09 seconds
+Info: C:/intelfpga_lite/ip/**/* matched 0 files in 0.00 seconds
+Info: Reading index C:\intelfpga_lite\20.1\quartus\sopc_builder\builtin.ipx
+Info: C:\intelfpga_lite\20.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0.00 seconds
+Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/**/* matched 8 files in 0.00 seconds
+Info: C:/intelfpga_lite/20.1/quartus/common/librarian/factories/**/* matched 0 files in 0.00 seconds
+Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
+Info: C:\intelfpga_lite\20.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0.30 seconds
+Info: C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.30 seconds
+Progress: 
+Progress: 
+Progress: 
+Info: Running script C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/tbgen.tcl
+Info: send_message Info TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: get_module_property NAME
+Info: send_message Info TB_Gen: System design is: ProjectFile
+Info: TB_Gen: System design is: ProjectFile
+Info: get_interfaces 
+Info: get_connections 
+Info: get_interface_property clk EXPORT_OF
+Info: get_instance_property CLK CLASS_NAME
+Info: get_instance_assignment CLK testbench.partner.map.clk_in
+Info: get_interface_property regs EXPORT_OF
+Info: get_instance_property REG CLASS_NAME
+Info: get_instance_assignment REG testbench.partner.map.external_connection
+Info: get_interface_property reset EXPORT_OF
+Info: get_instance_property CLK CLASS_NAME
+Info: get_instance_assignment CLK testbench.partner.map.clk_in_reset
+Info: send_message Info TB_Gen: Creating testbench system : ProjectFile_tb with all standard BFMs
+Info: TB_Gen: Creating testbench system : ProjectFile_tb with all standard BFMs
+Info: create_system ProjectFile_tb
+Info: add_instance ProjectFile_inst ProjectFile 
+Info: set_use_testbench_naming_pattern true ProjectFile
+Info: get_instance_interfaces ProjectFile_inst
+Info: get_instance_interface_property ProjectFile_inst clk CLASS_NAME
+Info: get_instance_interface_property ProjectFile_inst regs CLASS_NAME
+Info: get_instance_interface_property ProjectFile_inst reset CLASS_NAME
+Info: get_instance_interface_property ProjectFile_inst clk CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk
+Info: TB_Gen: clock_sink found: clk
+Info: get_instance_interface_property ProjectFile_inst clk CLASS_NAME
+Info: add_instance ProjectFile_inst_clk_bfm altera_avalon_clock_source 
+Info: get_instance_property ProjectFile_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value ProjectFile_inst clk clockRate
+Info: set_instance_parameter_value ProjectFile_inst_clk_bfm CLOCK_RATE 50000000.0
+Info: set_instance_parameter_value ProjectFile_inst_clk_bfm CLOCK_UNIT 1
+Info: get_instance_property ProjectFile_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_property ProjectFile_inst clk CLASS_NAME
+Info: get_instance_interfaces ProjectFile_inst_clk_bfm
+Info: get_instance_interface_property ProjectFile_inst_clk_bfm clk CLASS_NAME
+Info: add_connection ProjectFile_inst_clk_bfm.clk ProjectFile_inst.clk
+Info: get_instance_interface_property ProjectFile_inst reset CLASS_NAME
+Info: send_message Info TB_Gen: reset_sink found: reset
+Info: TB_Gen: reset_sink found: reset
+Info: get_instance_interface_property ProjectFile_inst reset CLASS_NAME
+Info: add_instance ProjectFile_inst_reset_bfm altera_avalon_reset_source 
+Info: get_instance_property ProjectFile_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_ports ProjectFile_inst reset
+Info: get_instance_interface_port_property ProjectFile_inst reset reset_reset_n ROLE
+Info: get_instance_interface_port_property ProjectFile_inst reset reset_reset_n ROLE
+Info: set_instance_parameter_value ProjectFile_inst_reset_bfm ASSERT_HIGH_RESET 0
+Info: set_instance_parameter_value ProjectFile_inst_reset_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property ProjectFile_inst_reset_bfm CLASS_NAME
+Info: get_instance_interfaces ProjectFile_inst_reset_bfm
+Info: get_instance_interface_property ProjectFile_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_property ProjectFile_inst_reset_bfm reset CLASS_NAME
+Info: get_instance_property ProjectFile_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value ProjectFile_inst reset associatedClock
+Info: get_instance_interfaces ProjectFile_inst_clk_bfm
+Info: get_instance_interface_property ProjectFile_inst_clk_bfm clk CLASS_NAME
+Info: send_message Warning TB_Gen: ProjectFile_inst_reset_bfm is not associated to any clock; connecting ProjectFile_inst_reset_bfm to 'ProjectFile_inst_clk_bfm.clk'
+Warning: TB_Gen: ProjectFile_inst_reset_bfm is not associated to any clock; connecting ProjectFile_inst_reset_bfm to 'ProjectFile_inst_clk_bfm.clk'
+Info: add_connection ProjectFile_inst_clk_bfm.clk ProjectFile_inst_reset_bfm.clk
+Info: get_instance_interface_property ProjectFile_inst reset CLASS_NAME
+Info: get_instance_interfaces ProjectFile_inst_reset_bfm
+Info: get_instance_interface_property ProjectFile_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_property ProjectFile_inst_reset_bfm reset CLASS_NAME
+Info: add_connection ProjectFile_inst_reset_bfm.reset ProjectFile_inst.reset
+Info: get_instance_interface_property ProjectFile_inst regs CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: regs
+Info: TB_Gen: conduit_end found: regs
+Info: get_instance_interface_property ProjectFile_inst regs CLASS_NAME
+Info: add_instance ProjectFile_inst_regs_bfm altera_conduit_bfm 
+Info: get_instance_property ProjectFile_inst_regs_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value ProjectFile_inst regs associatedClock
+Info: get_instance_interface_parameter_value ProjectFile_inst regs associatedReset
+Info: get_instance_interface_ports ProjectFile_inst regs
+Info: get_instance_interface_port_property ProjectFile_inst regs regs_export ROLE
+Info: get_instance_interface_port_property ProjectFile_inst regs regs_export WIDTH
+Info: get_instance_interface_port_property ProjectFile_inst regs regs_export DIRECTION
+Info: set_instance_parameter_value ProjectFile_inst_regs_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value ProjectFile_inst_regs_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value ProjectFile_inst_regs_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value ProjectFile_inst_regs_bfm SIGNAL_WIDTHS 8
+Info: set_instance_parameter_value ProjectFile_inst_regs_bfm SIGNAL_DIRECTIONS input
+Info: get_instance_property ProjectFile_inst_regs_bfm CLASS_NAME
+Info: get_instance_interface_property ProjectFile_inst regs CLASS_NAME
+Info: get_instance_interfaces ProjectFile_inst_regs_bfm
+Info: get_instance_interface_property ProjectFile_inst_regs_bfm conduit CLASS_NAME
+Info: add_connection ProjectFile_inst_regs_bfm.conduit ProjectFile_inst.regs
+Info: send_message Info TB_Gen: Saving testbench system: ProjectFile_tb.qsys
+Info: TB_Gen: Saving testbench system: ProjectFile_tb.qsys
+Info: save_system ProjectFile_tb.qsys
+Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
+Info: TB_Gen: TBGEN SUCCESSFUL
+Info: Testbench system: C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb.qsys
+Info: Done
+Info: qsys-generate C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=STANDARD --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile\testbench\ProjectFile_tb\simulation --family="Cyclone V" --part=5CEBA2F17A7
+Progress: Loading testbench/ProjectFile_tb.qsys
+Progress: Reading input file
+Warning: Invalid device family name in input file: Cyclone V
+Progress: Adding ProjectFile_inst [ProjectFile 1.0]
+Progress: Parameterizing module ProjectFile_inst
+Progress: Adding ProjectFile_inst_clk_bfm [altera_avalon_clock_source 20.1]
+Progress: Parameterizing module ProjectFile_inst_clk_bfm
+Progress: Adding ProjectFile_inst_regs_bfm [altera_conduit_bfm 20.1]
+Progress: Parameterizing module ProjectFile_inst_regs_bfm
+Progress: Adding ProjectFile_inst_reset_bfm [altera_avalon_reset_source 20.1]
+Progress: Parameterizing module ProjectFile_inst_reset_bfm
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ProjectFile_tb.ProjectFile_inst.JTAG: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: ProjectFile_tb.ProjectFile_inst.PioButtom: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Warning: ProjectFile_tb.ProjectFile_inst.PioButtom: PioButtom.external_connection must be exported, or connected to a matching conduit.
+Info: ProjectFile_tb.ProjectFile_inst_clk_bfm: Elaborate: altera_clock_source
+Info: ProjectFile_tb.ProjectFile_inst_clk_bfm:            $Revision: #1 $
+Info: ProjectFile_tb.ProjectFile_inst_clk_bfm:            $Date: 2019/10/06 $
+Info: ProjectFile_tb.ProjectFile_inst_reset_bfm: Elaborate: altera_reset_source
+Info: ProjectFile_tb.ProjectFile_inst_reset_bfm:            $Revision: #1 $
+Info: ProjectFile_tb.ProjectFile_inst_reset_bfm:            $Date: 2019/10/06 $
+Info: ProjectFile_tb.ProjectFile_inst_reset_bfm: Reset is negatively asserted.
+Info: ProjectFile_tb: Generating ProjectFile_tb "ProjectFile_tb" for SIM_VERILOG
+Info: ProjectFile_inst: "ProjectFile_tb" instantiated ProjectFile "ProjectFile_inst"
+Info: ProjectFile_inst_clk_bfm: "ProjectFile_tb" instantiated altera_avalon_clock_source "ProjectFile_inst_clk_bfm"
+Info: ProjectFile_inst_regs_bfm: "ProjectFile_tb" instantiated altera_conduit_bfm "ProjectFile_inst_regs_bfm"
+Info: Reusing file C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/verbosity_pkg.sv
+Info: ProjectFile_inst_reset_bfm: "ProjectFile_tb" instantiated altera_avalon_reset_source "ProjectFile_inst_reset_bfm"
+Info: Reusing file C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/verbosity_pkg.sv
+Info: CPU: "ProjectFile_inst" instantiated altera_nios2_gen2 "CPU"
+Info: JTAG: Starting RTL generation for module 'ProjectFile_JTAG'
+Info: JTAG:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=ProjectFile_JTAG --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0034_JTAG_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0034_JTAG_gen//ProjectFile_JTAG_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0034_JTAG_gen/  ]
+Info: JTAG: Done RTL generation for module 'ProjectFile_JTAG'
+Info: JTAG: "ProjectFile_inst" instantiated altera_avalon_jtag_uart "JTAG"
+Info: PioButtom: Starting RTL generation for module 'ProjectFile_PioButtom'
+Info: PioButtom:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ProjectFile_PioButtom --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0035_PioButtom_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0035_PioButtom_gen//ProjectFile_PioButtom_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0035_PioButtom_gen/  ]
+Info: PioButtom: Done RTL generation for module 'ProjectFile_PioButtom'
+Info: PioButtom: "ProjectFile_inst" instantiated altera_avalon_pio "PioButtom"
+Info: RAM: Starting RTL generation for module 'ProjectFile_RAM'
+Info: RAM:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=ProjectFile_RAM --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0036_RAM_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0036_RAM_gen//ProjectFile_RAM_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0036_RAM_gen/  ]
+Info: RAM: Done RTL generation for module 'ProjectFile_RAM'
+Info: RAM: "ProjectFile_inst" instantiated altera_avalon_onchip_memory2 "RAM"
+Info: REG: Starting RTL generation for module 'ProjectFile_REG'
+Info: REG:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ProjectFile_REG --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0037_REG_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0037_REG_gen//ProjectFile_REG_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0037_REG_gen/  ]
+Info: REG: Done RTL generation for module 'ProjectFile_REG'
+Info: REG: "ProjectFile_inst" instantiated altera_avalon_pio "REG"
+Info: Timer: Starting RTL generation for module 'ProjectFile_Timer'
+Info: Timer:   Generation command is [exec C:/intelFPGA_lite/20.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/20.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=ProjectFile_Timer --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0038_Timer_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0038_Timer_gen//ProjectFile_Timer_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0038_Timer_gen/  ]
+Info: Timer: Done RTL generation for module 'ProjectFile_Timer'
+Info: Timer: "ProjectFile_inst" instantiated altera_avalon_timer "Timer"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "ProjectFile_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "ProjectFile_inst" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "ProjectFile_inst" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'ProjectFile_CPU_cpu'
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/20.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/20.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.pl --name=ProjectFile_CPU_cpu --dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0041_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/20.1/quartus/bin64/ --verilog --config=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0041_cpu_gen//ProjectFile_CPU_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0041_cpu_gen/  ]
+Info: cpu: # 2021.04.28 19:41:35 (*) Starting Nios II generation
+Info: cpu: # 2021.04.28 19:41:35 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2021.04.28 19:41:35 (*)   Creating all objects for CPU
+Info: cpu: # 2021.04.28 19:41:36 (*)   Creating 'C:/Users/kenne/AppData/Local/Temp/alt8745_4915081441205936743.dir/0041_cpu_gen//ProjectFile_CPU_cpu_nios2_waves.do'
+Info: cpu: # 2021.04.28 19:41:36 (*)   Generating RTL from CPU objects
+Info: cpu: # 2021.04.28 19:41:36 (*)   Creating plain-text RTL
+Info: cpu: # 2021.04.28 19:41:36 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'ProjectFile_CPU_cpu'
+Info: cpu: "CPU" instantiated altera_nios2_gen2_unit "cpu"
+Info: CPU_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "CPU_data_master_translator"
+Info: JTAG_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "JTAG_avalon_jtag_slave_translator"
+Info: CPU_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "CPU_data_master_agent"
+Info: JTAG_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "JTAG_avalon_jtag_slave_agent"
+Info: JTAG_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "JTAG_avalon_jtag_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_003"
+Info: Reusing file C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_003"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: ProjectFile_tb: Done "ProjectFile_tb" with 34 modules, 55 files
+Info: qsys-generate succeeded.
+Info: sim-script-gen --spd=C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile_tb.spd --output-directory=C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\kenne\OneDrive\Desktop\Embebidos\Project2\Nios2AlarmClock\ProjectFile_tb.spd --output-directory=C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	34 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/kenne/OneDrive/Desktop/Embebidos/Project2/Nios2AlarmClock/ProjectFile/testbench/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create testbench Platform Designer system

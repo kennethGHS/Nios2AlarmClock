@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 1, 2021 12:38:18 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1619894298325</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 2, 2021 6:01:25 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1620000085212</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>A:\Nios2AlarmClock\software\alarm-clock_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>A:\Nios2AlarmClock\ProjectFile.sopcinfo</SopcDesignFile>

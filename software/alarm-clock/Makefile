@@ -89,7 +89,8 @@ ACDS_VERSION := 20.1
 ELF := alarm-clock.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := hello_world_small.c
+C_SRCS += hello_world_small.c
+C_SRCS += segment_display.c
 CXX_SRCS :=
 ASM_SRCS :=
 

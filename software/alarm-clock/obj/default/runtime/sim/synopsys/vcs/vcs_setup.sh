@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 20.1 720 win32 2021.04.29.22:16:25
+# ACDS 20.1 720 win32 2021.05.02.18:01:33
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 20.1 720 win32 2021.04.29.22:16:25
+# ACDS 20.1 720 win32 2021.05.02.18:01:33
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="ProjectFile_tb"
@@ -139,7 +139,6 @@ if [ $SKIP_FILE_COPY -eq 0 ]; then
   cp -f A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_rf_ram_b.dat ./
   cp -f A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_rf_ram_b.hex ./
   cp -f A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_rf_ram_b.mif ./
-  cp -f A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.hex ./
 fi
 
 vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS \
@@ -190,10 +189,12 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_SEG_1.v \
   A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v \
   A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v \
+  A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v \
   A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v \
   A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v \
-  A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0002.sv \
+  A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv \
   A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv \
+  A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0002.sv \
   A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm.sv \
   A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv \
   A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v \

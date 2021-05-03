@@ -3,21 +3,25 @@
 #include <sys/alt_irq.h>
 #include "altera_avalon_pio_regs.h"
 #include "system.h"
+#include "segment_display.h"
 
 void handle_timer_interrupt();
 void handle_button_interrupt(void * context);
 void init_interrupts();
 
 volatile int edge_capture;
+volatile int counter = 0;
 
 int main()
-{ 
+{
 	volatile int * displays[] = {(int *) SEG_1_BASE, (int *) SEG_2_BASE, (int *) SEG_3_BASE, (int *) SEG_4_BASE, (int *) SEG_5_BASE, (int *) SEG_6_BASE};
 
 	alt_putstr("Hello from Nios II!\n");
 
 	// Set the 7-segment displays
-	* displays[0] = 0x3;
+	two_digit_conversion(56, displays[5], displays[4]);
+	two_digit_conversion(78, displays[3], displays[2]);
+	two_digit_conversion(90, displays[1], displays[0]);
 
 	/* Event loop never exits. */
 	while (1);

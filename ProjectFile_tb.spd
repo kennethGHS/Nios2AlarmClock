@@ -190,13 +190,9 @@
    type="VERILOG"
    library="Timer" />
  <file
-   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_REG.v"
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_SEG_1.v"
    type="VERILOG"
-   library="REG" />
- <file
-   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.hex"
-   type="HEX"
-   library="RAM" />
+   library="SEG_1" />
  <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v"
    type="VERILOG"
@@ -206,6 +202,10 @@
    type="VERILOG"
    library="PioButtom" />
  <file
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v"
+   type="VERILOG"
+   library="LEDS" />
+ <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v"
    type="VERILOG"
    library="JTAG" />
@@ -214,13 +214,21 @@
    type="VERILOG"
    library="CPU" />
  <file
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv"
+   type="SYSTEM_VERILOG"
+   library="ProjectFile_inst_segment1_bfm" />
+ <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv"
    type="SYSTEM_VERILOG"
    library="ProjectFile_inst_reset_bfm" />
  <file
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0002.sv"
+   type="SYSTEM_VERILOG"
+   library="ProjectFile_inst_leds_bfm" />
+ <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm.sv"
    type="SYSTEM_VERILOG"
-   library="ProjectFile_inst_regs_bfm" />
+   library="ProjectFile_inst_interrupbutton_bfm" />
  <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv"
    type="SYSTEM_VERILOG"

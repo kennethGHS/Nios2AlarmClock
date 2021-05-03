@@ -1,0 +1,35 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dA:/Nios2AlarmClock/software/alarm-clock/obj/default/runtime/sim/mentor
+vProjectFile_LEDS
+!s110 1620001479
+!i10b 1
+!s100 _^FZH1AK1_OA=cbAT8mz>3
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+I1EYLbJRMUjij^GTOhA7U?1
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1619999969
+8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v
+FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v
+!i122 4
+L0 21 46
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1620001479.000000
+!s107 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v|
+!s90 -reportprogress|300|A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v|-work|LEDS|
+!i113 1
+o-work LEDS
+tCvgOpt 0
+n@project@file_@l@e@d@s

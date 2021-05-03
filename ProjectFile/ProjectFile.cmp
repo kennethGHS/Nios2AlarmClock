@@ -9,7 +9,8 @@
 			segment3_export       : out std_logic_vector(7 downto 0);        -- export
 			segment4_export       : out std_logic_vector(7 downto 0);        -- export
 			segment5_export       : out std_logic_vector(7 downto 0);        -- export
-			segment6_export       : out std_logic_vector(7 downto 0)         -- export
+			segment6_export       : out std_logic_vector(7 downto 0);        -- export
+			hour_changer_export   : in  std_logic                    := 'X'  -- export
 		);
 	end component ProjectFile;
 

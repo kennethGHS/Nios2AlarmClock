@@ -10,23 +10,23 @@ z2
 cModel Technology
 Z0 dA:/Nios2AlarmClock/software/alarm-clock/obj/default/runtime/sim/mentor
 vProjectFile_tb
-!s110 1620001480
+!s110 1620105418
 !i10b 1
-!s100 5A6Ai]iE2o4m=kTe4lfLo2
+!s100 E_7Q=`QjJca26A5iGOmWl1
 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IV3bHn5=:lFc@EOEf>lbaG2
+IYGnTFYhHAAg==oc:Fki2K1
 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1619999964
+w1620093886
 8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/ProjectFile_tb.v
 FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/ProjectFile_tb.v
-!i122 6
-L0 6 75
+!i122 11
+L0 6 84
 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1620001480.000000
+!s108 1620105418.000000
 !s107 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/ProjectFile_tb.v|
 !s90 -reportprogress|300|A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/ProjectFile_tb.v|
 !i113 1

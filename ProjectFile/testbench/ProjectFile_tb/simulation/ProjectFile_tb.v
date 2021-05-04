@@ -15,6 +15,8 @@ module ProjectFile_tb (
 	wire  [7:0] projectfile_inst_segment4_export;                   // ProjectFile_inst:segment4_export -> ProjectFile_inst_segment4_bfm:sig_export
 	wire  [7:0] projectfile_inst_segment5_export;                   // ProjectFile_inst:segment5_export -> ProjectFile_inst_segment5_bfm:sig_export
 	wire  [7:0] projectfile_inst_segment6_export;                   // ProjectFile_inst:segment6_export -> ProjectFile_inst_segment6_bfm:sig_export
+	wire        projectfile_inst_uart_txd;                          // ProjectFile_inst:uart_txd -> ProjectFile_inst_uart_bfm:sig_txd
+	wire  [0:0] projectfile_inst_uart_bfm_conduit_rxd;              // ProjectFile_inst_uart_bfm:sig_rxd -> ProjectFile_inst:uart_rxd
 	wire        projectfile_inst_reset_bfm_reset_reset;             // ProjectFile_inst_reset_bfm:reset -> ProjectFile_inst:reset_reset_n
 
 	ProjectFile projectfile_inst (
@@ -27,7 +29,9 @@ module ProjectFile_tb (
 		.segment3_export       (projectfile_inst_segment3_export),                   //       segment3.export
 		.segment4_export       (projectfile_inst_segment4_export),                   //       segment4.export
 		.segment5_export       (projectfile_inst_segment5_export),                   //       segment5.export
-		.segment6_export       (projectfile_inst_segment6_export)                    //       segment6.export
+		.segment6_export       (projectfile_inst_segment6_export),                   //       segment6.export
+		.uart_rxd              (projectfile_inst_uart_bfm_conduit_rxd),              //           uart.rxd
+		.uart_txd              (projectfile_inst_uart_txd)                           //               .txd
 	);
 
 	altera_avalon_clock_source #(
@@ -75,6 +79,11 @@ module ProjectFile_tb (
 
 	altera_conduit_bfm_0003 projectfile_inst_segment6_bfm (
 		.sig_export (projectfile_inst_segment6_export)  // conduit.export
+	);
+
+	altera_conduit_bfm_0004 projectfile_inst_uart_bfm (
+		.sig_rxd (projectfile_inst_uart_bfm_conduit_rxd), // conduit.rxd
+		.sig_txd (projectfile_inst_uart_txd)              //        .txd
 	);
 
 endmodule

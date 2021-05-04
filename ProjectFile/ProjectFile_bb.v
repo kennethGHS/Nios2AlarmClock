@@ -2,6 +2,7 @@
 module ProjectFile (
 	clk_clk,
 	interrupbutton_export,
+	leds_export,
 	reset_reset_n,
 	segment1_export,
 	segment2_export,
@@ -9,10 +10,12 @@ module ProjectFile (
 	segment4_export,
 	segment5_export,
 	segment6_export,
-	leds_export);	
+	uart_rxd,
+	uart_txd);	
 
 	input		clk_clk;
 	input		interrupbutton_export;
+	output	[9:0]	leds_export;
 	input		reset_reset_n;
 	output	[7:0]	segment1_export;
 	output	[7:0]	segment2_export;
@@ -20,5 +23,6 @@ module ProjectFile (
 	output	[7:0]	segment4_export;
 	output	[7:0]	segment5_export;
 	output	[7:0]	segment6_export;
-	output	[9:0]	leds_export;
+	input		uart_rxd;
+	output		uart_txd;
 endmodule

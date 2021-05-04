@@ -97,6 +97,14 @@
          type = "int";
       }
    }
+   element ProjectFile_inst_uart_bfm
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -232,6 +240,17 @@
   <parameter name="SIGNAL_ROLES" value="export" />
   <parameter name="SIGNAL_WIDTHS" value="8" />
  </module>
+ <module
+   name="ProjectFile_inst_uart_bfm"
+   kind="altera_conduit_bfm"
+   version="20.1"
+   enabled="1">
+  <parameter name="CLOCKED_SIGNAL" value="false" />
+  <parameter name="ENABLE_RESET" value="false" />
+  <parameter name="SIGNAL_DIRECTIONS" value="output,input" />
+  <parameter name="SIGNAL_ROLES" value="rxd,txd" />
+  <parameter name="SIGNAL_WIDTHS" value="1,1" />
+ </module>
  <connection
    kind="clock"
    version="20.1"
@@ -324,6 +343,17 @@
    version="20.1"
    start="ProjectFile_inst_segment6_bfm.conduit"
    end="ProjectFile_inst.segment6">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="20.1"
+   start="ProjectFile_inst_uart_bfm.conduit"
+   end="ProjectFile_inst.uart">
   <parameter name="endPort" value="" />
   <parameter name="endPortLSB" value="0" />
   <parameter name="startPort" value="" />

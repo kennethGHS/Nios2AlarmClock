@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'ProjectFile'
  * SOPC Builder design path: A:/Nios2AlarmClock/ProjectFile.sopcinfo
  *
- * Generated: Sat May 01 10:56:14 CST 2021
+ * Generated: Mon May 03 18:42:26 CST 2021
  */
 
 /*
@@ -61,6 +61,7 @@
 #include "altera_nios2_gen2_irq.h"
 #include "altera_avalon_jtag_uart.h"
 #include "altera_avalon_timer.h"
+#include "altera_avalon_uart.h"
 
 /*
  * Allocate the device storage
@@ -69,6 +70,7 @@
 ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( CPU, CPU);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG, JTAG);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMER, Timer);
+ALTERA_AVALON_UART_INSTANCE ( UART, UART);
 
 /*
  * Initialize the interrupt controller devices
@@ -93,4 +95,5 @@ void alt_sys_init( void )
 {
     ALTERA_AVALON_TIMER_INIT ( TIMER, Timer);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG, JTAG);
+    ALTERA_AVALON_UART_INIT ( UART, UART);
 }

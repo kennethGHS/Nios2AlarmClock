@@ -10,23 +10,23 @@ z2
 cModel Technology
 Z0 dA:/Nios2AlarmClock/software/alarm-clock/obj/default/runtime/sim/mentor
 vProjectFile_CPU
-!s110 1620001480
+!s110 1620105418
 !i10b 1
-!s100 __CZgIR3[gfjABfAhYcH51
+!s100 SAHD?=6@8R8N9zHcCAMen0
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IO@oJg]H8^SDXIi?=jXe3h3
+Ima^z::3DGjmOUVAj`cRQT3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1619999968
+w1620093889
 8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v
 FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v
-!i122 41
+!i122 71
 L0 9 59
 Z3 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1620001480.000000
+!s108 1620105418.000000
 !s107 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v|
 !s90 -reportprogress|300|A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v|-work|CPU|
 !i113 1
@@ -34,23 +34,23 @@ o-work CPU
 Z4 tCvgOpt 0
 n@project@file_@c@p@u
 vProjectFile_CPU_cpu
-Z5 !s110 1620001478
+Z5 !s110 1620105416
 !i10b 1
-!s100 EZGI0R2i0?eKm3MzNmYF]2
+!s100 3AEQkM^[beo14XJEULb:80
 R1
-IlA6=Oa^0P2@VJRW_<bLml2
+IV^JVKFkaaen>SEgo=PQ@Q1
 R2
 R0
-Z6 w1619999979
+Z6 w1620093900
 Z7 8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu.v
 Z8 FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu.v
-!i122 36
+!i122 66
 L0 2834 2824
 R3
 r1
 !s85 0
 31
-Z9 !s108 1620001478.000000
+Z9 !s108 1620105416.000000
 Z10 !s107 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu.v|
 Z11 !s90 -reportprogress|300|A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu.v|-work|cpu|
 !i113 1
@@ -58,7 +58,7 @@ Z12 o-work cpu
 R4
 n@project@file_@c@p@u_cpu
 vProjectFile_CPU_cpu_debug_slave_sysclk
-Z13 !s110 1620001479
+R5
 !i10b 1
 !s100 0oQa7W4TmaagFRe9FXFVd3
 R1
@@ -68,7 +68,7 @@ R0
 R6
 8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_sysclk.v
 FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_sysclk.v
-!i122 37
+!i122 67
 L0 21 141
 R3
 r1
@@ -82,7 +82,7 @@ R12
 R4
 n@project@file_@c@p@u_cpu_debug_slave_sysclk
 vProjectFile_CPU_cpu_debug_slave_tck
-R13
+R5
 !i10b 1
 !s100 F;7dOBI6cdaCk5OSYBl__3
 R1
@@ -92,13 +92,13 @@ R0
 R6
 8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_tck.v
 FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_tck.v
-!i122 38
+!i122 68
 L0 21 218
 R3
 r1
 !s85 0
 31
-Z14 !s108 1620001479.000000
+R9
 !s107 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_tck.v|
 !s90 -reportprogress|300|A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_tck.v|-work|cpu|
 !i113 1
@@ -106,7 +106,7 @@ R12
 R4
 n@project@file_@c@p@u_cpu_debug_slave_tck
 vProjectFile_CPU_cpu_debug_slave_wrapper
-R13
+Z13 !s110 1620105417
 !i10b 1
 !s100 4TWi>DL2Tm01Hn9<FHW=O0
 R1
@@ -116,13 +116,13 @@ R0
 R6
 8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_wrapper.v
 FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_wrapper.v
-!i122 39
+!i122 69
 L0 21 201
 R3
 r1
 !s85 0
 31
-R14
+Z14 !s108 1620105417.000000
 !s107 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_wrapper.v|
 !s90 -reportprogress|300|A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_wrapper.v|-work|cpu|
 !i113 1
@@ -132,15 +132,15 @@ n@project@file_@c@p@u_cpu_debug_slave_wrapper
 vProjectFile_CPU_cpu_nios2_avalon_reg
 R5
 !i10b 1
-!s100 BMH:<F5_GeR5zRnQLF?zU0
+!s100 IY?0QoEmRjiAg8^5a5Dln0
 R1
-IbiR<2m=XhWQoKETSGlfGb3
+ISnncNJIVZz_E9[cZ6=;Rn1
 R2
 R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 2023 83
 R3
 r1
@@ -156,15 +156,15 @@ n@project@file_@c@p@u_cpu_nios2_avalon_reg
 vProjectFile_CPU_cpu_nios2_oci
 R5
 !i10b 1
-!s100 _:DQ^oY?S4JEk?S_?lSPH1
+!s100 g>zZ;1W7m82F2Af28>>:L3
 R1
-I_f2:7Q`0h8Z`WGK?DQkU<0
+I7]`VojahkD9agoj>]hzPH2
 R2
 R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 2362 462
 R3
 r1
@@ -188,7 +188,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 295 283
 R3
 r1
@@ -212,7 +212,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 1265 62
 R3
 r1
@@ -236,7 +236,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 795 177
 R3
 r1
@@ -260,7 +260,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 153 132
 R3
 r1
@@ -284,7 +284,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 1183 72
 R3
 r1
@@ -308,7 +308,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 1427 476
 R3
 r1
@@ -332,7 +332,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 1380 37
 R3
 r1
@@ -356,7 +356,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 1337 33
 R3
 r1
@@ -380,7 +380,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 1936 60
 R3
 r1
@@ -404,7 +404,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 982 123
 R3
 r1
@@ -428,7 +428,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 1913 13
 R3
 r1
@@ -452,7 +452,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 1115 58
 R3
 r1
@@ -468,15 +468,15 @@ n@project@file_@c@p@u_cpu_nios2_oci_td_mode
 vProjectFile_CPU_cpu_nios2_oci_xbrk
 R5
 !i10b 1
-!s100 126gXYG?W>ChW846=fOC71
+!s100 DOgH01ceNd@4EjbYS0@d92
 R1
-I`ed9D5<EYnR?1BYf`MNG:2
+I_Pc`DTfR`LZbR?ao8M?:^0
 R2
 R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 588 197
 R3
 r1
@@ -492,15 +492,15 @@ n@project@file_@c@p@u_cpu_nios2_oci_xbrk
 vProjectFile_CPU_cpu_nios2_ocimem
 R5
 !i10b 1
-!s100 _EON?DBXME6C?ID6K@2HO0
+!s100 0XJYMMLmQ[:J^4B[C5EYi3
 R1
-ISIj=CA0`EfQ4c:ZgHWz:l0
+IhBUlRPWQT>G2E13GG6GTY1
 R2
 R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 2181 171
 R3
 r1
@@ -524,7 +524,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 2006 7
 R3
 r1
@@ -548,7 +548,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 2116 55
 R3
 r1
@@ -572,7 +572,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 21 56
 R3
 r1
@@ -596,7 +596,7 @@ R0
 R6
 R7
 R8
-!i122 36
+!i122 66
 L0 87 56
 R3
 r1
@@ -612,15 +612,15 @@ n@project@file_@c@p@u_cpu_register_bank_b_module
 vProjectFile_CPU_cpu_test_bench
 R13
 !i10b 1
-!s100 I8BEJ>P:Oe:W]@HMlWT_J2
+!s100 @X0Cj@dB[8z><4nYE>H6c1
 R1
-IYgLKHVmG5c=ma8C_nYGzd3
+IXU5VRV7d=;KXon`JE6mHV2
 R2
 R0
 R6
 8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_test_bench.v
 FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_test_bench.v
-!i122 40
+!i122 70
 L0 21 635
 R3
 r1

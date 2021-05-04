@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 20.1 720 win32 2021.05.02.18:01:33
+# ACDS 20.1 720 win32 2021.05.03.23:01:49
 
 # ----------------------------------------
 # Initialize variables
@@ -225,6 +225,8 @@ ensure_lib                                       ./libraries/irq_mapper/
 vmap       irq_mapper                            ./libraries/irq_mapper/                           
 ensure_lib                                       ./libraries/mm_interconnect_0/                    
 vmap       mm_interconnect_0                     ./libraries/mm_interconnect_0/                    
+ensure_lib                                       ./libraries/UART/                                 
+vmap       UART                                  ./libraries/UART/                                 
 ensure_lib                                       ./libraries/Timer/                                
 vmap       Timer                                 ./libraries/Timer/                                
 ensure_lib                                       ./libraries/SEG_1/                                
@@ -239,6 +241,8 @@ ensure_lib                                       ./libraries/JTAG/
 vmap       JTAG                                  ./libraries/JTAG/                                 
 ensure_lib                                       ./libraries/CPU/                                  
 vmap       CPU                                   ./libraries/CPU/                                  
+ensure_lib                                       ./libraries/ProjectFile_inst_uart_bfm/            
+vmap       ProjectFile_inst_uart_bfm             ./libraries/ProjectFile_inst_uart_bfm/            
 ensure_lib                                       ./libraries/ProjectFile_inst_segment1_bfm/        
 vmap       ProjectFile_inst_segment1_bfm         ./libraries/ProjectFile_inst_segment1_bfm/        
 ensure_lib                                       ./libraries/ProjectFile_inst_reset_bfm/           
@@ -310,6 +314,7 @@ alias com {
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v"                                                                     -work rst_controller                       
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_irq_mapper.sv"                                          -L altera_common_sv_packages -work irq_mapper                           
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0.v"                                                                 -work mm_interconnect_0                    
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v"                                                                              -work UART                                 
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v"                                                                             -work Timer                                
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_SEG_1.v"                                                                             -work SEG_1                                
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v"                                                                               -work RAM                                  
@@ -317,6 +322,7 @@ alias com {
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v"                                                                              -work LEDS                                 
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v"                                                                              -work JTAG                                 
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v"                                                                               -work CPU                                  
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0004.sv"                                         -L altera_common_sv_packages -work ProjectFile_inst_uart_bfm            
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv"                                         -L altera_common_sv_packages -work ProjectFile_inst_segment1_bfm        
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv"                                      -L altera_common_sv_packages -work ProjectFile_inst_reset_bfm           
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0002.sv"                                         -L altera_common_sv_packages -work ProjectFile_inst_leds_bfm            
@@ -330,14 +336,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L Timer -L SEG_1 -L RAM -L PioButtom -L LEDS -L JTAG -L CPU -L ProjectFile_inst_segment1_bfm -L ProjectFile_inst_reset_bfm -L ProjectFile_inst_leds_bfm -L ProjectFile_inst_interrupbutton_bfm -L ProjectFile_inst_clk_bfm -L ProjectFile_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L UART -L Timer -L SEG_1 -L RAM -L PioButtom -L LEDS -L JTAG -L CPU -L ProjectFile_inst_uart_bfm -L ProjectFile_inst_segment1_bfm -L ProjectFile_inst_reset_bfm -L ProjectFile_inst_leds_bfm -L ProjectFile_inst_interrupbutton_bfm -L ProjectFile_inst_clk_bfm -L ProjectFile_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with -voptargs=+acc option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -voptargs=+acc -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L Timer -L SEG_1 -L RAM -L PioButtom -L LEDS -L JTAG -L CPU -L ProjectFile_inst_segment1_bfm -L ProjectFile_inst_reset_bfm -L ProjectFile_inst_leds_bfm -L ProjectFile_inst_interrupbutton_bfm -L ProjectFile_inst_clk_bfm -L ProjectFile_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -voptargs=+acc -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L UART -L Timer -L SEG_1 -L RAM -L PioButtom -L LEDS -L JTAG -L CPU -L ProjectFile_inst_uart_bfm -L ProjectFile_inst_segment1_bfm -L ProjectFile_inst_reset_bfm -L ProjectFile_inst_leds_bfm -L ProjectFile_inst_interrupbutton_bfm -L ProjectFile_inst_clk_bfm -L ProjectFile_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 2, 2021 6:01:25 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1620000085212</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 3, 2021 8:06:27 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1620093987153</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>A:\Nios2AlarmClock\software\alarm-clock_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>A:\Nios2AlarmClock\ProjectFile.sopcinfo</SopcDesignFile>
@@ -875,6 +875,30 @@
                 <Group>none</Group>
         </Setting>
         <Setting>
+                <SettingName>altera_avalon_uart_driver.enable_small_driver</SettingName>
+                <Identifier>ALTERA_AVALON_UART_SMALL</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>false</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>Small-footprint (polled mode) driver</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>altera_avalon_uart_driver.enable_ioctl</SettingName>
+                <Identifier>ALTERA_AVALON_UART_USE_IOCTL</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>false</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>Enable driver ioctl() support. This feature is not compatible with the 'small' driver; ioctl() support will not be compiled if either the UART 'enable_small_driver' or HAL 'enable_reduced_device_drivers' settings are enabled.</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
                 <SettingName>altera_avalon_jtag_uart_driver.enable_small_driver</SettingName>
                 <Identifier>ALTERA_AVALON_JTAG_UART_SMALL</Identifier>
                 <Type>BooleanDefineOnly</Type>
@@ -899,70 +923,76 @@
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <MemoryMap>
+                <slaveDescriptor>RAM</slaveDescriptor>
+                <addressRange>0x00002000 - 0x00003FFF</addressRange>
+                <addressSpan>8192</addressSpan>
+                <attributes>memory</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>UART</slaveDescriptor>
+                <addressRange>0x00005000 - 0x0000501F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes>printable</attributes>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>Timer</slaveDescriptor>
-                <addressRange>0x00000000 - 0x0000001F</addressRange>
+                <addressRange>0x00005020 - 0x0000503F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>RAM</slaveDescriptor>
-                <addressRange>0x00001000 - 0x00001FFF</addressRange>
-                <addressSpan>4096</addressSpan>
-                <attributes>memory</attributes>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>JTAG</slaveDescriptor>
-                <addressRange>0x00003018 - 0x0000301F</addressRange>
-                <addressSpan>8</addressSpan>
-                <attributes>printable</attributes>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>SEG_1</slaveDescriptor>
-                <addressRange>0x00004000 - 0x0000400F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>PioButtom</slaveDescriptor>
-                <addressRange>0x00004010 - 0x0000401F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>SEG_2</slaveDescriptor>
-                <addressRange>0x00004020 - 0x0000402F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>SEG_3</slaveDescriptor>
-                <addressRange>0x00004030 - 0x0000403F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>SEG_4</slaveDescriptor>
-                <addressRange>0x00004040 - 0x0000404F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>SEG_5</slaveDescriptor>
-                <addressRange>0x00004050 - 0x0000405F</addressRange>
+                <slaveDescriptor>LEDS</slaveDescriptor>
+                <addressRange>0x00005040 - 0x0000504F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SEG_6</slaveDescriptor>
-                <addressRange>0x00004060 - 0x0000406F</addressRange>
+                <addressRange>0x00005050 - 0x0000505F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LEDS</slaveDescriptor>
-                <addressRange>0x00004070 - 0x0000407F</addressRange>
+                <slaveDescriptor>SEG_5</slaveDescriptor>
+                <addressRange>0x00005060 - 0x0000506F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>SEG_4</slaveDescriptor>
+                <addressRange>0x00005070 - 0x0000507F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>SEG_3</slaveDescriptor>
+                <addressRange>0x00005080 - 0x0000508F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>SEG_2</slaveDescriptor>
+                <addressRange>0x00005090 - 0x0000509F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>PioButtom</slaveDescriptor>
+                <addressRange>0x000050A0 - 0x000050AF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>SEG_1</slaveDescriptor>
+                <addressRange>0x000050B0 - 0x000050BF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>JTAG</slaveDescriptor>
+                <addressRange>0x000050C8 - 0x000050CF</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes>printable</attributes>
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>

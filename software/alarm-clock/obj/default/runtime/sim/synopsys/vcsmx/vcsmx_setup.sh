@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 20.1 720 win32 2021.05.02.18:01:33
+# ACDS 20.1 720 win32 2021.05.03.23:01:49
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 20.1 720 win32 2021.05.02.18:01:33
+# ACDS 20.1 720 win32 2021.05.03.23:01:49
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="ProjectFile_tb"
@@ -171,6 +171,7 @@ mkdir -p ./libraries/cpu/
 mkdir -p ./libraries/rst_controller/
 mkdir -p ./libraries/irq_mapper/
 mkdir -p ./libraries/mm_interconnect_0/
+mkdir -p ./libraries/UART/
 mkdir -p ./libraries/Timer/
 mkdir -p ./libraries/SEG_1/
 mkdir -p ./libraries/RAM/
@@ -178,6 +179,7 @@ mkdir -p ./libraries/PioButtom/
 mkdir -p ./libraries/LEDS/
 mkdir -p ./libraries/JTAG/
 mkdir -p ./libraries/CPU/
+mkdir -p ./libraries/ProjectFile_inst_uart_bfm/
 mkdir -p ./libraries/ProjectFile_inst_segment1_bfm/
 mkdir -p ./libraries/ProjectFile_inst_reset_bfm/
 mkdir -p ./libraries/ProjectFile_inst_leds_bfm/
@@ -261,6 +263,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                       
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_irq_mapper.sv"                                          -work irq_mapper                           
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0.v"                                    -work mm_interconnect_0                    
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v"                                                 -work UART                                 
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v"                                                -work Timer                                
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_SEG_1.v"                                                -work SEG_1                                
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v"                                                  -work RAM                                  
@@ -268,6 +271,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v"                                                 -work LEDS                                 
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v"                                                 -work JTAG                                 
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v"                                                  -work CPU                                  
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0004.sv"                                         -work ProjectFile_inst_uart_bfm            
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv"                                         -work ProjectFile_inst_segment1_bfm        
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv"                                      -work ProjectFile_inst_reset_bfm           
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0002.sv"                                         -work ProjectFile_inst_leds_bfm            

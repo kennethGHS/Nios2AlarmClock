@@ -42,7 +42,7 @@
 #  ld
 # [exec] dev_com
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:23 on May 02,2021
+# Start time: 23:16:41 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_primitives.v -work altera_ver 
 # -- Compiling module global
 # -- Compiling module carry
@@ -124,10 +124,10 @@
 # 	alt_iobuf_diff
 # 	alt_bidir_diff
 # 	alt_bidir_buf
-# End time: 18:24:24 on May 02,2021, Elapsed time: 0:00:01
+# End time: 23:16:42 on May 03,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:24 on May 02,2021
+# Start time: 23:16:42 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/220model.v -work lpm_ver 
 # -- Compiling module LPM_MEMORY_INITIALIZATION
 # -- Compiling module LPM_HINT_EVALUATION
@@ -191,10 +191,10 @@
 # 	lpm_inpad
 # 	lpm_outpad
 # 	lpm_bipad
-# End time: 18:24:24 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:42 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:24 on May 02,2021
+# Start time: 23:16:42 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/sgate.v -work sgate_ver 
 # -- Compiling module oper_add
 # -- Compiling module oper_addsub
@@ -236,10 +236,10 @@
 # 	oper_decoder
 # 	oper_bus_mux
 # 	oper_latch
-# End time: 18:24:24 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:42 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:24 on May 02,2021
+# Start time: 23:16:42 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_mf.v -work altera_mf_ver 
 # -- Compiling module lcell
 # -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
@@ -369,10 +369,10 @@
 # 	alt_fault_injection
 # 	sld_virtual_jtag_basic
 # 	altsource_probe
-# End time: 18:24:26 on May 02,2021, Elapsed time: 0:00:02
+# End time: 23:16:44 on May 03,2021, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:26 on May 02,2021
+# Start time: 23:16:44 on May 03,2021
 # vlog -reportprogress 300 -sv C:/intelfpga_lite/20.1/quartus/eda/sim_lib/altera_lnsim.sv -work altera_lnsim_ver 
 # -- Compiling package altera_lnsim_functions
 # -- Compiling package altera_generic_pll_functions
@@ -455,10 +455,10 @@
 # 	altera_iopll
 # 	fourteennm_altera_iopll
 # 	fourteennm_simple_iopll
-# End time: 18:24:26 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:44 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:26 on May 02,2021
+# Start time: 23:16:44 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v -work cyclonev_ver 
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
@@ -472,17 +472,17 @@
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # 
 # Top level modules:
-# End time: 18:24:29 on May 02,2021, Elapsed time: 0:00:03
+# End time: 23:16:47 on May 03,2021, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 10
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:29 on May 02,2021
+# Start time: 23:16:47 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v -work cyclonev_ver 
 # 
 # Top level modules:
-# End time: 18:24:30 on May 02,2021, Elapsed time: 0:00:01
+# End time: 23:16:48 on May 03,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:30 on May 02,2021
+# Start time: 23:16:48 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/cyclonev_atoms.v -work cyclonev_ver 
 # -- Compiling UDP CYCLONEV_PRIM_DFFE
 # -- Compiling UDP CYCLONEV_PRIM_DFFEAS
@@ -622,17 +622,17 @@
 # 	cyclonev_mem_phy
 # 	cyclonev_oscillator
 # 	cyclonev_hps_interface_fpga2sdram
-# End time: 18:24:31 on May 02,2021, Elapsed time: 0:00:01
+# End time: 23:16:49 on May 03,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:31 on May 02,2021
+# Start time: 23:16:49 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v -work cyclonev_hssi_ver 
 # 
 # Top level modules:
-# End time: 18:24:33 on May 02,2021, Elapsed time: 0:00:02
+# End time: 23:16:51 on May 03,2021, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:33 on May 02,2021
+# Start time: 23:16:51 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/cyclonev_hssi_atoms.v -work cyclonev_hssi_ver 
 # -- Compiling module cyclonev_hssi_8g_pcs_aggregate
 # -- Compiling module cyclonev_hssi_8g_rx_pcs
@@ -732,10 +732,10 @@
 # 	arriav_hssi_avmm_interface
 # 	arriav_hssi_pma_hi_pmaif
 # 	arriav_hssi_pma_hi_xcvrif
-# End time: 18:24:33 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:51 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:34 on May 02,2021
+# Start time: 23:16:52 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v -work cyclonev_pcie_hip_ver 
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
@@ -745,209 +745,209 @@
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # 
 # Top level modules:
-# End time: 18:24:36 on May 02,2021, Elapsed time: 0:00:02
+# End time: 23:16:54 on May 03,2021, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 6
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:36 on May 02,2021
+# Start time: 23:16:54 on May 03,2021
 # vlog -reportprogress 300 C:/intelfpga_lite/20.1/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v -work cyclonev_pcie_hip_ver 
 # -- Compiling module cyclonev_hd_altpe2_hip_top
 # -- Compiling module arriav_hd_altpe2_hip_top
 # 
 # Top level modules:
 # 	cyclonev_hd_altpe2_hip_top
-# End time: 18:24:36 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:54 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # [exec] com
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:36 on May 02,2021
+# Start time: 23:16:54 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/verbosity_pkg.sv -work altera_common_sv_packages 
 # -- Compiling package verbosity_pkg
 # 
 # Top level modules:
 # 	--none--
-# End time: 18:24:36 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:54 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:36 on May 02,2021
+# Start time: 23:16:54 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv -L altera_common_sv_packages -work error_adapter_0 
 # -- Compiling module ProjectFile_mm_interconnect_0_avalon_st_adapter_error_adapter_0
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_avalon_st_adapter_error_adapter_0
-# End time: 18:24:36 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:54 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:36 on May 02,2021
+# Start time: 23:16:54 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_avalon_st_adapter.v -work avalon_st_adapter 
 # -- Compiling module ProjectFile_mm_interconnect_0_avalon_st_adapter
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_avalon_st_adapter
-# End time: 18:24:36 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:54 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:36 on May 02,2021
+# Start time: 23:16:54 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_mux_001.sv -L altera_common_sv_packages -work rsp_mux_001 
 # -- Compiling module ProjectFile_mm_interconnect_0_rsp_mux_001
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_rsp_mux_001
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:01
+# End time: 23:16:54 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:54 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work rsp_mux_001 
 # -- Compiling module altera_merlin_arbitrator
 # -- Compiling module altera_merlin_arb_adder
 # 
 # Top level modules:
 # 	altera_merlin_arbitrator
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:54 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_mux.sv -L altera_common_sv_packages -work rsp_mux 
 # -- Compiling module ProjectFile_mm_interconnect_0_rsp_mux
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_rsp_mux
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work rsp_mux 
 # -- Compiling module altera_merlin_arbitrator
 # -- Compiling module altera_merlin_arb_adder
 # 
 # Top level modules:
 # 	altera_merlin_arbitrator
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_demux_003.sv -L altera_common_sv_packages -work rsp_demux_003 
 # -- Compiling module ProjectFile_mm_interconnect_0_rsp_demux_003
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_rsp_demux_003
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_demux.sv -L altera_common_sv_packages -work rsp_demux 
 # -- Compiling module ProjectFile_mm_interconnect_0_rsp_demux
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_rsp_demux
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_mux_003.sv -L altera_common_sv_packages -work cmd_mux_003 
 # -- Compiling module ProjectFile_mm_interconnect_0_cmd_mux_003
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_cmd_mux_003
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work cmd_mux_003 
 # -- Compiling module altera_merlin_arbitrator
 # -- Compiling module altera_merlin_arb_adder
 # 
 # Top level modules:
 # 	altera_merlin_arbitrator
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_mux.sv -L altera_common_sv_packages -work cmd_mux 
 # -- Compiling module ProjectFile_mm_interconnect_0_cmd_mux
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_cmd_mux
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv -L altera_common_sv_packages -work cmd_mux 
 # -- Compiling module altera_merlin_arbitrator
 # -- Compiling module altera_merlin_arb_adder
 # 
 # Top level modules:
 # 	altera_merlin_arbitrator
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_demux_001.sv -L altera_common_sv_packages -work cmd_demux_001 
 # -- Compiling module ProjectFile_mm_interconnect_0_cmd_demux_001
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_cmd_demux_001
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_demux.sv -L altera_common_sv_packages -work cmd_demux 
 # -- Compiling module ProjectFile_mm_interconnect_0_cmd_demux
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_cmd_demux
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:37 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router_005.sv -L altera_common_sv_packages -work router_005 
 # -- Compiling module ProjectFile_mm_interconnect_0_router_005_default_decode
 # -- Compiling module ProjectFile_mm_interconnect_0_router_005
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_router_005
-# End time: 18:24:37 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router_002.sv -L altera_common_sv_packages -work router_002 
 # -- Compiling module ProjectFile_mm_interconnect_0_router_002_default_decode
 # -- Compiling module ProjectFile_mm_interconnect_0_router_002
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_router_002
-# End time: 18:24:38 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:55 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:55 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router_001.sv -L altera_common_sv_packages -work router_001 
 # -- Compiling module ProjectFile_mm_interconnect_0_router_001_default_decode
 # -- Compiling module ProjectFile_mm_interconnect_0_router_001
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_router_001
-# End time: 18:24:38 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:56 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router.sv -L altera_common_sv_packages -work router 
 # -- Compiling module ProjectFile_mm_interconnect_0_router_default_decode
 # -- Compiling module ProjectFile_mm_interconnect_0_router
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0_router
-# End time: 18:24:38 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:56 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_sc_fifo.v -work JTAG_avalon_jtag_slave_agent_rsp_fifo 
 # -- Compiling module altera_avalon_sc_fifo
 # 
 # Top level modules:
 # 	altera_avalon_sc_fifo
-# End time: 18:24:38 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:56 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_slave_agent.sv -L altera_common_sv_packages -work JTAG_avalon_jtag_slave_agent 
 # -- Compiling module altera_merlin_slave_agent
 # ** Warning: A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_slave_agent.sv(618): (vlog-2186) SystemVerilog testbench feature
@@ -963,46 +963,46 @@
 # 
 # Top level modules:
 # 	altera_merlin_slave_agent
-# End time: 18:24:38 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 6
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:56 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv -L altera_common_sv_packages -work JTAG_avalon_jtag_slave_agent 
 # -- Compiling module altera_merlin_burst_uncompressor
 # 
 # Top level modules:
 # 	altera_merlin_burst_uncompressor
-# End time: 18:24:38 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:56 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_master_agent.sv -L altera_common_sv_packages -work CPU_data_master_agent 
 # -- Compiling module altera_merlin_master_agent
 # 
 # Top level modules:
 # 	altera_merlin_master_agent
-# End time: 18:24:38 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:56 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_slave_translator.sv -L altera_common_sv_packages -work JTAG_avalon_jtag_slave_translator 
 # -- Compiling module altera_merlin_slave_translator
 # 
 # Top level modules:
 # 	altera_merlin_slave_translator
-# End time: 18:24:38 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:56 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_merlin_master_translator.sv -L altera_common_sv_packages -work CPU_data_master_translator 
 # -- Compiling module altera_merlin_master_translator
 # 
 # Top level modules:
 # 	altera_merlin_master_translator
-# End time: 18:24:38 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:56 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu.v -work cpu 
 # -- Compiling module ProjectFile_CPU_cpu_register_bank_a_module
 # -- Compiling module ProjectFile_CPU_cpu_register_bank_b_module
@@ -1029,127 +1029,140 @@
 # Top level modules:
 # 	ProjectFile_CPU_cpu_nios2_performance_monitors
 # 	ProjectFile_CPU_cpu
-# End time: 18:24:38 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:38 on May 02,2021
+# Start time: 23:16:56 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_sysclk.v -work cpu 
 # -- Compiling module ProjectFile_CPU_cpu_debug_slave_sysclk
 # 
 # Top level modules:
 # 	ProjectFile_CPU_cpu_debug_slave_sysclk
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:01
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:56 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_tck.v -work cpu 
 # -- Compiling module ProjectFile_CPU_cpu_debug_slave_tck
 # 
 # Top level modules:
 # 	ProjectFile_CPU_cpu_debug_slave_tck
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:56 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_wrapper.v -work cpu 
 # -- Compiling module ProjectFile_CPU_cpu_debug_slave_wrapper
 # 
 # Top level modules:
 # 	ProjectFile_CPU_cpu_debug_slave_wrapper
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_test_bench.v -work cpu 
 # -- Compiling module ProjectFile_CPU_cpu_test_bench
 # 
 # Top level modules:
 # 	ProjectFile_CPU_cpu_test_bench
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_reset_controller.v -work rst_controller 
 # -- Compiling module altera_reset_controller
 # 
 # Top level modules:
 # 	altera_reset_controller
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v -work rst_controller 
 # -- Compiling module altera_reset_synchronizer
 # 
 # Top level modules:
 # 	altera_reset_synchronizer
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_irq_mapper.sv -L altera_common_sv_packages -work irq_mapper 
 # -- Compiling module ProjectFile_irq_mapper
 # 
 # Top level modules:
 # 	ProjectFile_irq_mapper
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0.v -work mm_interconnect_0 
 # -- Compiling module ProjectFile_mm_interconnect_0
 # 
 # Top level modules:
 # 	ProjectFile_mm_interconnect_0
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
+# vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v -work UART 
+# -- Compiling module ProjectFile_UART_tx
+# -- Compiling module ProjectFile_UART_rx_stimulus_source
+# -- Compiling module ProjectFile_UART_rx
+# -- Compiling module ProjectFile_UART_regs
+# -- Compiling module ProjectFile_UART
+# 
+# Top level modules:
+# 	ProjectFile_UART
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v -work Timer 
 # -- Compiling module ProjectFile_Timer
 # 
 # Top level modules:
 # 	ProjectFile_Timer
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_SEG_1.v -work SEG_1 
 # -- Compiling module ProjectFile_SEG_1
 # 
 # Top level modules:
 # 	ProjectFile_SEG_1
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v -work RAM 
 # -- Compiling module ProjectFile_RAM
 # 
 # Top level modules:
 # 	ProjectFile_RAM
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v -work PioButtom 
 # -- Compiling module ProjectFile_PioButtom
 # 
 # Top level modules:
 # 	ProjectFile_PioButtom
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v -work LEDS 
 # -- Compiling module ProjectFile_LEDS
 # 
 # Top level modules:
 # 	ProjectFile_LEDS
-# End time: 18:24:39 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:57 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:39 on May 02,2021
+# Start time: 23:16:57 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v -work JTAG 
 # -- Compiling module ProjectFile_JTAG_sim_scfifo_w
 # -- Compiling module ProjectFile_JTAG_scfifo_w
@@ -1159,88 +1172,98 @@
 # 
 # Top level modules:
 # 	ProjectFile_JTAG
-# End time: 18:24:40 on May 02,2021, Elapsed time: 0:00:01
+# End time: 23:16:58 on May 03,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:40 on May 02,2021
+# Start time: 23:16:58 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v -work CPU 
 # -- Compiling module ProjectFile_CPU
 # 
 # Top level modules:
 # 	ProjectFile_CPU
-# End time: 18:24:40 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:58 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:40 on May 02,2021
+# Start time: 23:16:58 on May 03,2021
+# vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0004.sv -L altera_common_sv_packages -work ProjectFile_inst_uart_bfm 
+# -- Compiling module altera_conduit_bfm_0004
+# -- Importing package altera_common_sv_packages.verbosity_pkg
+# 
+# Top level modules:
+# 	altera_conduit_bfm_0004
+# End time: 23:16:58 on May 03,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:16:58 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv -L altera_common_sv_packages -work ProjectFile_inst_segment1_bfm 
 # -- Compiling module altera_conduit_bfm_0003
 # -- Importing package altera_common_sv_packages.verbosity_pkg
 # 
 # Top level modules:
 # 	altera_conduit_bfm_0003
-# End time: 18:24:40 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:58 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:40 on May 02,2021
+# Start time: 23:16:58 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv -L altera_common_sv_packages -work ProjectFile_inst_reset_bfm 
 # -- Compiling module altera_avalon_reset_source
 # -- Importing package altera_common_sv_packages.verbosity_pkg
 # 
 # Top level modules:
 # 	altera_avalon_reset_source
-# End time: 18:24:40 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:58 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:40 on May 02,2021
+# Start time: 23:16:58 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0002.sv -L altera_common_sv_packages -work ProjectFile_inst_leds_bfm 
 # -- Compiling module altera_conduit_bfm_0002
 # -- Importing package altera_common_sv_packages.verbosity_pkg
 # 
 # Top level modules:
 # 	altera_conduit_bfm_0002
-# End time: 18:24:40 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:58 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:40 on May 02,2021
+# Start time: 23:16:58 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm.sv -L altera_common_sv_packages -work ProjectFile_inst_interrupbutton_bfm 
 # -- Compiling module altera_conduit_bfm
 # -- Importing package altera_common_sv_packages.verbosity_pkg
 # 
 # Top level modules:
 # 	altera_conduit_bfm
-# End time: 18:24:40 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:58 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:40 on May 02,2021
+# Start time: 23:16:58 on May 03,2021
 # vlog -reportprogress 300 -sv A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv -L altera_common_sv_packages -work ProjectFile_inst_clk_bfm 
 # -- Compiling module altera_avalon_clock_source
 # -- Importing package altera_common_sv_packages.verbosity_pkg
 # 
 # Top level modules:
 # 	altera_avalon_clock_source
-# End time: 18:24:40 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:58 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:40 on May 02,2021
+# Start time: 23:16:58 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v -work ProjectFile_inst 
 # -- Compiling module ProjectFile
 # 
 # Top level modules:
 # 	ProjectFile
-# End time: 18:24:40 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:58 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:24:40 on May 02,2021
+# Start time: 23:16:58 on May 03,2021
 # vlog -reportprogress 300 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/ProjectFile_tb.v 
 # -- Compiling module ProjectFile_tb
 # 
 # Top level modules:
 # 	ProjectFile_tb
-# End time: 18:24:40 on May 02,2021, Elapsed time: 0:00:00
+# End time: 23:16:58 on May 03,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # [exec] elab
-# vsim -t ps -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L Timer -L SEG_1 -L RAM -L PioButtom -L LEDS -L JTAG -L CPU -L ProjectFile_inst_segment1_bfm -L ProjectFile_inst_reset_bfm -L ProjectFile_inst_leds_bfm -L ProjectFile_inst_interrupbutton_bfm -L ProjectFile_inst_clk_bfm -L ProjectFile_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver ProjectFile_tb 
-# Start time: 18:24:40 on May 02,2021
+# vsim -t ps -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L UART -L Timer -L SEG_1 -L RAM -L PioButtom -L LEDS -L JTAG -L CPU -L ProjectFile_inst_uart_bfm -L ProjectFile_inst_segment1_bfm -L ProjectFile_inst_reset_bfm -L ProjectFile_inst_leds_bfm -L ProjectFile_inst_interrupbutton_bfm -L ProjectFile_inst_clk_bfm -L ProjectFile_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver ProjectFile_tb 
+# Start time: 23:16:58 on May 03,2021
 # Loading work.ProjectFile_tb
 # Loading ProjectFile_inst.ProjectFile
 # Loading CPU.ProjectFile_CPU
@@ -1280,6 +1303,11 @@
 # Loading RAM.ProjectFile_RAM
 # Loading SEG_1.ProjectFile_SEG_1
 # Loading Timer.ProjectFile_Timer
+# Loading UART.ProjectFile_UART
+# Loading UART.ProjectFile_UART_tx
+# Loading UART.ProjectFile_UART_rx
+# Loading UART.ProjectFile_UART_rx_stimulus_source
+# Loading UART.ProjectFile_UART_regs
 # Loading mm_interconnect_0.ProjectFile_mm_interconnect_0
 # Loading sv_std.std
 # Loading CPU_data_master_translator.altera_merlin_master_translator
@@ -1320,6 +1348,7 @@
 # Loading ProjectFile_inst_segment1_bfm.altera_conduit_bfm_0002
 # Loading ProjectFile_inst_reset_bfm.altera_avalon_reset_source
 # Loading ProjectFile_inst_segment1_bfm.altera_conduit_bfm_0003
+# Loading ProjectFile_inst_uart_bfm.altera_conduit_bfm_0004
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
@@ -1384,9 +1413,9 @@
 # ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu.v(2147): [TFMPC] - Missing connection for port 'q_b'.
 # ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu.v(2147): [TFMPC] - Missing connection for port 'eccstatus'.
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'jtag'.  Expected 12, found 10.
-#    Time: 0 ps  Iteration: 0  Instance: /ProjectFile_tb/projectfile_inst/jtag File: A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v Line: 136
-# ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v(136): [TFMPC] - Missing connection for port 'dataavailable'.
-# ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v(136): [TFMPC] - Missing connection for port 'readyfordata'.
+#    Time: 0 ps  Iteration: 0  Instance: /ProjectFile_tb/projectfile_inst/jtag File: A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v Line: 146
+# ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v(146): [TFMPC] - Missing connection for port 'dataavailable'.
+# ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v(146): [TFMPC] - Missing connection for port 'readyfordata'.
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'the_altsyncram'.  Expected 23, found 7.
 #    Time: 0 ps  Iteration: 0  Instance: /ProjectFile_tb/projectfile_inst/ram/the_altsyncram File: A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v Line: 60
 # ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v(60): [TFMPC] - Missing connection for port 'wren_b'.
@@ -1405,19 +1434,29 @@
 # ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v(60): [TFMPC] - Missing connection for port 'addressstall_b'.
 # ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v(60): [TFMPC] - Missing connection for port 'q_b'.
 # ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v(60): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uart'.  Expected 14, found 12.
+#    Time: 0 ps  Iteration: 0  Instance: /ProjectFile_tb/projectfile_inst/uart File: A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v Line: 273
+# ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v(273): [TFMPC] - Missing connection for port 'dataavailable'.
+# ** Warning: (vsim-3722) A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v(273): [TFMPC] - Missing connection for port 'readyfordata'.
 # ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (10) for port 'sig_export'. The port definition is at: A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0002.sv(38).
-#    Time: 0 ps  Iteration: 0  Instance: /ProjectFile_tb/projectfile_inst_leds_bfm File: A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/ProjectFile_tb.v Line: 44
-# ** Warning: Design size of 10445 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+#    Time: 0 ps  Iteration: 0  Instance: /ProjectFile_tb/projectfile_inst_leds_bfm File: A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/ProjectFile_tb.v Line: 48
+# ** Warning: Design size of 10822 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 #  
 add wave -position insertpoint  \
-sim:/ProjectFile_tb/projectfile_inst_segment1_export \
-sim:/ProjectFile_tb/projectfile_inst_segment2_export \
-sim:/ProjectFile_tb/projectfile_inst_segment3_export \
-sim:/ProjectFile_tb/projectfile_inst_segment4_export \
+sim:/ProjectFile_tb/projectfile_inst_uart_txd \
+sim:/ProjectFile_tb/projectfile_inst_uart_bfm_conduit_rxd \
+sim:/ProjectFile_tb/projectfile_inst_segment6_export \
 sim:/ProjectFile_tb/projectfile_inst_segment5_export \
-sim:/ProjectFile_tb/projectfile_inst_segment6_export
-run 0.2ms
+sim:/ProjectFile_tb/projectfile_inst_segment4_export \
+sim:/ProjectFile_tb/projectfile_inst_segment3_export \
+sim:/ProjectFile_tb/projectfile_inst_segment2_export \
+sim:/ProjectFile_tb/projectfile_inst_segment1_export \
+sim:/ProjectFile_tb/projectfile_inst_reset_bfm_reset_reset \
+sim:/ProjectFile_tb/projectfile_inst_leds_export \
+sim:/ProjectFile_tb/projectfile_inst_interrupbutton_bfm_conduit_export \
+sim:/ProjectFile_tb/projectfile_inst_clk_bfm_clk_clk
+run 1ms
 # Warning: DONT_CARE value for read_during_write_mode_port_a is not supported in Stratix device family, it might cause incorrect behavioural simulation result
 # Time: 0  Instance: ProjectFile_tb.projectfile_inst.cpu.cpu.the_ProjectFile_CPU_cpu_nios2_oci.the_ProjectFile_CPU_cpu_nios2_ocimem.ProjectFile_CPU_cpu_ociram_sp_ram.the_altsyncram.m_default.altsyncram_inst
 # Warning: DONT_CARE value for read_during_write_mode_port_a is not supported in Stratix device family, it might cause incorrect behavioural simulation result
@@ -1435,6 +1474,9 @@ run 0.2ms
 #                    0: INFO: ------------------------------------------------------------
 #                    0: INFO: ProjectFile_tb.projectfile_inst_reset_bfm.reset_assert: Reset asserted
 #               990000: INFO: ProjectFile_tb.projectfile_inst_reset_bfm.reset_deassert: Reset deasserted
-# Hello from Nios II!
-# End time: 18:26:49 on May 02,2021, Elapsed time: 0:02:09
-# Errors: 0, Warnings: 77
+# 309610 ns: ERROR: ProjectFile_CPU_cpu_test_bench/E_valid is 'x'
+# ** Note: $stop    : A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_test_bench.v(472)
+#    Time: 309610 ns  Iteration: 1  Instance: /ProjectFile_tb/projectfile_inst/cpu/cpu/the_ProjectFile_CPU_cpu_test_bench
+# Break in Module ProjectFile_CPU_cpu_test_bench at A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_test_bench.v line 472
+# End time: 23:18:51 on May 03,2021, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 80

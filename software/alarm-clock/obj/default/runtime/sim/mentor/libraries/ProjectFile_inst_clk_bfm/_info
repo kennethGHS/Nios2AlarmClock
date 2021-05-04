@@ -12,7 +12,7 @@ Z0 dA:/Nios2AlarmClock/software/alarm-clock/obj/default/runtime/sim/mentor
 valtera_avalon_clock_source
 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
 DXx25 altera_common_sv_packages 13 verbosity_pkg 0 22 ;P4>o=U8o^OoIGz4KzY5I2
-!s110 1620001480
+!s110 1620105418
 !i10b 1
 !s100 hG8?1HC?N8:D5VgTfFPH]0
 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,16 +20,16 @@ IDO1R29]hcab65<Q73HW<k2
 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1619999968
+w1620093889
 8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv
 FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv
-!i122 6
+!i122 11
 L0 23 70
 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1620001480.000000
+!s108 1620105418.000000
 !s107 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv|
 !s90 -reportprogress|300|-sv|A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv|-L|altera_common_sv_packages|-work|ProjectFile_inst_clk_bfm|
 !i113 1

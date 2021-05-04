@@ -13,13 +13,15 @@ module ProjectFile (
 		output wire [7:0] segment3_export,       //       segment3.export
 		output wire [7:0] segment4_export,       //       segment4.export
 		output wire [7:0] segment5_export,       //       segment5.export
-		output wire [7:0] segment6_export        //       segment6.export
+		output wire [7:0] segment6_export,       //       segment6.export
+		input  wire       uart_rxd,              //           uart.rxd
+		output wire       uart_txd               //               .txd
 	);
 
 	wire  [31:0] cpu_data_master_readdata;                             // mm_interconnect_0:CPU_data_master_readdata -> CPU:d_readdata
 	wire         cpu_data_master_waitrequest;                          // mm_interconnect_0:CPU_data_master_waitrequest -> CPU:d_waitrequest
 	wire         cpu_data_master_debugaccess;                          // CPU:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:CPU_data_master_debugaccess
-	wire  [14:0] cpu_data_master_address;                              // CPU:d_address -> mm_interconnect_0:CPU_data_master_address
+	wire  [13:0] cpu_data_master_address;                              // CPU:d_address -> mm_interconnect_0:CPU_data_master_address
 	wire   [3:0] cpu_data_master_byteenable;                           // CPU:d_byteenable -> mm_interconnect_0:CPU_data_master_byteenable
 	wire         cpu_data_master_read;                                 // CPU:d_read -> mm_interconnect_0:CPU_data_master_read
 	wire         cpu_data_master_write;                                // CPU:d_write -> mm_interconnect_0:CPU_data_master_write
@@ -95,11 +97,18 @@ module ProjectFile (
 	wire   [1:0] mm_interconnect_0_leds_s1_address;                    // mm_interconnect_0:LEDS_s1_address -> LEDS:address
 	wire         mm_interconnect_0_leds_s1_write;                      // mm_interconnect_0:LEDS_s1_write -> LEDS:write_n
 	wire  [31:0] mm_interconnect_0_leds_s1_writedata;                  // mm_interconnect_0:LEDS_s1_writedata -> LEDS:writedata
+	wire         mm_interconnect_0_uart_s1_chipselect;                 // mm_interconnect_0:UART_s1_chipselect -> UART:chipselect
+	wire  [15:0] mm_interconnect_0_uart_s1_readdata;                   // UART:readdata -> mm_interconnect_0:UART_s1_readdata
+	wire   [2:0] mm_interconnect_0_uart_s1_address;                    // mm_interconnect_0:UART_s1_address -> UART:address
+	wire         mm_interconnect_0_uart_s1_read;                       // mm_interconnect_0:UART_s1_read -> UART:read_n
+	wire         mm_interconnect_0_uart_s1_begintransfer;              // mm_interconnect_0:UART_s1_begintransfer -> UART:begintransfer
+	wire         mm_interconnect_0_uart_s1_write;                      // mm_interconnect_0:UART_s1_write -> UART:write_n
+	wire  [15:0] mm_interconnect_0_uart_s1_writedata;                  // mm_interconnect_0:UART_s1_writedata -> UART:writedata
 	wire         irq_mapper_receiver0_irq;                             // JTAG:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                             // Timer:irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                             // PioButtom:irq -> irq_mapper:receiver2_irq
 	wire  [31:0] cpu_irq_irq;                                          // irq_mapper:sender_irq -> CPU:irq
-	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [CPU:reset_n, JTAG:rst_n, LEDS:reset_n, RAM:reset, SEG_1:reset_n, SEG_2:reset_n, SEG_3:reset_n, SEG_4:reset_n, SEG_5:reset_n, SEG_6:reset_n, Timer:reset_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [CPU:reset_n, JTAG:rst_n, LEDS:reset_n, RAM:reset, SEG_1:reset_n, SEG_2:reset_n, SEG_3:reset_n, SEG_4:reset_n, SEG_5:reset_n, SEG_6:reset_n, Timer:reset_n, UART:reset_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                   // rst_controller:reset_req -> [CPU:reset_req, RAM:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                   // rst_controller_001:reset_out -> [PioButtom:reset_n, mm_interconnect_0:PioButtom_reset_reset_bridge_in_reset_reset]
 	wire         cpu_debug_reset_request_reset;                        // CPU:debug_reset_request -> rst_controller_001:reset_in1
@@ -260,6 +269,21 @@ module ProjectFile (
 		.irq        (irq_mapper_receiver1_irq)               //   irq.irq
 	);
 
+	ProjectFile_UART uart (
+		.clk           (clk_clk),                                 //                 clk.clk
+		.reset_n       (~rst_controller_reset_out_reset),         //               reset.reset_n
+		.address       (mm_interconnect_0_uart_s1_address),       //                  s1.address
+		.begintransfer (mm_interconnect_0_uart_s1_begintransfer), //                    .begintransfer
+		.chipselect    (mm_interconnect_0_uart_s1_chipselect),    //                    .chipselect
+		.read_n        (~mm_interconnect_0_uart_s1_read),         //                    .read_n
+		.write_n       (~mm_interconnect_0_uart_s1_write),        //                    .write_n
+		.writedata     (mm_interconnect_0_uart_s1_writedata),     //                    .writedata
+		.readdata      (mm_interconnect_0_uart_s1_readdata),      //                    .readdata
+		.rxd           (uart_rxd),                                // external_connection.export
+		.txd           (uart_txd),                                //                    .export
+		.irq           ()                                         //                 irq.irq
+	);
+
 	ProjectFile_mm_interconnect_0 mm_interconnect_0 (
 		.CLK_clk_clk                                 (clk_clk),                                              //                               CLK_clk.clk
 		.CPU_reset_reset_bridge_in_reset_reset       (rst_controller_reset_out_reset),                       //       CPU_reset_reset_bridge_in_reset.reset
@@ -342,7 +366,14 @@ module ProjectFile (
 		.Timer_s1_write                              (mm_interconnect_0_timer_s1_write),                     //                                      .write
 		.Timer_s1_readdata                           (mm_interconnect_0_timer_s1_readdata),                  //                                      .readdata
 		.Timer_s1_writedata                          (mm_interconnect_0_timer_s1_writedata),                 //                                      .writedata
-		.Timer_s1_chipselect                         (mm_interconnect_0_timer_s1_chipselect)                 //                                      .chipselect
+		.Timer_s1_chipselect                         (mm_interconnect_0_timer_s1_chipselect),                //                                      .chipselect
+		.UART_s1_address                             (mm_interconnect_0_uart_s1_address),                    //                               UART_s1.address
+		.UART_s1_write                               (mm_interconnect_0_uart_s1_write),                      //                                      .write
+		.UART_s1_read                                (mm_interconnect_0_uart_s1_read),                       //                                      .read
+		.UART_s1_readdata                            (mm_interconnect_0_uart_s1_readdata),                   //                                      .readdata
+		.UART_s1_writedata                           (mm_interconnect_0_uart_s1_writedata),                  //                                      .writedata
+		.UART_s1_begintransfer                       (mm_interconnect_0_uart_s1_begintransfer),              //                                      .begintransfer
+		.UART_s1_chipselect                          (mm_interconnect_0_uart_s1_chipselect)                  //                                      .chipselect
 	);
 
 	ProjectFile_irq_mapper irq_mapper (

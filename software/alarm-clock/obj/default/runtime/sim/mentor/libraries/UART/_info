@@ -1,0 +1,131 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dA:/Nios2AlarmClock/software/alarm-clock/obj/default/runtime/sim/mentor
+vProjectFile_UART
+Z1 !s110 1620105417
+!i10b 1
+!s100 MXdC8Z3?aI43B=eC`fI0B2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IM5G[oh1LF>ZM<Jc9FgfXO0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1620093891
+Z5 8A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v
+Z6 FA:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v
+!i122 3
+L0 793 128
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1620105417.000000
+!s107 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v|
+Z9 !s90 -reportprogress|300|A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v|-work|UART|
+!i113 1
+Z10 o-work UART
+Z11 tCvgOpt 0
+n@project@file_@u@a@r@t
+vProjectFile_UART_regs
+R1
+!i10b 1
+!s100 I:i0jDeBSB9Re5zZe9iLP1
+R2
+IDE[O]=ZWALG20fg:QEEI93
+R3
+R0
+R4
+R5
+R6
+!i122 3
+L0 547 236
+R7
+r1
+!s85 0
+31
+R8
+Z12 !s107 A:/Nios2AlarmClock/ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v|
+R9
+!i113 1
+R10
+R11
+n@project@file_@u@a@r@t_regs
+vProjectFile_UART_rx
+R1
+!i10b 1
+!s100 R@EfJX:D`cYgd:eaOGCT02
+R2
+IhYW98Uhh8Y?DVSdfVMGTH1
+R3
+R0
+R4
+R5
+R6
+!i122 3
+L0 288 249
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+n@project@file_@u@a@r@t_rx
+vProjectFile_UART_rx_stimulus_source
+R1
+!i10b 1
+!s100 n6daS>CcffRFk=]H9GlhV2
+R2
+IdMNNFz:YaZEAdIXR>[SgX3
+R3
+R0
+R4
+R5
+R6
+!i122 3
+L0 194 84
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+n@project@file_@u@a@r@t_rx_stimulus_source
+vProjectFile_UART_tx
+R1
+!i10b 1
+!s100 4>EKRWWg[6z?j4:O8P2>l2
+R2
+IieGH4^ECFihok9ll[0bc43
+R3
+R0
+R4
+R5
+R6
+!i122 3
+L0 21 163
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+n@project@file_@u@a@r@t_tx

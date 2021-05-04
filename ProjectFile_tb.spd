@@ -186,6 +186,10 @@
    type="VERILOG"
    library="mm_interconnect_0" />
  <file
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v"
+   type="VERILOG"
+   library="UART" />
+ <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v"
    type="VERILOG"
    library="Timer" />
@@ -213,6 +217,10 @@
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v"
    type="VERILOG"
    library="CPU" />
+ <file
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0004.sv"
+   type="SYSTEM_VERILOG"
+   library="ProjectFile_inst_uart_bfm" />
  <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv"
    type="SYSTEM_VERILOG"

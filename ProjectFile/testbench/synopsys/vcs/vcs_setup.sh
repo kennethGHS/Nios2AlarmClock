@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 20.1 720 win32 2021.05.03.20:05:01
+# ACDS 20.1 720 win32 2021.05.04.16:57:16
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 20.1 720 win32 2021.05.03.20:05:01
+# ACDS 20.1 720 win32 2021.05.04.16:57:16
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="ProjectFile_tb"
@@ -192,6 +192,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_PioButtom.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v \
+  $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_ChangeSwitch.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0004.sv \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv \

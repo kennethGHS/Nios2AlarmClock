@@ -7,6 +7,7 @@ module ProjectFile_tb (
 	);
 
 	wire        projectfile_inst_clk_bfm_clk_clk;                   // ProjectFile_inst_clk_bfm:clk -> [ProjectFile_inst:clk_clk, ProjectFile_inst_reset_bfm:clk]
+	wire  [0:0] projectfile_inst_hour_changer_bfm_conduit_export;   // ProjectFile_inst_hour_changer_bfm:sig_export -> ProjectFile_inst:hour_changer_export
 	wire  [0:0] projectfile_inst_interrupbutton_bfm_conduit_export; // ProjectFile_inst_interrupbutton_bfm:sig_export -> ProjectFile_inst:interrupbutton_export
 	wire  [9:0] projectfile_inst_leds_export;                       // ProjectFile_inst:leds_export -> ProjectFile_inst_leds_bfm:sig_export
 	wire  [7:0] projectfile_inst_segment1_export;                   // ProjectFile_inst:segment1_export -> ProjectFile_inst_segment1_bfm:sig_export
@@ -21,6 +22,7 @@ module ProjectFile_tb (
 
 	ProjectFile projectfile_inst (
 		.clk_clk               (projectfile_inst_clk_bfm_clk_clk),                   //            clk.clk
+		.hour_changer_export   (projectfile_inst_hour_changer_bfm_conduit_export),   //   hour_changer.export
 		.interrupbutton_export (projectfile_inst_interrupbutton_bfm_conduit_export), // interrupbutton.export
 		.leds_export           (projectfile_inst_leds_export),                       //           leds.export
 		.reset_reset_n         (projectfile_inst_reset_bfm_reset_reset),             //          reset.reset_n
@@ -39,6 +41,10 @@ module ProjectFile_tb (
 		.CLOCK_UNIT (1)
 	) projectfile_inst_clk_bfm (
 		.clk (projectfile_inst_clk_bfm_clk_clk)  // clk.clk
+	);
+
+	altera_conduit_bfm projectfile_inst_hour_changer_bfm (
+		.sig_export (projectfile_inst_hour_changer_bfm_conduit_export)  // conduit.export
 	);
 
 	altera_conduit_bfm projectfile_inst_interrupbutton_bfm (

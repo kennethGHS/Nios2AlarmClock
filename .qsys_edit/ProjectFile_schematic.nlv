@@ -18,20 +18,20 @@ preplace inst ProjectFile.PioButtom -pg 1 -lvl 3 -y 410
 preplace inst ProjectFile.RAM -pg 1 -lvl 3 -y 130
 preplace inst ProjectFile.CPU.reset_bridge -pg 1
 preplace inst ProjectFile.UART -pg 1 -lvl 3 -y 1130
-preplace netloc INTERCONNECT<net_container>ProjectFile</net_container>(SLAVE)RAM.s1,(SLAVE)JTAG.avalon_jtag_slave,(SLAVE)SEG_6.s1,(SLAVE)LEDS.s1,(SLAVE)SEG_1.s1,(SLAVE)Timer.s1,(SLAVE)SEG_2.s1,(SLAVE)SEG_4.s1,(SLAVE)UART.s1,(MASTER)CPU.instruction_master,(SLAVE)PioButtom.s1,(SLAVE)SEG_3.s1,(SLAVE)SEG_5.s1,(MASTER)CPU.data_master,(SLAVE)CPU.debug_mem_slave) 1 1 2 350 340 730
+preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)ProjectFile.segment5,(SLAVE)SEG_5.external_connection) 1 0 3 NJ 860 NJ 860 NJ
 preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)SEG_2.external_connection,(SLAVE)ProjectFile.segment2) 1 0 3 NJ 560 NJ 560 NJ
 preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)ProjectFile.leds,(SLAVE)LEDS.external_connection) 1 0 3 NJ 60 NJ 60 NJ
 preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)ProjectFile.clk,(SLAVE)CLK.clk_in) 1 0 1 NJ
 preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)ProjectFile.segment3,(SLAVE)SEG_3.external_connection) 1 0 3 NJ 660 NJ 660 NJ
 preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)UART.external_connection,(SLAVE)ProjectFile.uart) 1 0 3 NJ 1160 NJ 1160 NJ
-preplace netloc FAN_OUT<net_container>ProjectFile</net_container>(MASTER)CLK.clk,(SLAVE)SEG_3.clk,(SLAVE)SEG_5.clk,(SLAVE)CPU.clk,(SLAVE)PioButtom.clk,(SLAVE)UART.clk,(SLAVE)SEG_1.clk,(SLAVE)Timer.clk,(SLAVE)JTAG.clk,(SLAVE)SEG_6.clk,(SLAVE)LEDS.clk,(SLAVE)SEG_2.clk,(SLAVE)SEG_4.clk,(SLAVE)RAM.clk1) 1 1 2 310 360 770
+preplace netloc FAN_OUT<net_container>ProjectFile</net_container>(SLAVE)JTAG.irq,(MASTER)CPU.irq,(SLAVE)Timer.irq,(SLAVE)PioButtom.irq,(SLAVE)UART.irq) 1 2 1 790
+preplace netloc INTERCONNECT<net_container>ProjectFile</net_container>(SLAVE)SEG_6.s1,(MASTER)CPU.data_master,(SLAVE)LEDS.s1,(SLAVE)RAM.s1,(SLAVE)PioButtom.s1,(SLAVE)Timer.s1,(SLAVE)SEG_5.s1,(SLAVE)UART.s1,(SLAVE)SEG_3.s1,(SLAVE)SEG_2.s1,(MASTER)CPU.instruction_master,(SLAVE)JTAG.avalon_jtag_slave,(SLAVE)CPU.debug_mem_slave,(SLAVE)SEG_1.s1,(SLAVE)SEG_4.s1) 1 1 2 350 1200 730
+preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)ProjectFile.segment4,(SLAVE)SEG_4.external_connection) 1 0 3 NJ 760 NJ 760 NJ
 preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)CLK.clk_in_reset,(SLAVE)ProjectFile.reset) 1 0 1 NJ
-preplace netloc FAN_OUT<net_container>ProjectFile</net_container>(SLAVE)PioButtom.irq,(MASTER)CPU.irq,(SLAVE)JTAG.irq,(SLAVE)Timer.irq) 1 2 1 790
 preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)SEG_6.external_connection,(SLAVE)ProjectFile.segment6) 1 0 3 NJ 960 NJ 960 NJ
-preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)SEG_4.external_connection,(SLAVE)ProjectFile.segment4) 1 0 3 NJ 760 NJ 760 NJ
-preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)ProjectFile.interrupbutton,(SLAVE)PioButtom.external_connection) 1 0 3 NJ 440 NJ 440 NJ
+preplace netloc INTERCONNECT<net_container>ProjectFile</net_container>(MASTER)CPU.debug_reset_request,(SLAVE)SEG_5.reset,(SLAVE)JTAG.reset,(SLAVE)SEG_4.reset,(SLAVE)CPU.reset,(SLAVE)SEG_1.reset,(SLAVE)SEG_3.reset,(SLAVE)SEG_6.reset,(SLAVE)UART.reset,(MASTER)CLK.clk_reset,(SLAVE)Timer.reset,(SLAVE)LEDS.reset,(SLAVE)RAM.reset1,(SLAVE)PioButtom.reset,(SLAVE)SEG_2.reset) 1 1 2 330 1180 750
+preplace netloc FAN_OUT<net_container>ProjectFile</net_container>(SLAVE)SEG_6.clk,(SLAVE)SEG_2.clk,(SLAVE)SEG_5.clk,(SLAVE)Timer.clk,(SLAVE)SEG_1.clk,(SLAVE)UART.clk,(SLAVE)JTAG.clk,(SLAVE)CPU.clk,(SLAVE)SEG_3.clk,(SLAVE)PioButtom.clk,(SLAVE)SEG_4.clk,(SLAVE)LEDS.clk,(SLAVE)RAM.clk1,(MASTER)CLK.clk) 1 1 2 310 1080 770
 preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)ProjectFile.segment1,(SLAVE)SEG_1.external_connection) 1 0 3 NJ 1060 NJ 1060 NJ
-preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)SEG_5.external_connection,(SLAVE)ProjectFile.segment5) 1 0 3 NJ 860 NJ 860 NJ
-preplace netloc INTERCONNECT<net_container>ProjectFile</net_container>(SLAVE)SEG_3.reset,(SLAVE)UART.reset,(SLAVE)SEG_4.reset,(SLAVE)PioButtom.reset,(SLAVE)LEDS.reset,(SLAVE)SEG_2.reset,(SLAVE)Timer.reset,(SLAVE)CPU.reset,(SLAVE)SEG_6.reset,(SLAVE)JTAG.reset,(SLAVE)SEG_1.reset,(MASTER)CPU.debug_reset_request,(SLAVE)RAM.reset1,(SLAVE)SEG_5.reset,(MASTER)CLK.clk_reset) 1 1 2 330 380 750
+preplace netloc EXPORT<net_container>ProjectFile</net_container>(SLAVE)PioButtom.external_connection,(SLAVE)ProjectFile.interrupbutton) 1 0 3 NJ 440 NJ 440 NJ
 levelinfo -pg 1 0 100 1000
 levelinfo -hier ProjectFile 110 140 490 840 990

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 3, 2021 8:06:27 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1620093987153</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 4, 2021 4:57:54 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1620169074503</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>A:\Nios2AlarmClock\software\alarm-clock_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>A:\Nios2AlarmClock\ProjectFile.sopcinfo</SopcDesignFile>
@@ -922,6 +922,12 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
+        <MemoryMap>
+                <slaveDescriptor>ChangeSwitch</slaveDescriptor>
+                <addressRange>0x00000000 - 0x0000000F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>RAM</slaveDescriptor>
                 <addressRange>0x00002000 - 0x00003FFF</addressRange>

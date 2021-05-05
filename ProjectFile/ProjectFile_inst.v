@@ -10,6 +10,7 @@
 		.segment5_export       (<connected-to-segment5_export>),       //       segment5.export
 		.segment6_export       (<connected-to-segment6_export>),       //       segment6.export
 		.uart_rxd              (<connected-to-uart_rxd>),              //           uart.rxd
-		.uart_txd              (<connected-to-uart_txd>)               //               .txd
+		.uart_txd              (<connected-to-uart_txd>),              //               .txd
+		.hour_changer_export   (<connected-to-hour_changer_export>)    //   hour_changer.export
 	);
 

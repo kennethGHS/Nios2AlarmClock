@@ -21,14 +21,14 @@ module ProjectFile (
 	wire  [31:0] cpu_data_master_readdata;                             // mm_interconnect_0:CPU_data_master_readdata -> CPU:d_readdata
 	wire         cpu_data_master_waitrequest;                          // mm_interconnect_0:CPU_data_master_waitrequest -> CPU:d_waitrequest
 	wire         cpu_data_master_debugaccess;                          // CPU:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:CPU_data_master_debugaccess
-	wire  [13:0] cpu_data_master_address;                              // CPU:d_address -> mm_interconnect_0:CPU_data_master_address
+	wire  [14:0] cpu_data_master_address;                              // CPU:d_address -> mm_interconnect_0:CPU_data_master_address
 	wire   [3:0] cpu_data_master_byteenable;                           // CPU:d_byteenable -> mm_interconnect_0:CPU_data_master_byteenable
 	wire         cpu_data_master_read;                                 // CPU:d_read -> mm_interconnect_0:CPU_data_master_read
 	wire         cpu_data_master_write;                                // CPU:d_write -> mm_interconnect_0:CPU_data_master_write
 	wire  [31:0] cpu_data_master_writedata;                            // CPU:d_writedata -> mm_interconnect_0:CPU_data_master_writedata
 	wire  [31:0] cpu_instruction_master_readdata;                      // mm_interconnect_0:CPU_instruction_master_readdata -> CPU:i_readdata
 	wire         cpu_instruction_master_waitrequest;                   // mm_interconnect_0:CPU_instruction_master_waitrequest -> CPU:i_waitrequest
-	wire  [13:0] cpu_instruction_master_address;                       // CPU:i_address -> mm_interconnect_0:CPU_instruction_master_address
+	wire  [14:0] cpu_instruction_master_address;                       // CPU:i_address -> mm_interconnect_0:CPU_instruction_master_address
 	wire         cpu_instruction_master_read;                          // CPU:i_read -> mm_interconnect_0:CPU_instruction_master_read
 	wire         mm_interconnect_0_jtag_avalon_jtag_slave_chipselect;  // mm_interconnect_0:JTAG_avalon_jtag_slave_chipselect -> JTAG:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_avalon_jtag_slave_readdata;    // JTAG:av_readdata -> mm_interconnect_0:JTAG_avalon_jtag_slave_readdata
@@ -47,7 +47,7 @@ module ProjectFile (
 	wire  [31:0] mm_interconnect_0_cpu_debug_mem_slave_writedata;      // mm_interconnect_0:CPU_debug_mem_slave_writedata -> CPU:debug_mem_slave_writedata
 	wire         mm_interconnect_0_ram_s1_chipselect;                  // mm_interconnect_0:RAM_s1_chipselect -> RAM:chipselect
 	wire  [31:0] mm_interconnect_0_ram_s1_readdata;                    // RAM:readdata -> mm_interconnect_0:RAM_s1_readdata
-	wire   [9:0] mm_interconnect_0_ram_s1_address;                     // mm_interconnect_0:RAM_s1_address -> RAM:address
+	wire  [10:0] mm_interconnect_0_ram_s1_address;                     // mm_interconnect_0:RAM_s1_address -> RAM:address
 	wire   [3:0] mm_interconnect_0_ram_s1_byteenable;                  // mm_interconnect_0:RAM_s1_byteenable -> RAM:byteenable
 	wire         mm_interconnect_0_ram_s1_write;                       // mm_interconnect_0:RAM_s1_write -> RAM:write
 	wire  [31:0] mm_interconnect_0_ram_s1_writedata;                   // mm_interconnect_0:RAM_s1_writedata -> RAM:writedata
@@ -107,6 +107,7 @@ module ProjectFile (
 	wire         irq_mapper_receiver0_irq;                             // JTAG:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                             // Timer:irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                             // PioButtom:irq -> irq_mapper:receiver2_irq
+	wire         irq_mapper_receiver3_irq;                             // UART:irq -> irq_mapper:receiver3_irq
 	wire  [31:0] cpu_irq_irq;                                          // irq_mapper:sender_irq -> CPU:irq
 	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [CPU:reset_n, JTAG:rst_n, LEDS:reset_n, RAM:reset, SEG_1:reset_n, SEG_2:reset_n, SEG_3:reset_n, SEG_4:reset_n, SEG_5:reset_n, SEG_6:reset_n, Timer:reset_n, UART:reset_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                   // rst_controller:reset_req -> [CPU:reset_req, RAM:reset_req, rst_translator:reset_req_in]
@@ -281,7 +282,7 @@ module ProjectFile (
 		.readdata      (mm_interconnect_0_uart_s1_readdata),      //                    .readdata
 		.rxd           (uart_rxd),                                // external_connection.export
 		.txd           (uart_txd),                                //                    .export
-		.irq           ()                                         //                 irq.irq
+		.irq           (irq_mapper_receiver3_irq)                 //                 irq.irq
 	);
 
 	ProjectFile_mm_interconnect_0 mm_interconnect_0 (
@@ -382,6 +383,7 @@ module ProjectFile (
 		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
 		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
 		.receiver2_irq (irq_mapper_receiver2_irq),       // receiver2.irq
+		.receiver3_irq (irq_mapper_receiver3_irq),       // receiver3.irq
 		.sender_irq    (cpu_irq_irq)                     //    sender.irq
 	);
 

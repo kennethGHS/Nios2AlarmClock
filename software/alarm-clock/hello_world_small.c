@@ -14,25 +14,28 @@ void handle_button_interrupt(void * context);
 void init_interrupts();
 
 volatile int edge_capture;
-volatile int counter = 0;
+volatile int hours, minutes, seconds;
 
 int main() {
 	volatile int * displays[] = { (int *) SEG_1_BASE, (int *) SEG_2_BASE,
 			(int *) SEG_3_BASE, (int *) SEG_4_BASE, (int *) SEG_5_BASE,
 			(int *) SEG_6_BASE };
 
-	unsigned char ch;
+//	init_interrupts();
 
-	init_interrupts();
+	hours = 3;
+	minutes = 41;
+	seconds = 26;
+
+	InitUart(BAUD_RATE, &hours, &minutes, &seconds);
+	alt_ic_isr_register(UART_IRQ_INTERRUPT_CONTROLLER_ID, UART_IRQ, IsrUart, 0, 0);
+	alt_ic_irq_enable(UART_IRQ_INTERRUPT_CONTROLLER_ID, UART_IRQ);
 
 	/* Event loop never exits. */
-	while (1) {
-		alt_putstr("TEST!!!!\n");
-//		if (!EmptyUart()) {
-			*displays[0] = 0x8;
-			ch = GetUart();
-			PutUart(ch);
-//		}
+	while (1){
+		two_digit_conversion(hours, displays[5], displays[4]);
+		two_digit_conversion(minutes, displays[3], displays[2]);
+		two_digit_conversion(seconds, displays[1], displays[0]);
 	};
 
 	return 0;
@@ -60,9 +63,7 @@ void init_interrupts() {
 	PIOBUTTOM_IRQ, handle_button_interrupt, edge_capture_ptr, 0x0);
 
 	// Init UART
-	InitUart(BAUD_RATE);
-	alt_ic_isr_register(UART_IRQ_INTERRUPT_CONTROLLER_ID, UART_IRQ, IsrUart, 0, 0);
-	alt_ic_irq_enable(UART_IRQ_INTERRUPT_CONTROLLER_ID, UART_IRQ);
+
 }
 void handle_timer_interrupt() {
 	alt_putstr("Executed interruption");

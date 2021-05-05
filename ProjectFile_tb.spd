@@ -214,6 +214,10 @@
    type="VERILOG"
    library="JTAG" />
  <file
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_ChangeSwitch.v"
+   type="VERILOG"
+   library="ChangeSwitch" />
+ <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v"
    type="VERILOG"
    library="CPU" />
@@ -236,7 +240,7 @@
  <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm.sv"
    type="SYSTEM_VERILOG"
-   library="ProjectFile_inst_interrupbutton_bfm" />
+   library="ProjectFile_inst_hour_changer_bfm" />
  <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv"
    type="SYSTEM_VERILOG"

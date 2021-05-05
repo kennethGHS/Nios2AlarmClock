@@ -11,7 +11,8 @@
 			segment5_export       : out std_logic_vector(7 downto 0);        -- export
 			segment6_export       : out std_logic_vector(7 downto 0);        -- export
 			uart_rxd              : in  std_logic                    := 'X'; -- rxd
-			uart_txd              : out std_logic                            -- txd
+			uart_txd              : out std_logic;                           -- txd
+			hour_changer_export   : in  std_logic                    := 'X'  -- export
 		);
 	end component ProjectFile;
 
@@ -28,6 +29,7 @@
 			segment5_export       => CONNECTED_TO_segment5_export,       --       segment5.export
 			segment6_export       => CONNECTED_TO_segment6_export,       --       segment6.export
 			uart_rxd              => CONNECTED_TO_uart_rxd,              --           uart.rxd
-			uart_txd              => CONNECTED_TO_uart_txd               --               .txd
+			uart_txd              => CONNECTED_TO_uart_txd,              --               .txd
+			hour_changer_export   => CONNECTED_TO_hour_changer_export    --   hour_changer.export
 		);
 

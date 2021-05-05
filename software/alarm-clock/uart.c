@@ -19,7 +19,13 @@ unsigned short RxTail_1 = 0;
 
 unsigned char rx_buffer_1[RX_BUFFER_SIZE_1];
 
-void InitUart(unsigned int BaudRate)
+volatile int * hour_ptr;
+
+volatile int * min_ptr;
+
+volatile int * sec_ptr;
+
+void InitUart(unsigned int BaudRate, volatile int * hour, volatile int * min, volatile int * sec)
 
 {
 
@@ -32,13 +38,16 @@ void InitUart(unsigned int BaudRate)
 	IOWR_ALTERA_AVALON_UART_CONTROL(UART_BASE,
 			ALTERA_AVALON_UART_CONTROL_RRDY_MSK);
 
+	hour_ptr = hour;
+
+	min_ptr = min;
+
+	sec_ptr = sec;
 }
 
 void IsrUart(void* context, unsigned int id)
 
 {
-
-	alt_putstr("UART ISR\n");
 
 	int sr;
 
@@ -87,6 +96,8 @@ void IsrUart(void* context, unsigned int id)
 		}
 
 	}
+
+	parseReceived();
 
 }
 
@@ -161,3 +172,55 @@ unsigned char PutUart(unsigned char in_char)
 
 }
 
+void parseReceived(){
+	volatile int received, hour, min;
+	unsigned char msc, lsc;
+	volatile int msd, lsd;
+
+	if(RxTail_1 > RxHead_1){
+		received = RxHead_1 + (RX_BUFFER_SIZE_1 - RxTail_1);
+	}else{
+		received = RxHead_1 - RxTail_1;
+	}
+
+	if(5 <= received){
+
+		// Hour
+		msc = GetUart();
+		msd = (int) msc - 48;
+		lsc = GetUart();
+		lsd = (int) lsc - 48;
+
+		hour = msd * 10 + lsd;
+
+		if(hour > 12){
+			return;
+		}
+
+		* hour_ptr = hour;
+
+		// Separator
+		GetUart();
+
+
+		// Minutes
+		msc = GetUart();
+		msd = (int) msc - 48;
+		lsc = GetUart();
+		lsd = (int) lsc - 48;
+		min = msd * 10 + lsd;
+
+		if(min > 60){
+			return;
+		}
+
+		* min_ptr = min;
+
+		// Seconds
+		* sec_ptr = 0;
+
+//		// Reset buffer
+//		RxHead_1 = 0;
+//		RxTail_1 = 0;
+	}
+}

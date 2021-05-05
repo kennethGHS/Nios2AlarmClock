@@ -33,12 +33,13 @@ RAM:                                   ./libraries/RAM/
 PioButtom:                             ./libraries/PioButtom/                            
 LEDS:                                  ./libraries/LEDS/                                 
 JTAG:                                  ./libraries/JTAG/                                 
+ChangeSwitch:                          ./libraries/ChangeSwitch/                         
 CPU:                                   ./libraries/CPU/                                  
 ProjectFile_inst_uart_bfm:             ./libraries/ProjectFile_inst_uart_bfm/            
 ProjectFile_inst_segment1_bfm:         ./libraries/ProjectFile_inst_segment1_bfm/        
 ProjectFile_inst_reset_bfm:            ./libraries/ProjectFile_inst_reset_bfm/           
 ProjectFile_inst_leds_bfm:             ./libraries/ProjectFile_inst_leds_bfm/            
-ProjectFile_inst_interrupbutton_bfm:   ./libraries/ProjectFile_inst_interrupbutton_bfm/  
+ProjectFile_inst_hour_changer_bfm:     ./libraries/ProjectFile_inst_hour_changer_bfm/    
 ProjectFile_inst_clk_bfm:              ./libraries/ProjectFile_inst_clk_bfm/             
 ProjectFile_inst:                      ./libraries/ProjectFile_inst/                     
 altera_ver:                            ./libraries/altera_ver/                           

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'ProjectFile'
  * SOPC Builder design path: A:/Nios2AlarmClock/ProjectFile.sopcinfo
  *
- * Generated: Mon May 03 20:06:27 CST 2021
+ * Generated: Tue May 04 16:57:55 CST 2021
  */
 
 /*
@@ -126,6 +126,33 @@
 #define NIOS2_INST_ADDR_WIDTH 0xf
 #define NIOS2_OCI_VERSION 1
 #define NIOS2_RESET_ADDR 0x00002000
+
+
+/*
+ * ChangeSwitch configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_ChangeSwitch altera_avalon_pio
+#define CHANGESWITCH_BASE 0x0
+#define CHANGESWITCH_BIT_CLEARING_EDGE_REGISTER 0
+#define CHANGESWITCH_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define CHANGESWITCH_CAPTURE 1
+#define CHANGESWITCH_DATA_WIDTH 1
+#define CHANGESWITCH_DO_TEST_BENCH_WIRING 0
+#define CHANGESWITCH_DRIVEN_SIM_VALUE 0
+#define CHANGESWITCH_EDGE_TYPE "FALLING"
+#define CHANGESWITCH_FREQ 50000000
+#define CHANGESWITCH_HAS_IN 1
+#define CHANGESWITCH_HAS_OUT 0
+#define CHANGESWITCH_HAS_TRI 0
+#define CHANGESWITCH_IRQ 4
+#define CHANGESWITCH_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define CHANGESWITCH_IRQ_TYPE "EDGE"
+#define CHANGESWITCH_NAME "/dev/ChangeSwitch"
+#define CHANGESWITCH_RESET_VALUE 0
+#define CHANGESWITCH_SPAN 16
+#define CHANGESWITCH_TYPE "altera_avalon_pio"
 
 
 /*

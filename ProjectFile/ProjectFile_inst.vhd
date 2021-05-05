@@ -1,6 +1,7 @@
 	component ProjectFile is
 		port (
 			clk_clk               : in  std_logic                    := 'X'; -- clk
+			hour_changer_export   : in  std_logic                    := 'X'; -- export
 			interrupbutton_export : in  std_logic                    := 'X'; -- export
 			leds_export           : out std_logic_vector(9 downto 0);        -- export
 			reset_reset_n         : in  std_logic                    := 'X'; -- reset_n
@@ -10,13 +11,15 @@
 			segment4_export       : out std_logic_vector(7 downto 0);        -- export
 			segment5_export       : out std_logic_vector(7 downto 0);        -- export
 			segment6_export       : out std_logic_vector(7 downto 0);        -- export
-			hour_changer_export   : in  std_logic                    := 'X'  -- export
+			uart_rxd              : in  std_logic                    := 'X'; -- rxd
+			uart_txd              : out std_logic                            -- txd
 		);
 	end component ProjectFile;
 
 	u0 : component ProjectFile
 		port map (
 			clk_clk               => CONNECTED_TO_clk_clk,               --            clk.clk
+			hour_changer_export   => CONNECTED_TO_hour_changer_export,   --   hour_changer.export
 			interrupbutton_export => CONNECTED_TO_interrupbutton_export, -- interrupbutton.export
 			leds_export           => CONNECTED_TO_leds_export,           --           leds.export
 			reset_reset_n         => CONNECTED_TO_reset_reset_n,         --          reset.reset_n
@@ -26,6 +29,7 @@
 			segment4_export       => CONNECTED_TO_segment4_export,       --       segment4.export
 			segment5_export       => CONNECTED_TO_segment5_export,       --       segment5.export
 			segment6_export       => CONNECTED_TO_segment6_export,       --       segment6.export
-			hour_changer_export   => CONNECTED_TO_hour_changer_export    --   hour_changer.export
+			uart_rxd              => CONNECTED_TO_uart_rxd,              --           uart.rxd
+			uart_txd              => CONNECTED_TO_uart_txd               --               .txd
 		);
 

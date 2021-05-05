@@ -91,6 +91,7 @@ ELF := alarm-clock.elf
 # Paths to C, C++, and assembly source files.
 C_SRCS += hello_world_small.c
 C_SRCS += segment_display.c
+C_SRCS += uart.c
 CXX_SRCS :=
 ASM_SRCS :=
 

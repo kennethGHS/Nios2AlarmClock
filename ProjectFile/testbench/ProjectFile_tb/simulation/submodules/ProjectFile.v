@@ -5,6 +5,7 @@
 `timescale 1 ps / 1 ps
 module ProjectFile (
 		input  wire       clk_clk,               //            clk.clk
+		input  wire       hour_changer_export,   //   hour_changer.export
 		input  wire       interrupbutton_export, // interrupbutton.export
 		output wire [9:0] leds_export,           //           leds.export
 		input  wire       reset_reset_n,         //          reset.reset_n
@@ -13,7 +14,9 @@ module ProjectFile (
 		output wire [7:0] segment3_export,       //       segment3.export
 		output wire [7:0] segment4_export,       //       segment4.export
 		output wire [7:0] segment5_export,       //       segment5.export
-		output wire [7:0] segment6_export        //       segment6.export
+		output wire [7:0] segment6_export,       //       segment6.export
+		input  wire       uart_rxd,              //           uart.rxd
+		output wire       uart_txd               //               .txd
 	);
 
 	wire  [31:0] cpu_data_master_readdata;                             // mm_interconnect_0:CPU_data_master_readdata -> CPU:d_readdata
@@ -26,7 +29,7 @@ module ProjectFile (
 	wire  [31:0] cpu_data_master_writedata;                            // CPU:d_writedata -> mm_interconnect_0:CPU_data_master_writedata
 	wire  [31:0] cpu_instruction_master_readdata;                      // mm_interconnect_0:CPU_instruction_master_readdata -> CPU:i_readdata
 	wire         cpu_instruction_master_waitrequest;                   // mm_interconnect_0:CPU_instruction_master_waitrequest -> CPU:i_waitrequest
-	wire  [13:0] cpu_instruction_master_address;                       // CPU:i_address -> mm_interconnect_0:CPU_instruction_master_address
+	wire  [14:0] cpu_instruction_master_address;                       // CPU:i_address -> mm_interconnect_0:CPU_instruction_master_address
 	wire         cpu_instruction_master_read;                          // CPU:i_read -> mm_interconnect_0:CPU_instruction_master_read
 	wire         mm_interconnect_0_jtag_avalon_jtag_slave_chipselect;  // mm_interconnect_0:JTAG_avalon_jtag_slave_chipselect -> JTAG:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_avalon_jtag_slave_readdata;    // JTAG:av_readdata -> mm_interconnect_0:JTAG_avalon_jtag_slave_readdata
@@ -45,7 +48,7 @@ module ProjectFile (
 	wire  [31:0] mm_interconnect_0_cpu_debug_mem_slave_writedata;      // mm_interconnect_0:CPU_debug_mem_slave_writedata -> CPU:debug_mem_slave_writedata
 	wire         mm_interconnect_0_ram_s1_chipselect;                  // mm_interconnect_0:RAM_s1_chipselect -> RAM:chipselect
 	wire  [31:0] mm_interconnect_0_ram_s1_readdata;                    // RAM:readdata -> mm_interconnect_0:RAM_s1_readdata
-	wire   [9:0] mm_interconnect_0_ram_s1_address;                     // mm_interconnect_0:RAM_s1_address -> RAM:address
+	wire  [10:0] mm_interconnect_0_ram_s1_address;                     // mm_interconnect_0:RAM_s1_address -> RAM:address
 	wire   [3:0] mm_interconnect_0_ram_s1_byteenable;                  // mm_interconnect_0:RAM_s1_byteenable -> RAM:byteenable
 	wire         mm_interconnect_0_ram_s1_write;                       // mm_interconnect_0:RAM_s1_write -> RAM:write
 	wire  [31:0] mm_interconnect_0_ram_s1_writedata;                   // mm_interconnect_0:RAM_s1_writedata -> RAM:writedata
@@ -95,11 +98,25 @@ module ProjectFile (
 	wire   [1:0] mm_interconnect_0_leds_s1_address;                    // mm_interconnect_0:LEDS_s1_address -> LEDS:address
 	wire         mm_interconnect_0_leds_s1_write;                      // mm_interconnect_0:LEDS_s1_write -> LEDS:write_n
 	wire  [31:0] mm_interconnect_0_leds_s1_writedata;                  // mm_interconnect_0:LEDS_s1_writedata -> LEDS:writedata
+	wire         mm_interconnect_0_changeswitch_s1_chipselect;         // mm_interconnect_0:ChangeSwitch_s1_chipselect -> ChangeSwitch:chipselect
+	wire  [31:0] mm_interconnect_0_changeswitch_s1_readdata;           // ChangeSwitch:readdata -> mm_interconnect_0:ChangeSwitch_s1_readdata
+	wire   [1:0] mm_interconnect_0_changeswitch_s1_address;            // mm_interconnect_0:ChangeSwitch_s1_address -> ChangeSwitch:address
+	wire         mm_interconnect_0_changeswitch_s1_write;              // mm_interconnect_0:ChangeSwitch_s1_write -> ChangeSwitch:write_n
+	wire  [31:0] mm_interconnect_0_changeswitch_s1_writedata;          // mm_interconnect_0:ChangeSwitch_s1_writedata -> ChangeSwitch:writedata
+	wire         mm_interconnect_0_uart_s1_chipselect;                 // mm_interconnect_0:UART_s1_chipselect -> UART:chipselect
+	wire  [15:0] mm_interconnect_0_uart_s1_readdata;                   // UART:readdata -> mm_interconnect_0:UART_s1_readdata
+	wire   [2:0] mm_interconnect_0_uart_s1_address;                    // mm_interconnect_0:UART_s1_address -> UART:address
+	wire         mm_interconnect_0_uart_s1_read;                       // mm_interconnect_0:UART_s1_read -> UART:read_n
+	wire         mm_interconnect_0_uart_s1_begintransfer;              // mm_interconnect_0:UART_s1_begintransfer -> UART:begintransfer
+	wire         mm_interconnect_0_uart_s1_write;                      // mm_interconnect_0:UART_s1_write -> UART:write_n
+	wire  [15:0] mm_interconnect_0_uart_s1_writedata;                  // mm_interconnect_0:UART_s1_writedata -> UART:writedata
 	wire         irq_mapper_receiver0_irq;                             // JTAG:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                             // Timer:irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                             // PioButtom:irq -> irq_mapper:receiver2_irq
+	wire         irq_mapper_receiver3_irq;                             // ChangeSwitch:irq -> irq_mapper:receiver3_irq
+	wire         irq_mapper_receiver4_irq;                             // UART:irq -> irq_mapper:receiver4_irq
 	wire  [31:0] cpu_irq_irq;                                          // irq_mapper:sender_irq -> CPU:irq
-	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [CPU:reset_n, JTAG:rst_n, LEDS:reset_n, RAM:reset, SEG_1:reset_n, SEG_2:reset_n, SEG_3:reset_n, SEG_4:reset_n, SEG_5:reset_n, SEG_6:reset_n, Timer:reset_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [CPU:reset_n, ChangeSwitch:reset_n, JTAG:rst_n, LEDS:reset_n, RAM:reset, SEG_1:reset_n, SEG_2:reset_n, SEG_3:reset_n, SEG_4:reset_n, SEG_5:reset_n, SEG_6:reset_n, Timer:reset_n, UART:reset_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                   // rst_controller:reset_req -> [CPU:reset_req, RAM:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                   // rst_controller_001:reset_out -> [PioButtom:reset_n, mm_interconnect_0:PioButtom_reset_reset_bridge_in_reset_reset]
 	wire         cpu_debug_reset_request_reset;                        // CPU:debug_reset_request -> rst_controller_001:reset_in1
@@ -133,6 +150,18 @@ module ProjectFile (
 		.dummy_ci_port                       ()                                                   // custom_instruction_master.readra
 	);
 
+	ProjectFile_ChangeSwitch changeswitch (
+		.clk        (clk_clk),                                      //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),              //               reset.reset_n
+		.address    (mm_interconnect_0_changeswitch_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_changeswitch_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_changeswitch_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_changeswitch_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_changeswitch_s1_readdata),   //                    .readdata
+		.in_port    (hour_changer_export),                          // external_connection.export
+		.irq        (irq_mapper_receiver3_irq)                      //                 irq.irq
+	);
+
 	ProjectFile_JTAG jtag (
 		.clk            (clk_clk),                                              //               clk.clk
 		.rst_n          (~rst_controller_reset_out_reset),                      //             reset.reset_n
@@ -157,7 +186,7 @@ module ProjectFile (
 		.out_port   (leds_export)                           // external_connection.export
 	);
 
-	ProjectFile_PioButtom piobuttom (
+	ProjectFile_ChangeSwitch piobuttom (
 		.clk        (clk_clk),                                   //                 clk.clk
 		.reset_n    (~rst_controller_001_reset_out_reset),       //               reset.reset_n
 		.address    (mm_interconnect_0_piobuttom_s1_address),    //                  s1.address
@@ -260,6 +289,21 @@ module ProjectFile (
 		.irq        (irq_mapper_receiver1_irq)               //   irq.irq
 	);
 
+	ProjectFile_UART uart (
+		.clk           (clk_clk),                                 //                 clk.clk
+		.reset_n       (~rst_controller_reset_out_reset),         //               reset.reset_n
+		.address       (mm_interconnect_0_uart_s1_address),       //                  s1.address
+		.begintransfer (mm_interconnect_0_uart_s1_begintransfer), //                    .begintransfer
+		.chipselect    (mm_interconnect_0_uart_s1_chipselect),    //                    .chipselect
+		.read_n        (~mm_interconnect_0_uart_s1_read),         //                    .read_n
+		.write_n       (~mm_interconnect_0_uart_s1_write),        //                    .write_n
+		.writedata     (mm_interconnect_0_uart_s1_writedata),     //                    .writedata
+		.readdata      (mm_interconnect_0_uart_s1_readdata),      //                    .readdata
+		.rxd           (uart_rxd),                                // external_connection.export
+		.txd           (uart_txd),                                //                    .export
+		.irq           (irq_mapper_receiver4_irq)                 //                 irq.irq
+	);
+
 	ProjectFile_mm_interconnect_0 mm_interconnect_0 (
 		.CLK_clk_clk                                 (clk_clk),                                              //                               CLK_clk.clk
 		.CPU_reset_reset_bridge_in_reset_reset       (rst_controller_reset_out_reset),                       //       CPU_reset_reset_bridge_in_reset.reset
@@ -276,6 +320,11 @@ module ProjectFile (
 		.CPU_instruction_master_waitrequest          (cpu_instruction_master_waitrequest),                   //                                      .waitrequest
 		.CPU_instruction_master_read                 (cpu_instruction_master_read),                          //                                      .read
 		.CPU_instruction_master_readdata             (cpu_instruction_master_readdata),                      //                                      .readdata
+		.ChangeSwitch_s1_address                     (mm_interconnect_0_changeswitch_s1_address),            //                       ChangeSwitch_s1.address
+		.ChangeSwitch_s1_write                       (mm_interconnect_0_changeswitch_s1_write),              //                                      .write
+		.ChangeSwitch_s1_readdata                    (mm_interconnect_0_changeswitch_s1_readdata),           //                                      .readdata
+		.ChangeSwitch_s1_writedata                   (mm_interconnect_0_changeswitch_s1_writedata),          //                                      .writedata
+		.ChangeSwitch_s1_chipselect                  (mm_interconnect_0_changeswitch_s1_chipselect),         //                                      .chipselect
 		.CPU_debug_mem_slave_address                 (mm_interconnect_0_cpu_debug_mem_slave_address),        //                   CPU_debug_mem_slave.address
 		.CPU_debug_mem_slave_write                   (mm_interconnect_0_cpu_debug_mem_slave_write),          //                                      .write
 		.CPU_debug_mem_slave_read                    (mm_interconnect_0_cpu_debug_mem_slave_read),           //                                      .read
@@ -342,7 +391,14 @@ module ProjectFile (
 		.Timer_s1_write                              (mm_interconnect_0_timer_s1_write),                     //                                      .write
 		.Timer_s1_readdata                           (mm_interconnect_0_timer_s1_readdata),                  //                                      .readdata
 		.Timer_s1_writedata                          (mm_interconnect_0_timer_s1_writedata),                 //                                      .writedata
-		.Timer_s1_chipselect                         (mm_interconnect_0_timer_s1_chipselect)                 //                                      .chipselect
+		.Timer_s1_chipselect                         (mm_interconnect_0_timer_s1_chipselect),                //                                      .chipselect
+		.UART_s1_address                             (mm_interconnect_0_uart_s1_address),                    //                               UART_s1.address
+		.UART_s1_write                               (mm_interconnect_0_uart_s1_write),                      //                                      .write
+		.UART_s1_read                                (mm_interconnect_0_uart_s1_read),                       //                                      .read
+		.UART_s1_readdata                            (mm_interconnect_0_uart_s1_readdata),                   //                                      .readdata
+		.UART_s1_writedata                           (mm_interconnect_0_uart_s1_writedata),                  //                                      .writedata
+		.UART_s1_begintransfer                       (mm_interconnect_0_uart_s1_begintransfer),              //                                      .begintransfer
+		.UART_s1_chipselect                          (mm_interconnect_0_uart_s1_chipselect)                  //                                      .chipselect
 	);
 
 	ProjectFile_irq_mapper irq_mapper (
@@ -351,6 +407,8 @@ module ProjectFile (
 		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
 		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
 		.receiver2_irq (irq_mapper_receiver2_irq),       // receiver2.irq
+		.receiver3_irq (irq_mapper_receiver3_irq),       // receiver3.irq
+		.receiver4_irq (irq_mapper_receiver4_irq),       // receiver4.irq
 		.sender_irq    (cpu_irq_irq)                     //    sender.irq
 	);
 

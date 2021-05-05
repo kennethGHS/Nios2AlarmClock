@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'ProjectFile'
  * SOPC Builder design path: A:/Nios2AlarmClock/ProjectFile.sopcinfo
  *
- * Generated: Sat May 01 10:56:14 CST 2021
+ * Generated: Tue May 04 19:50:50 CST 2021
  */
 
 /*
@@ -65,9 +65,9 @@
  *
  */
 
-#define RAM_REGION_BASE 0x1020
-#define RAM_REGION_SPAN 4064
-#define RESET_REGION_BASE 0x1000
+#define RAM_REGION_BASE 0x2020
+#define RAM_REGION_SPAN 8160
+#define RESET_REGION_BASE 0x2000
 #define RESET_REGION_SPAN 32
 
 

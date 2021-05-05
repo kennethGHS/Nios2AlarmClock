@@ -25,7 +25,7 @@
          type = "int";
       }
    }
-   element ProjectFile_inst_interrupbutton_bfm
+   element ProjectFile_inst_hour_changer_bfm
    {
       datum _sortIndex
       {
@@ -33,11 +33,19 @@
          type = "int";
       }
    }
-   element ProjectFile_inst_leds_bfm
+   element ProjectFile_inst_interrupbutton_bfm
    {
       datum _sortIndex
       {
          value = "4";
+         type = "int";
+      }
+   }
+   element ProjectFile_inst_leds_bfm
+   {
+      datum _sortIndex
+      {
+         value = "5";
          type = "int";
       }
    }
@@ -53,7 +61,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "6";
          type = "int";
       }
    }
@@ -61,7 +69,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "7";
          type = "int";
       }
    }
@@ -69,7 +77,7 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "8";
          type = "int";
       }
    }
@@ -77,7 +85,7 @@
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "9";
          type = "int";
       }
    }
@@ -85,7 +93,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "10";
          type = "int";
       }
    }
@@ -93,7 +101,15 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "11";
+         type = "int";
+      }
+   }
+   element ProjectFile_inst_uart_bfm
+   {
+      datum _sortIndex
+      {
+         value = "12";
          type = "int";
       }
    }
@@ -135,6 +151,17 @@
    enabled="1">
   <parameter name="CLOCK_RATE" value="50000000" />
   <parameter name="CLOCK_UNIT" value="1" />
+ </module>
+ <module
+   name="ProjectFile_inst_hour_changer_bfm"
+   kind="altera_conduit_bfm"
+   version="20.1"
+   enabled="1">
+  <parameter name="CLOCKED_SIGNAL" value="false" />
+  <parameter name="ENABLE_RESET" value="false" />
+  <parameter name="SIGNAL_DIRECTIONS" value="output" />
+  <parameter name="SIGNAL_ROLES" value="export" />
+  <parameter name="SIGNAL_WIDTHS" value="1" />
  </module>
  <module
    name="ProjectFile_inst_interrupbutton_bfm"
@@ -232,6 +259,17 @@
   <parameter name="SIGNAL_ROLES" value="export" />
   <parameter name="SIGNAL_WIDTHS" value="8" />
  </module>
+ <module
+   name="ProjectFile_inst_uart_bfm"
+   kind="altera_conduit_bfm"
+   version="20.1"
+   enabled="1">
+  <parameter name="CLOCKED_SIGNAL" value="false" />
+  <parameter name="ENABLE_RESET" value="false" />
+  <parameter name="SIGNAL_DIRECTIONS" value="output,input" />
+  <parameter name="SIGNAL_ROLES" value="rxd,txd" />
+  <parameter name="SIGNAL_WIDTHS" value="1,1" />
+ </module>
  <connection
    kind="clock"
    version="20.1"
@@ -242,6 +280,17 @@
    version="20.1"
    start="ProjectFile_inst_clk_bfm.clk"
    end="ProjectFile_inst_reset_bfm.clk" />
+ <connection
+   kind="conduit"
+   version="20.1"
+   start="ProjectFile_inst_hour_changer_bfm.conduit"
+   end="ProjectFile_inst.hour_changer">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
  <connection
    kind="conduit"
    version="20.1"
@@ -324,6 +373,17 @@
    version="20.1"
    start="ProjectFile_inst_segment6_bfm.conduit"
    end="ProjectFile_inst.segment6">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="20.1"
+   start="ProjectFile_inst_uart_bfm.conduit"
+   end="ProjectFile_inst.uart">
   <parameter name="endPort" value="" />
   <parameter name="endPortLSB" value="0" />
   <parameter name="startPort" value="" />

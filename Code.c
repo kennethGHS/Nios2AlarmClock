@@ -8,27 +8,36 @@
  void handle_timer_interrupt();
  void handle_button_interrupt(void* context);
  void init_interrupts();
+ void add_pio_interrupt(int pio_base,alt_u32 ic_id,
+ 		 alt_u32 irq,
+ 		 alt_isr_func isr,
+ 		 void *isr_context);
+ void handle_switch_change_interrupt(void* context);
 
 volatile int edge_capture;
 volatile int edge_capture_change;
-void add_pio_interrupt(int pio_base,alt_u32 ic_id,
-		 alt_u32 irq,
-		 alt_isr_func isr,
-		 void *isr_context);
-void handle_switch_change_interrupt(void* context);
+volatile int hours, minutes, seconds;
+
 int main()
 {
   volatile int * displays[] = {(int *) SEG_1_BASE, (int *) SEG_2_BASE, (int *) SEG_3_BASE, (int *) SEG_4_BASE, (int *) SEG_5_BASE, (int *) SEG_6_BASE};
 
-  // Set the 7-segment displays
-	two_digit_conversion(56, displays[5], displays[4]);
-	two_digit_conversion(78, displays[3], displays[2]);
-	two_digit_conversion(90, displays[1], displays[0]);
+  hours = 3;
+	minutes = 41;
+	seconds = 26;
+
+	InitUart(BAUD_RATE, &hours, &minutes, &seconds);
+	alt_ic_isr_register(UART_IRQ_INTERRUPT_CONTROLLER_ID, UART_IRQ, IsrUart, 0, 0);
+	alt_ic_irq_enable(UART_IRQ_INTERRUPT_CONTROLLER_ID, UART_IRQ);
 
   init_interrupts();
   alt_putstr("Hello from Nios II!\n");
   /* Event loop never exits. */
-  while (1);
+  while (1){
+		two_digit_conversion(hours, displays[5], displays[4]);
+		two_digit_conversion(minutes, displays[3], displays[2]);
+		two_digit_conversion(seconds, displays[1], displays[0]);
+	};
 
   return 0;
 }

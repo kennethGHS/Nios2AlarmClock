@@ -1,6 +1,7 @@
 	component ProjectFile is
 		port (
 			clk_clk               : in  std_logic                    := 'X'; -- clk
+			hour_changer_export   : in  std_logic                    := 'X'; -- export
 			interrupbutton_export : in  std_logic                    := 'X'; -- export
 			leds_export           : out std_logic_vector(9 downto 0);        -- export
 			reset_reset_n         : in  std_logic                    := 'X'; -- reset_n
@@ -10,7 +11,8 @@
 			segment4_export       : out std_logic_vector(7 downto 0);        -- export
 			segment5_export       : out std_logic_vector(7 downto 0);        -- export
 			segment6_export       : out std_logic_vector(7 downto 0);        -- export
-			hour_changer_export   : in  std_logic                    := 'X'  -- export
+			uart_rxd              : in  std_logic                    := 'X'; -- rxd
+			uart_txd              : out std_logic                            -- txd
 		);
 	end component ProjectFile;
 

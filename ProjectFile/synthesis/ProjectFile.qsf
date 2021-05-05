@@ -99,4 +99,17 @@ set_location_assignment PIN_AB27 -to segment6_export[3]
 set_location_assignment PIN_AB26 -to segment6_export[4]
 set_location_assignment PIN_AA26 -to segment6_export[5]
 set_location_assignment PIN_AA25 -to segment6_export[6]
+set_location_assignment PIN_AC18 -to uart_rxd
+set_location_assignment PIN_Y17 -to uart_txd
+set_location_assignment PIN_Y21 -to leds_export[9]
+set_location_assignment PIN_W21 -to leds_export[8]
+set_location_assignment PIN_W20 -to leds_export[7]
+set_location_assignment PIN_Y19 -to leds_export[6]
+set_location_assignment PIN_W19 -to leds_export[5]
+set_location_assignment PIN_W17 -to leds_export[4]
+set_location_assignment PIN_V18 -to leds_export[3]
+set_location_assignment PIN_V17 -to leds_export[2]
+set_location_assignment PIN_W16 -to leds_export[1]
+set_location_assignment PIN_V16 -to leds_export[0]
+set_location_assignment PIN_W15 -to hour_changer_export
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

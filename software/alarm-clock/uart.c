@@ -187,6 +187,11 @@ void parseReceived(){
 
 		// Hour
 		msc = GetUart();
+
+		while(!(msc > 47 && msc < 58)){
+			msc = GetUart();
+		}
+
 		msd = (int) msc - 48;
 		lsc = GetUart();
 		lsd = (int) lsc - 48;
@@ -197,30 +202,24 @@ void parseReceived(){
 			return;
 		}
 
-		* hour_ptr = hour;
-
-		// Separator
-		GetUart();
-
-
 		// Minutes
 		msc = GetUart();
+
+		while(!(msc > 47 && msc < 58)){
+			msc = GetUart();
+		}
 		msd = (int) msc - 48;
 		lsc = GetUart();
 		lsd = (int) lsc - 48;
 		min = msd * 10 + lsd;
 
-		if(min > 60){
+		if(min >= 60){
 			return;
 		}
 
+		// Set if all verifications pass
+		* hour_ptr = hour;
 		* min_ptr = min;
-
-		// Seconds
 		* sec_ptr = 0;
-
-//		// Reset buffer
-//		RxHead_1 = 0;
-//		RxTail_1 = 0;
 	}
 }

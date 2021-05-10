@@ -151,7 +151,7 @@ unsigned char PutUart(unsigned char in_char)
 
 void parseReceived() {
 	volatile int received, hour, min;
-	unsigned char msc, lsc, type;
+	unsigned char msc, lsc;
 	volatile int msd, lsd;
 
 	if (RxTail_1 > RxHead_1) {
@@ -175,16 +175,13 @@ void parseReceived() {
 
 		hour = msd * 10 + lsd;
 
-		if (hour > 12) {
+		if (hour > 23) {
 			return;
 		}
 
 		// Minutes
 		msc = GetUart();
 
-		while (!(msc > 47 && msc < 58)) {
-			msc = GetUart();
-		}
 		msd = (int) msc - 48;
 		lsc = GetUart();
 		lsd = (int) lsc - 48;
@@ -195,14 +192,11 @@ void parseReceived() {
 		}
 
 		// Set if all verifications pass
-		type = GetUart();
-
-		if('t' == type){
-			set_clock_time(clock_ptr, hour, min);
-		}
-		else if('a' == type){
+		if (clock_ptr->state == editing_alarm) {
 			set_clock_alarm(clock_ptr, hour, min);
 			*leds_ptr = 0b1000000000;
+		} else {
+			set_clock_time(clock_ptr, hour, min);
 		}
 	}
 }

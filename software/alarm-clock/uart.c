@@ -25,7 +25,8 @@ volatile int * min_ptr;
 
 volatile int * sec_ptr;
 
-void InitUart(unsigned int BaudRate, volatile int * hour, volatile int * min, volatile int * sec)
+void InitUart(unsigned int BaudRate, volatile int * hour, volatile int * min,
+		volatile int * sec)
 
 {
 
@@ -172,23 +173,23 @@ unsigned char PutUart(unsigned char in_char)
 
 }
 
-void parseReceived(){
+void parseReceived() {
 	volatile int received, hour, min;
 	unsigned char msc, lsc;
 	volatile int msd, lsd;
 
-	if(RxTail_1 > RxHead_1){
+	if (RxTail_1 > RxHead_1) {
 		received = RxHead_1 + (RX_BUFFER_SIZE_1 - RxTail_1);
-	}else{
+	} else {
 		received = RxHead_1 - RxTail_1;
 	}
 
-	if(5 <= received){
+	if (5 <= received) {
 
 		// Hour
 		msc = GetUart();
 
-		while(!(msc > 47 && msc < 58)){
+		while (!(msc > 47 && msc < 58)) {
 			msc = GetUart();
 		}
 
@@ -198,14 +199,14 @@ void parseReceived(){
 
 		hour = msd * 10 + lsd;
 
-		if(hour > 12){
+		if (hour > 12) {
 			return;
 		}
 
 		// Minutes
 		msc = GetUart();
 
-		while(!(msc > 47 && msc < 58)){
+		while (!(msc > 47 && msc < 58)) {
 			msc = GetUart();
 		}
 		msd = (int) msc - 48;
@@ -213,13 +214,13 @@ void parseReceived(){
 		lsd = (int) lsc - 48;
 		min = msd * 10 + lsd;
 
-		if(min >= 60){
+		if (min >= 60) {
 			return;
 		}
 
 		// Set if all verifications pass
-		* hour_ptr = hour;
-		* min_ptr = min;
-		* sec_ptr = 0;
+		*hour_ptr = hour;
+		*min_ptr = min;
+		*sec_ptr = 0;
 	}
 }

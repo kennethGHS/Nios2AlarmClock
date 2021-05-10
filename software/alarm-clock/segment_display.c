@@ -1,9 +1,9 @@
 #include "segment_display.h"
 
-volatile int single_digit_conversion(volatile int value){
+volatile int single_digit_conversion(volatile int value) {
 	int result = 0b01111111;
 
-	switch(value){
+	switch (value) {
 	case 0:
 		result = 0b01000000;
 		break;
@@ -41,7 +41,8 @@ volatile int single_digit_conversion(volatile int value){
 	return result;
 }
 
-void two_digit_conversion(volatile int value, volatile int *msd, volatile int *lsd){
+void two_digit_conversion(volatile int value, volatile int *msd,
+		volatile int *lsd) {
 	*msd = single_digit_conversion(value / 10);
 	*lsd = single_digit_conversion(value % 10);
 }

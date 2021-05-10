@@ -8,7 +8,8 @@
 
  ************************************************** **************************/
 
-void InitUart(unsigned int BaudRate, volatile int * hour, volatile int * min, volatile int * sec);
+void InitUart(unsigned int BaudRate, volatile int * hour, volatile int * min,
+		volatile int * sec);
 
 void IsrUart();
 

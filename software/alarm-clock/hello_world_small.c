@@ -218,7 +218,13 @@ void handle_timer_active_switch_interrupt(void* context) {
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(TIMERACTIVESWITCH_BASE, 0);
 	IORD_ALTERA_AVALON_PIO_EDGE_CAP(TIMERACTIVESWITCH_BASE);
 	//Do things
-	clock->timer_active = 1;
+	if(clock->alarm_active){
+		clock->timer_active = 0;
+		*leds = 0b0000000000;
+	}else{
+		clock->timer_active = 1;
+		*leds = 0b0000010000;
+	}
 }
 
 void handle_alarm_editing_switch_interrupt(void* context) {

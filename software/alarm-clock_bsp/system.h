@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'ProjectFile'
  * SOPC Builder design path: A:/Nios2AlarmClock/ProjectFile.sopcinfo
  *
- * Generated: Sun May 09 22:44:20 CST 2021
+ * Generated: Mon May 10 01:58:01 CST 2021
  */
 
 /*
@@ -669,15 +669,15 @@
 #define TIMER_FREQ 50000000
 #define TIMER_IRQ 1
 #define TIMER_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define TIMER_LOAD_VALUE 49
-#define TIMER_MULT 1.0E-6
+#define TIMER_LOAD_VALUE 49999999
+#define TIMER_MULT 1.0
 #define TIMER_NAME "/dev/Timer"
 #define TIMER_PERIOD 1
-#define TIMER_PERIOD_UNITS "us"
+#define TIMER_PERIOD_UNITS "s"
 #define TIMER_RESET_OUTPUT 0
 #define TIMER_SNAPSHOT 1
 #define TIMER_SPAN 32
-#define TIMER_TICKS_PER_SEC 1000000
+#define TIMER_TICKS_PER_SEC 1
 #define TIMER_TIMEOUT_PULSE_OUTPUT 0
 #define TIMER_TYPE "altera_avalon_timer"
 

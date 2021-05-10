@@ -39,12 +39,14 @@ _time* time_constructor();
 
 void reset_clock(_clock* clock);
 void reset_time(_time* time);
+void set_clock_time(_clock* clock, int hour, int minutes);
+void set_clock_alarm(_clock* clock, int hour, int minutes);
 void increment(_time* clock, clock_element element);
 void decrement(_time* clock, clock_element element);
 void set_clock_state(_clock* clock, clock_state state);
 void select_next_element(_clock* clock);
 void select_previous_element(_clock* clock);
-void tick(_clock* clock);
+void tick(_clock* clock, int *leds);
 void increment_selected(_clock* clock);
 void decrement_selected(_clock* clock);
 void print_clock(_clock* clock);

@@ -43,6 +43,19 @@ void reset_time(_time* time) {
 	time->seconds = 0;
 }
 
+void set_clock_time(_clock* clock, int hour, int minutes){
+	clock->_time->hours = hour;
+	clock->_time->minutes = minutes;
+	clock->_time->seconds = 0;
+};
+
+void set_clock_alarm(_clock* clock, int hour, int minutes){
+	clock->alarm->hours = hour;
+	clock->alarm->minutes = minutes;
+	clock->alarm->seconds = 0;
+	clock->alarm_active = true;
+};;
+
 void increment(_time* clock, clock_element element) {
 	if (element == second) {
 		if (clock->seconds == 59) {
@@ -119,16 +132,18 @@ void select_previous_element(_clock* clock) {
 	}
 }
 
-void tick(_clock* clock) {
+void tick(_clock* clock, int *leds) {
 	increment(clock->_time, second);
 	if (clock->alarm_active && times_are_equal(clock->_time, clock->alarm)) {
-		alt_putstr("Alarm went off");
+//		alt_putstr("Alarm went off");
+		*leds = 0b1111111111;
 	}
 	if (clock->timer_active) {
 		decrement(clock->timer, second);
 		if (time_is_zero(clock->timer)) {
-			alt_putstr("Timer went off");
+//			alt_putstr("Timer went off");
 			clock->timer_active = false;
+			*leds = 0b1111111111;
 		}
 
 	}

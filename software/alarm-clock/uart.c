@@ -19,14 +19,11 @@ unsigned short RxTail_1 = 0;
 
 unsigned char rx_buffer_1[RX_BUFFER_SIZE_1];
 
-volatile int * hour_ptr;
+_clock *clock_ptr;
 
-volatile int * min_ptr;
+volatile int * leds_ptr;
 
-volatile int * sec_ptr;
-
-void InitUart(unsigned int BaudRate, volatile int * hour, volatile int * min,
-		volatile int * sec)
+void InitUart(unsigned int BaudRate, _clock *clock, volatile int *leds)
 
 {
 
@@ -39,11 +36,8 @@ void InitUart(unsigned int BaudRate, volatile int * hour, volatile int * min,
 	IOWR_ALTERA_AVALON_UART_CONTROL(UART_BASE,
 			ALTERA_AVALON_UART_CONTROL_RRDY_MSK);
 
-	hour_ptr = hour;
-
-	min_ptr = min;
-
-	sec_ptr = sec;
+	clock_ptr = clock;
+	leds_ptr = leds;
 }
 
 void IsrUart(void* context, unsigned int id)
@@ -51,49 +45,31 @@ void IsrUart(void* context, unsigned int id)
 {
 
 	int sr;
-
 	sr = IORD_ALTERA_AVALON_UART_STATUS(UART_BASE);
 
 	if (sr & ALTERA_AVALON_UART_STATUS_RRDY_MSK)
 		;
-
 	{
-
 		rx_buffer_1[RxHead_1] = IORD_ALTERA_AVALON_UART_RXDATA(UART_BASE);
-
 		IOWR_ALTERA_AVALON_UART_STATUS(UART_BASE, 0);
-
 		if (++RxHead_1 > (RX_BUFFER_SIZE_1 - 1))
 			RxHead_1 = 0;
-
 	}
 
-	if (sr & ALTERA_AVALON_UART_STATUS_TRDY_MSK)
-
-	{
-
+	if (sr & ALTERA_AVALON_UART_STATUS_TRDY_MSK) {
 		if (IORD_ALTERA_AVALON_UART_CONTROL(
 				UART_BASE) & ALTERA_AVALON_UART_CONTROL_TRDY_MSK)
 			;
-
 		{
-
-			if (TxTail_1 != TxHead_1)
-
-			{
-
+			if (TxTail_1 != TxHead_1) {
 				IOWR_ALTERA_AVALON_UART_TXDATA(UART_BASE,
 						tx_buffer_1[TxTail_1]);
 
 				if (++TxTail_1 > (TX_BUFFER_SIZE_1 - 1))
 					TxTail_1 = 0;
-
-			}
-
-			else
+			} else
 				IOWR_ALTERA_AVALON_UART_CONTROL(UART_BASE,
 						ALTERA_AVALON_UART_CONTROL_RRDY_MSK);
-
 		}
 
 	}
@@ -175,7 +151,7 @@ unsigned char PutUart(unsigned char in_char)
 
 void parseReceived() {
 	volatile int received, hour, min;
-	unsigned char msc, lsc;
+	unsigned char msc, lsc, type;
 	volatile int msd, lsd;
 
 	if (RxTail_1 > RxHead_1) {
@@ -219,8 +195,14 @@ void parseReceived() {
 		}
 
 		// Set if all verifications pass
-		*hour_ptr = hour;
-		*min_ptr = min;
-		*sec_ptr = 0;
+		type = GetUart();
+
+		if('t' == type){
+			set_clock_time(clock_ptr, hour, min);
+		}
+		else if('a' == type){
+			set_clock_alarm(clock_ptr, hour, min);
+			*leds_ptr = 0b1000000000;
+		}
 	}
 }

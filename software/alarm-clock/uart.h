@@ -2,14 +2,15 @@
 
 #define _INTERRUPTHANDLERFORUAR_H_
 
+#include "clock.h"
+
 /************************************************** ***************************
 
  * Public function prototypes
 
  ************************************************** **************************/
 
-void InitUart(unsigned int BaudRate, volatile int * hour, volatile int * min,
-		volatile int * sec);
+void InitUart(unsigned int BaudRate, _clock *clock, volatile int *leds);
 
 void IsrUart();
 

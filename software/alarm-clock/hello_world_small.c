@@ -41,11 +41,15 @@ volatile int * displays[] = { (int *) SEG_1_BASE, (int *) SEG_2_BASE,
 		(int *) SEG_3_BASE, (int *) SEG_4_BASE, (int *) SEG_5_BASE,
 		(int *) SEG_6_BASE };
 
+volatile int * leds = (int *) LEDS_BASE;
+
 int main() {
 
+	*leds = 0b0000000000;
 	clock = clock_constructor();
 	reset_clock(clock);
 	update_displays();
+
 
 	init_interrupts();
 
@@ -59,10 +63,10 @@ void init_interrupts() {
 	alt_irq_cpu_enable_interrupts();
 
 	//Enables UART
-	// InitUart(BAUD_RATE, &hours, &minutes, &seconds);
-	// alt_ic_isr_register(UART_IRQ_INTERRUPT_CONTROLLER_ID, UART_IRQ, IsrUart, 0,
-	// 	0);
-	// alt_ic_irq_enable(UART_IRQ_INTERRUPT_CONTROLLER_ID, UART_IRQ);
+	InitUart(BAUD_RATE, clock, leds);
+	alt_ic_isr_register(UART_IRQ_INTERRUPT_CONTROLLER_ID, UART_IRQ, IsrUart, 0,
+	 	0);
+	alt_ic_irq_enable(UART_IRQ_INTERRUPT_CONTROLLER_ID, UART_IRQ);
 
 	//Enables the timer
 	IOWR_ALTERA_AVALON_TIMER_CONTROL(TIMER_BASE,
@@ -139,7 +143,7 @@ void handle_timer_interrupt() {
 //	alt_putstr("Executed interruption \n");
 	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0);
 	//Do things
-	tick(clock);
+	tick(clock, leds);
 	update_displays();
 }
 
@@ -198,8 +202,14 @@ void handle_alarm_active_switch_interrupt(void* context) {
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(ALARMACTIVESWITCH_BASE, 0);
 	IORD_ALTERA_AVALON_PIO_EDGE_CAP(ALARMACTIVESWITCH_BASE);
 	//Do things
-	clock->alarm_active = 1;
-}
+	if(clock->alarm_active){
+		clock->alarm_active = 0;
+		*leds = 0b0000000000;
+	}else{
+		clock->alarm_active = 1;
+		*leds = 0b1000000000;
+	}
+ }
 
 void handle_timer_active_switch_interrupt(void* context) {
 //	alt_putstr("Executed interruption timer active switch \n");
@@ -219,6 +229,7 @@ void handle_alarm_editing_switch_interrupt(void* context) {
 	IORD_ALTERA_AVALON_PIO_EDGE_CAP(EDITALARMSWITCH_BASE);
 	//Do things
 	set_clock_state(clock, editing_alarm);
+	*leds = 0b0000000000;
 }
 
 void handle_timer_editing_switch_interrupt(void* context) {
@@ -229,6 +240,7 @@ void handle_timer_editing_switch_interrupt(void* context) {
 	IORD_ALTERA_AVALON_PIO_EDGE_CAP(EDITTIMERSWITCH_BASE);
 	//Do things
 	set_clock_state(clock, editing_timer);
+	*leds = 0b0000000000;
 }
 
 void handle_time_editing_switch_interrupt(void* context) {

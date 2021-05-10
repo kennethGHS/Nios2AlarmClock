@@ -60,8 +60,7 @@ set_location_assignment PIN_AF28 -to segment1_export[4]
 set_location_assignment PIN_AG28 -to segment1_export[5]
 set_location_assignment PIN_AH28 -to segment1_export[6]
 set_location_assignment PIN_AF14 -to clk_clk
-set_location_assignment PIN_AA14 -to reset_reset_n
-set_location_assignment PIN_AA15 -to interrupbutton_export
+set_location_assignment PIN_AB12 -to reset_reset_n
 set_global_assignment -name QIP_FILE "../../software/alarm-clock/mem_init/meminit.qip"
 set_global_assignment -name QIP_FILE ProjectFile.qip
 set_location_assignment PIN_AJ29 -to segment2_export[0]
@@ -111,5 +110,14 @@ set_location_assignment PIN_V18 -to leds_export[3]
 set_location_assignment PIN_V17 -to leds_export[2]
 set_location_assignment PIN_W16 -to leds_export[1]
 set_location_assignment PIN_V16 -to leds_export[0]
-set_location_assignment PIN_W15 -to hour_changer_export
+set_location_assignment PIN_AE12 -to alarm_active_switch_export
+set_location_assignment PIN_AD10 -to edit_alarm_switch_export
+set_location_assignment PIN_AC9 -to edit_time_switch_export
+set_location_assignment PIN_AE11 -to edit_timer_switch_export
+set_location_assignment PIN_AD12 -to save_switch_export
+set_location_assignment PIN_AD11 -to timer_active_switch_export
+set_location_assignment PIN_Y16 -to left_button_export
+set_location_assignment PIN_W15 -to right_button_export
+set_location_assignment PIN_AA15 -to up_button_export
+set_location_assignment PIN_AA14 -to down_button_export
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

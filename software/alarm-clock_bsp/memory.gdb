@@ -3,7 +3,7 @@
 # Machine generated for CPU 'CPU' in SOPC Builder design 'ProjectFile'
 # SOPC Builder design path: A:/Nios2AlarmClock/ProjectFile.sopcinfo
 #
-# Generated: Tue May 04 19:50:50 CST 2021
+# Generated: Sun May 09 22:44:20 CST 2021
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,4 +47,4 @@
 # by allowing GDB to cache memory contents on the host.
 
 # RAM
-memory 0x2000 0x4000 cache
+memory 0x4000 0x8000 cache

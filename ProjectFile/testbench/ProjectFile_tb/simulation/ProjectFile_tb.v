@@ -6,34 +6,50 @@
 module ProjectFile_tb (
 	);
 
-	wire        projectfile_inst_clk_bfm_clk_clk;                   // ProjectFile_inst_clk_bfm:clk -> [ProjectFile_inst:clk_clk, ProjectFile_inst_reset_bfm:clk]
-	wire  [0:0] projectfile_inst_hour_changer_bfm_conduit_export;   // ProjectFile_inst_hour_changer_bfm:sig_export -> ProjectFile_inst:hour_changer_export
-	wire  [0:0] projectfile_inst_interrupbutton_bfm_conduit_export; // ProjectFile_inst_interrupbutton_bfm:sig_export -> ProjectFile_inst:interrupbutton_export
-	wire  [9:0] projectfile_inst_leds_export;                       // ProjectFile_inst:leds_export -> ProjectFile_inst_leds_bfm:sig_export
-	wire  [7:0] projectfile_inst_segment1_export;                   // ProjectFile_inst:segment1_export -> ProjectFile_inst_segment1_bfm:sig_export
-	wire  [7:0] projectfile_inst_segment2_export;                   // ProjectFile_inst:segment2_export -> ProjectFile_inst_segment2_bfm:sig_export
-	wire  [7:0] projectfile_inst_segment3_export;                   // ProjectFile_inst:segment3_export -> ProjectFile_inst_segment3_bfm:sig_export
-	wire  [7:0] projectfile_inst_segment4_export;                   // ProjectFile_inst:segment4_export -> ProjectFile_inst_segment4_bfm:sig_export
-	wire  [7:0] projectfile_inst_segment5_export;                   // ProjectFile_inst:segment5_export -> ProjectFile_inst_segment5_bfm:sig_export
-	wire  [7:0] projectfile_inst_segment6_export;                   // ProjectFile_inst:segment6_export -> ProjectFile_inst_segment6_bfm:sig_export
-	wire        projectfile_inst_uart_txd;                          // ProjectFile_inst:uart_txd -> ProjectFile_inst_uart_bfm:sig_txd
-	wire  [0:0] projectfile_inst_uart_bfm_conduit_rxd;              // ProjectFile_inst_uart_bfm:sig_rxd -> ProjectFile_inst:uart_rxd
-	wire        projectfile_inst_reset_bfm_reset_reset;             // ProjectFile_inst_reset_bfm:reset -> ProjectFile_inst:reset_reset_n
+	wire        projectfile_inst_clk_bfm_clk_clk;                        // ProjectFile_inst_clk_bfm:clk -> [ProjectFile_inst:clk_clk, ProjectFile_inst_reset_bfm:clk]
+	wire  [0:0] projectfile_inst_alarm_active_switch_bfm_conduit_export; // ProjectFile_inst_alarm_active_switch_bfm:sig_export -> ProjectFile_inst:alarm_active_switch_export
+	wire  [0:0] projectfile_inst_down_button_bfm_conduit_export;         // ProjectFile_inst_down_button_bfm:sig_export -> ProjectFile_inst:down_button_export
+	wire  [0:0] projectfile_inst_edit_alarm_switch_bfm_conduit_export;   // ProjectFile_inst_edit_alarm_switch_bfm:sig_export -> ProjectFile_inst:edit_alarm_switch_export
+	wire  [0:0] projectfile_inst_edit_time_switch_bfm_conduit_export;    // ProjectFile_inst_edit_time_switch_bfm:sig_export -> ProjectFile_inst:edit_time_switch_export
+	wire  [0:0] projectfile_inst_edit_timer_switch_bfm_conduit_export;   // ProjectFile_inst_edit_timer_switch_bfm:sig_export -> ProjectFile_inst:edit_timer_switch_export
+	wire  [9:0] projectfile_inst_leds_export;                            // ProjectFile_inst:leds_export -> ProjectFile_inst_leds_bfm:sig_export
+	wire  [0:0] projectfile_inst_left_button_bfm_conduit_export;         // ProjectFile_inst_left_button_bfm:sig_export -> ProjectFile_inst:left_button_export
+	wire  [0:0] projectfile_inst_right_button_bfm_conduit_export;        // ProjectFile_inst_right_button_bfm:sig_export -> ProjectFile_inst:right_button_export
+	wire  [0:0] projectfile_inst_save_switch_bfm_conduit_export;         // ProjectFile_inst_save_switch_bfm:sig_export -> ProjectFile_inst:save_switch_export
+	wire  [7:0] projectfile_inst_segment1_export;                        // ProjectFile_inst:segment1_export -> ProjectFile_inst_segment1_bfm:sig_export
+	wire  [7:0] projectfile_inst_segment2_export;                        // ProjectFile_inst:segment2_export -> ProjectFile_inst_segment2_bfm:sig_export
+	wire  [7:0] projectfile_inst_segment3_export;                        // ProjectFile_inst:segment3_export -> ProjectFile_inst_segment3_bfm:sig_export
+	wire  [7:0] projectfile_inst_segment4_export;                        // ProjectFile_inst:segment4_export -> ProjectFile_inst_segment4_bfm:sig_export
+	wire  [7:0] projectfile_inst_segment5_export;                        // ProjectFile_inst:segment5_export -> ProjectFile_inst_segment5_bfm:sig_export
+	wire  [7:0] projectfile_inst_segment6_export;                        // ProjectFile_inst:segment6_export -> ProjectFile_inst_segment6_bfm:sig_export
+	wire  [0:0] projectfile_inst_timer_active_switch_bfm_conduit_export; // ProjectFile_inst_timer_active_switch_bfm:sig_export -> ProjectFile_inst:timer_active_switch_export
+	wire  [0:0] projectfile_inst_up_button_bfm_conduit_export;           // ProjectFile_inst_up_button_bfm:sig_export -> ProjectFile_inst:up_button_export
+	wire        projectfile_inst_reset_bfm_reset_reset;                  // ProjectFile_inst_reset_bfm:reset -> ProjectFile_inst:reset_reset_n
 
 	ProjectFile projectfile_inst (
-		.clk_clk               (projectfile_inst_clk_bfm_clk_clk),                   //            clk.clk
-		.hour_changer_export   (projectfile_inst_hour_changer_bfm_conduit_export),   //   hour_changer.export
-		.interrupbutton_export (projectfile_inst_interrupbutton_bfm_conduit_export), // interrupbutton.export
-		.leds_export           (projectfile_inst_leds_export),                       //           leds.export
-		.reset_reset_n         (projectfile_inst_reset_bfm_reset_reset),             //          reset.reset_n
-		.segment1_export       (projectfile_inst_segment1_export),                   //       segment1.export
-		.segment2_export       (projectfile_inst_segment2_export),                   //       segment2.export
-		.segment3_export       (projectfile_inst_segment3_export),                   //       segment3.export
-		.segment4_export       (projectfile_inst_segment4_export),                   //       segment4.export
-		.segment5_export       (projectfile_inst_segment5_export),                   //       segment5.export
-		.segment6_export       (projectfile_inst_segment6_export),                   //       segment6.export
-		.uart_rxd              (projectfile_inst_uart_bfm_conduit_rxd),              //           uart.rxd
-		.uart_txd              (projectfile_inst_uart_txd)                           //               .txd
+		.alarm_active_switch_export (projectfile_inst_alarm_active_switch_bfm_conduit_export), // alarm_active_switch.export
+		.clk_clk                    (projectfile_inst_clk_bfm_clk_clk),                        //                 clk.clk
+		.down_button_export         (projectfile_inst_down_button_bfm_conduit_export),         //         down_button.export
+		.edit_alarm_switch_export   (projectfile_inst_edit_alarm_switch_bfm_conduit_export),   //   edit_alarm_switch.export
+		.edit_time_switch_export    (projectfile_inst_edit_time_switch_bfm_conduit_export),    //    edit_time_switch.export
+		.edit_timer_switch_export   (projectfile_inst_edit_timer_switch_bfm_conduit_export),   //   edit_timer_switch.export
+		.leds_export                (projectfile_inst_leds_export),                            //                leds.export
+		.left_button_export         (projectfile_inst_left_button_bfm_conduit_export),         //         left_button.export
+		.reset_reset_n              (projectfile_inst_reset_bfm_reset_reset),                  //               reset.reset_n
+		.right_button_export        (projectfile_inst_right_button_bfm_conduit_export),        //        right_button.export
+		.save_switch_export         (projectfile_inst_save_switch_bfm_conduit_export),         //         save_switch.export
+		.segment1_export            (projectfile_inst_segment1_export),                        //            segment1.export
+		.segment2_export            (projectfile_inst_segment2_export),                        //            segment2.export
+		.segment3_export            (projectfile_inst_segment3_export),                        //            segment3.export
+		.segment4_export            (projectfile_inst_segment4_export),                        //            segment4.export
+		.segment5_export            (projectfile_inst_segment5_export),                        //            segment5.export
+		.segment6_export            (projectfile_inst_segment6_export),                        //            segment6.export
+		.timer_active_switch_export (projectfile_inst_timer_active_switch_bfm_conduit_export), // timer_active_switch.export
+		.up_button_export           (projectfile_inst_up_button_bfm_conduit_export)            //           up_button.export
+	);
+
+	altera_conduit_bfm projectfile_inst_alarm_active_switch_bfm (
+		.sig_export (projectfile_inst_alarm_active_switch_bfm_conduit_export)  // conduit.export
 	);
 
 	altera_avalon_clock_source #(
@@ -43,16 +59,28 @@ module ProjectFile_tb (
 		.clk (projectfile_inst_clk_bfm_clk_clk)  // clk.clk
 	);
 
-	altera_conduit_bfm projectfile_inst_hour_changer_bfm (
-		.sig_export (projectfile_inst_hour_changer_bfm_conduit_export)  // conduit.export
+	altera_conduit_bfm projectfile_inst_down_button_bfm (
+		.sig_export (projectfile_inst_down_button_bfm_conduit_export)  // conduit.export
 	);
 
-	altera_conduit_bfm projectfile_inst_interrupbutton_bfm (
-		.sig_export (projectfile_inst_interrupbutton_bfm_conduit_export)  // conduit.export
+	altera_conduit_bfm projectfile_inst_edit_alarm_switch_bfm (
+		.sig_export (projectfile_inst_edit_alarm_switch_bfm_conduit_export)  // conduit.export
+	);
+
+	altera_conduit_bfm projectfile_inst_edit_time_switch_bfm (
+		.sig_export (projectfile_inst_edit_time_switch_bfm_conduit_export)  // conduit.export
+	);
+
+	altera_conduit_bfm projectfile_inst_edit_timer_switch_bfm (
+		.sig_export (projectfile_inst_edit_timer_switch_bfm_conduit_export)  // conduit.export
 	);
 
 	altera_conduit_bfm_0002 projectfile_inst_leds_bfm (
 		.sig_export (projectfile_inst_leds_export)  // conduit.export
+	);
+
+	altera_conduit_bfm projectfile_inst_left_button_bfm (
+		.sig_export (projectfile_inst_left_button_bfm_conduit_export)  // conduit.export
 	);
 
 	altera_avalon_reset_source #(
@@ -61,6 +89,14 @@ module ProjectFile_tb (
 	) projectfile_inst_reset_bfm (
 		.reset (projectfile_inst_reset_bfm_reset_reset), // reset.reset_n
 		.clk   (projectfile_inst_clk_bfm_clk_clk)        //   clk.clk
+	);
+
+	altera_conduit_bfm projectfile_inst_right_button_bfm (
+		.sig_export (projectfile_inst_right_button_bfm_conduit_export)  // conduit.export
+	);
+
+	altera_conduit_bfm projectfile_inst_save_switch_bfm (
+		.sig_export (projectfile_inst_save_switch_bfm_conduit_export)  // conduit.export
 	);
 
 	altera_conduit_bfm_0003 projectfile_inst_segment1_bfm (
@@ -87,9 +123,12 @@ module ProjectFile_tb (
 		.sig_export (projectfile_inst_segment6_export)  // conduit.export
 	);
 
-	altera_conduit_bfm_0004 projectfile_inst_uart_bfm (
-		.sig_rxd (projectfile_inst_uart_bfm_conduit_rxd), // conduit.rxd
-		.sig_txd (projectfile_inst_uart_txd)              //        .txd
+	altera_conduit_bfm projectfile_inst_timer_active_switch_bfm (
+		.sig_export (projectfile_inst_timer_active_switch_bfm_conduit_export)  // conduit.export
+	);
+
+	altera_conduit_bfm projectfile_inst_up_button_bfm (
+		.sig_export (projectfile_inst_up_button_bfm_conduit_export)  // conduit.export
 	);
 
 endmodule

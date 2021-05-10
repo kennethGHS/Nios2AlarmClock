@@ -20,9 +20,9 @@
 // Altera IRQ Mapper
 //
 // Parameters
-//   NUM_RCVRS        : 5
+//   NUM_RCVRS        : 13
 //   SENDER_IRW_WIDTH : 32
-//   IRQ_MAP          : 0:0,1:1,2:2,3:3,4:4
+//   IRQ_MAP          : 0:0,1:1,2:4,3:5,4:6,5:7,6:8,7:3,8:9,9:10,10:11,11:2,12:12
 //
 // -------------------------------------------------------
 
@@ -44,6 +44,14 @@ module ProjectFile_irq_mapper
     input                receiver2_irq,
     input                receiver3_irq,
     input                receiver4_irq,
+    input                receiver5_irq,
+    input                receiver6_irq,
+    input                receiver7_irq,
+    input                receiver8_irq,
+    input                receiver9_irq,
+    input                receiver10_irq,
+    input                receiver11_irq,
+    input                receiver12_irq,
 
     // -------------------
     // Command Source (Output)
@@ -57,9 +65,17 @@ module ProjectFile_irq_mapper
 
         sender_irq[0] = receiver0_irq;
         sender_irq[1] = receiver1_irq;
-        sender_irq[2] = receiver2_irq;
-        sender_irq[3] = receiver3_irq;
-        sender_irq[4] = receiver4_irq;
+        sender_irq[4] = receiver2_irq;
+        sender_irq[5] = receiver3_irq;
+        sender_irq[6] = receiver4_irq;
+        sender_irq[7] = receiver5_irq;
+        sender_irq[8] = receiver6_irq;
+        sender_irq[3] = receiver7_irq;
+        sender_irq[9] = receiver8_irq;
+        sender_irq[10] = receiver9_irq;
+        sender_irq[11] = receiver10_irq;
+        sender_irq[2] = receiver11_irq;
+        sender_irq[12] = receiver12_irq;
     end
 
 endmodule

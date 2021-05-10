@@ -198,6 +198,10 @@
    type="VERILOG"
    library="SEG_1" />
  <file
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.hex"
+   type="HEX"
+   library="RAM" />
+ <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v"
    type="VERILOG"
    library="RAM" />
@@ -210,17 +214,13 @@
    type="VERILOG"
    library="JTAG" />
  <file
-   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_ChangeSwitch.v"
-   type="VERILOG"
-   library="ChangeSwitch" />
- <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v"
    type="VERILOG"
    library="CPU" />
  <file
-   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0004.sv"
-   type="SYSTEM_VERILOG"
-   library="ProjectFile_inst_uart_bfm" />
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile_AlarmActiveSwitch.v"
+   type="VERILOG"
+   library="AlarmActiveSwitch" />
  <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv"
    type="SYSTEM_VERILOG"
@@ -234,13 +234,13 @@
    type="SYSTEM_VERILOG"
    library="ProjectFile_inst_leds_bfm" />
  <file
-   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm.sv"
-   type="SYSTEM_VERILOG"
-   library="ProjectFile_inst_hour_changer_bfm" />
- <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv"
    type="SYSTEM_VERILOG"
    library="ProjectFile_inst_clk_bfm" />
+ <file
+   path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/altera_conduit_bfm.sv"
+   type="SYSTEM_VERILOG"
+   library="ProjectFile_inst_alarm_active_switch_bfm" />
  <file
    path="ProjectFile/testbench/ProjectFile_tb/simulation/submodules/ProjectFile.v"
    type="VERILOG"

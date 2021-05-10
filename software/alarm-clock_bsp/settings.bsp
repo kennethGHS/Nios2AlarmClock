@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 8, 2021 7:48:24 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1620524904454</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 9, 2021 10:44:20 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1620621860193</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>A:\Nios2AlarmClock\software\alarm-clock_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>A:\Nios2AlarmClock\ProjectFile.sopcinfo</SopcDesignFile>
@@ -924,79 +924,127 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>RAM</slaveDescriptor>
-                <addressRange>0x00002000 - 0x00003FFF</addressRange>
-                <addressSpan>8192</addressSpan>
+                <addressRange>0x00004000 - 0x00007FFF</addressRange>
+                <addressSpan>16384</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>UART</slaveDescriptor>
-                <addressRange>0x00005000 - 0x0000501F</addressRange>
+                <addressRange>0x00009000 - 0x0000901F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>Timer</slaveDescriptor>
-                <addressRange>0x00005020 - 0x0000503F</addressRange>
+                <addressRange>0x00009020 - 0x0000903F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>ChangeSwitch</slaveDescriptor>
-                <addressRange>0x00005040 - 0x0000504F</addressRange>
+                <slaveDescriptor>SaveSwitch</slaveDescriptor>
+                <addressRange>0x00009040 - 0x0000904F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>EditTimeSwitch</slaveDescriptor>
+                <addressRange>0x00009050 - 0x0000905F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>EditTimerSwitch</slaveDescriptor>
+                <addressRange>0x00009060 - 0x0000906F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>PioLeftButton</slaveDescriptor>
+                <addressRange>0x00009070 - 0x0000907F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>EditAlarmSwitch</slaveDescriptor>
+                <addressRange>0x00009080 - 0x0000908F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>TimerActiveSwitch</slaveDescriptor>
+                <addressRange>0x00009090 - 0x0000909F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>AlarmActiveSwitch</slaveDescriptor>
+                <addressRange>0x000090A0 - 0x000090AF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>PioDownButton</slaveDescriptor>
+                <addressRange>0x000090B0 - 0x000090BF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>PioUpButton</slaveDescriptor>
+                <addressRange>0x000090C0 - 0x000090CF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>PioRightButton</slaveDescriptor>
+                <addressRange>0x000090D0 - 0x000090DF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>LEDS</slaveDescriptor>
-                <addressRange>0x00005050 - 0x0000505F</addressRange>
+                <addressRange>0x000090E0 - 0x000090EF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SEG_6</slaveDescriptor>
-                <addressRange>0x00005060 - 0x0000506F</addressRange>
+                <addressRange>0x000090F0 - 0x000090FF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SEG_5</slaveDescriptor>
-                <addressRange>0x00005070 - 0x0000507F</addressRange>
+                <addressRange>0x00009100 - 0x0000910F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SEG_4</slaveDescriptor>
-                <addressRange>0x00005080 - 0x0000508F</addressRange>
+                <addressRange>0x00009110 - 0x0000911F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SEG_3</slaveDescriptor>
-                <addressRange>0x00005090 - 0x0000509F</addressRange>
+                <addressRange>0x00009120 - 0x0000912F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SEG_2</slaveDescriptor>
-                <addressRange>0x000050A0 - 0x000050AF</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>PioButtom</slaveDescriptor>
-                <addressRange>0x000050B0 - 0x000050BF</addressRange>
+                <addressRange>0x00009130 - 0x0000913F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SEG_1</slaveDescriptor>
-                <addressRange>0x000050C0 - 0x000050CF</addressRange>
+                <addressRange>0x00009140 - 0x0000914F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>JTAG</slaveDescriptor>
-                <addressRange>0x000050D8 - 0x000050DF</addressRange>
+                <addressRange>0x00009158 - 0x0000915F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

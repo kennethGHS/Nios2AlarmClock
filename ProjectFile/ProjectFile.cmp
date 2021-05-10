@@ -1,18 +1,26 @@
 	component ProjectFile is
 		port (
-			clk_clk               : in  std_logic                    := 'X'; -- clk
-			hour_changer_export   : in  std_logic                    := 'X'; -- export
-			interrupbutton_export : in  std_logic                    := 'X'; -- export
-			leds_export           : out std_logic_vector(9 downto 0);        -- export
-			reset_reset_n         : in  std_logic                    := 'X'; -- reset_n
-			segment1_export       : out std_logic_vector(7 downto 0);        -- export
-			segment2_export       : out std_logic_vector(7 downto 0);        -- export
-			segment3_export       : out std_logic_vector(7 downto 0);        -- export
-			segment4_export       : out std_logic_vector(7 downto 0);        -- export
-			segment5_export       : out std_logic_vector(7 downto 0);        -- export
-			segment6_export       : out std_logic_vector(7 downto 0);        -- export
-			uart_rxd              : in  std_logic                    := 'X'; -- rxd
-			uart_txd              : out std_logic                            -- txd
+			alarm_active_switch_export : in  std_logic                    := 'X'; -- export
+			clk_clk                    : in  std_logic                    := 'X'; -- clk
+			down_button_export         : in  std_logic                    := 'X'; -- export
+			edit_alarm_switch_export   : in  std_logic                    := 'X'; -- export
+			edit_time_switch_export    : in  std_logic                    := 'X'; -- export
+			edit_timer_switch_export   : in  std_logic                    := 'X'; -- export
+			leds_export                : out std_logic_vector(9 downto 0);        -- export
+			left_button_export         : in  std_logic                    := 'X'; -- export
+			reset_reset_n              : in  std_logic                    := 'X'; -- reset_n
+			right_button_export        : in  std_logic                    := 'X'; -- export
+			save_switch_export         : in  std_logic                    := 'X'; -- export
+			segment1_export            : out std_logic_vector(7 downto 0);        -- export
+			segment2_export            : out std_logic_vector(7 downto 0);        -- export
+			segment3_export            : out std_logic_vector(7 downto 0);        -- export
+			segment4_export            : out std_logic_vector(7 downto 0);        -- export
+			segment5_export            : out std_logic_vector(7 downto 0);        -- export
+			segment6_export            : out std_logic_vector(7 downto 0);        -- export
+			timer_active_switch_export : in  std_logic                    := 'X'; -- export
+			uart_rxd                   : in  std_logic                    := 'X'; -- rxd
+			uart_txd                   : out std_logic;                           -- txd
+			up_button_export           : in  std_logic                    := 'X'  -- export
 		);
 	end component ProjectFile;
 

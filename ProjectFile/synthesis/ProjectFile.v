@@ -4,32 +4,40 @@
 
 `timescale 1 ps / 1 ps
 module ProjectFile (
-		input  wire       clk_clk,               //            clk.clk
-		input  wire       hour_changer_export,   //   hour_changer.export
-		input  wire       interrupbutton_export, // interrupbutton.export
-		output wire [9:0] leds_export,           //           leds.export
-		input  wire       reset_reset_n,         //          reset.reset_n
-		output wire [7:0] segment1_export,       //       segment1.export
-		output wire [7:0] segment2_export,       //       segment2.export
-		output wire [7:0] segment3_export,       //       segment3.export
-		output wire [7:0] segment4_export,       //       segment4.export
-		output wire [7:0] segment5_export,       //       segment5.export
-		output wire [7:0] segment6_export,       //       segment6.export
-		input  wire       uart_rxd,              //           uart.rxd
-		output wire       uart_txd               //               .txd
+		input  wire       alarm_active_switch_export, // alarm_active_switch.export
+		input  wire       clk_clk,                    //                 clk.clk
+		input  wire       down_button_export,         //         down_button.export
+		input  wire       edit_alarm_switch_export,   //   edit_alarm_switch.export
+		input  wire       edit_time_switch_export,    //    edit_time_switch.export
+		input  wire       edit_timer_switch_export,   //   edit_timer_switch.export
+		output wire [9:0] leds_export,                //                leds.export
+		input  wire       left_button_export,         //         left_button.export
+		input  wire       reset_reset_n,              //               reset.reset_n
+		input  wire       right_button_export,        //        right_button.export
+		input  wire       save_switch_export,         //         save_switch.export
+		output wire [7:0] segment1_export,            //            segment1.export
+		output wire [7:0] segment2_export,            //            segment2.export
+		output wire [7:0] segment3_export,            //            segment3.export
+		output wire [7:0] segment4_export,            //            segment4.export
+		output wire [7:0] segment5_export,            //            segment5.export
+		output wire [7:0] segment6_export,            //            segment6.export
+		input  wire       timer_active_switch_export, // timer_active_switch.export
+		input  wire       uart_rxd,                   //                uart.rxd
+		output wire       uart_txd,                   //                    .txd
+		input  wire       up_button_export            //           up_button.export
 	);
 
 	wire  [31:0] cpu_data_master_readdata;                             // mm_interconnect_0:CPU_data_master_readdata -> CPU:d_readdata
 	wire         cpu_data_master_waitrequest;                          // mm_interconnect_0:CPU_data_master_waitrequest -> CPU:d_waitrequest
 	wire         cpu_data_master_debugaccess;                          // CPU:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:CPU_data_master_debugaccess
-	wire  [14:0] cpu_data_master_address;                              // CPU:d_address -> mm_interconnect_0:CPU_data_master_address
+	wire  [15:0] cpu_data_master_address;                              // CPU:d_address -> mm_interconnect_0:CPU_data_master_address
 	wire   [3:0] cpu_data_master_byteenable;                           // CPU:d_byteenable -> mm_interconnect_0:CPU_data_master_byteenable
 	wire         cpu_data_master_read;                                 // CPU:d_read -> mm_interconnect_0:CPU_data_master_read
 	wire         cpu_data_master_write;                                // CPU:d_write -> mm_interconnect_0:CPU_data_master_write
 	wire  [31:0] cpu_data_master_writedata;                            // CPU:d_writedata -> mm_interconnect_0:CPU_data_master_writedata
 	wire  [31:0] cpu_instruction_master_readdata;                      // mm_interconnect_0:CPU_instruction_master_readdata -> CPU:i_readdata
 	wire         cpu_instruction_master_waitrequest;                   // mm_interconnect_0:CPU_instruction_master_waitrequest -> CPU:i_waitrequest
-	wire  [14:0] cpu_instruction_master_address;                       // CPU:i_address -> mm_interconnect_0:CPU_instruction_master_address
+	wire  [15:0] cpu_instruction_master_address;                       // CPU:i_address -> mm_interconnect_0:CPU_instruction_master_address
 	wire         cpu_instruction_master_read;                          // CPU:i_read -> mm_interconnect_0:CPU_instruction_master_read
 	wire         mm_interconnect_0_jtag_avalon_jtag_slave_chipselect;  // mm_interconnect_0:JTAG_avalon_jtag_slave_chipselect -> JTAG:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_avalon_jtag_slave_readdata;    // JTAG:av_readdata -> mm_interconnect_0:JTAG_avalon_jtag_slave_readdata
@@ -48,7 +56,7 @@ module ProjectFile (
 	wire  [31:0] mm_interconnect_0_cpu_debug_mem_slave_writedata;      // mm_interconnect_0:CPU_debug_mem_slave_writedata -> CPU:debug_mem_slave_writedata
 	wire         mm_interconnect_0_ram_s1_chipselect;                  // mm_interconnect_0:RAM_s1_chipselect -> RAM:chipselect
 	wire  [31:0] mm_interconnect_0_ram_s1_readdata;                    // RAM:readdata -> mm_interconnect_0:RAM_s1_readdata
-	wire  [10:0] mm_interconnect_0_ram_s1_address;                     // mm_interconnect_0:RAM_s1_address -> RAM:address
+	wire  [11:0] mm_interconnect_0_ram_s1_address;                     // mm_interconnect_0:RAM_s1_address -> RAM:address
 	wire   [3:0] mm_interconnect_0_ram_s1_byteenable;                  // mm_interconnect_0:RAM_s1_byteenable -> RAM:byteenable
 	wire         mm_interconnect_0_ram_s1_write;                       // mm_interconnect_0:RAM_s1_write -> RAM:write
 	wire  [31:0] mm_interconnect_0_ram_s1_writedata;                   // mm_interconnect_0:RAM_s1_writedata -> RAM:writedata
@@ -63,11 +71,6 @@ module ProjectFile (
 	wire   [2:0] mm_interconnect_0_timer_s1_address;                   // mm_interconnect_0:Timer_s1_address -> Timer:address
 	wire         mm_interconnect_0_timer_s1_write;                     // mm_interconnect_0:Timer_s1_write -> Timer:write_n
 	wire  [15:0] mm_interconnect_0_timer_s1_writedata;                 // mm_interconnect_0:Timer_s1_writedata -> Timer:writedata
-	wire         mm_interconnect_0_piobuttom_s1_chipselect;            // mm_interconnect_0:PioButtom_s1_chipselect -> PioButtom:chipselect
-	wire  [31:0] mm_interconnect_0_piobuttom_s1_readdata;              // PioButtom:readdata -> mm_interconnect_0:PioButtom_s1_readdata
-	wire   [1:0] mm_interconnect_0_piobuttom_s1_address;               // mm_interconnect_0:PioButtom_s1_address -> PioButtom:address
-	wire         mm_interconnect_0_piobuttom_s1_write;                 // mm_interconnect_0:PioButtom_s1_write -> PioButtom:write_n
-	wire  [31:0] mm_interconnect_0_piobuttom_s1_writedata;             // mm_interconnect_0:PioButtom_s1_writedata -> PioButtom:writedata
 	wire         mm_interconnect_0_seg_2_s1_chipselect;                // mm_interconnect_0:SEG_2_s1_chipselect -> SEG_2:chipselect
 	wire  [31:0] mm_interconnect_0_seg_2_s1_readdata;                  // SEG_2:readdata -> mm_interconnect_0:SEG_2_s1_readdata
 	wire   [1:0] mm_interconnect_0_seg_2_s1_address;                   // mm_interconnect_0:SEG_2_s1_address -> SEG_2:address
@@ -98,11 +101,56 @@ module ProjectFile (
 	wire   [1:0] mm_interconnect_0_leds_s1_address;                    // mm_interconnect_0:LEDS_s1_address -> LEDS:address
 	wire         mm_interconnect_0_leds_s1_write;                      // mm_interconnect_0:LEDS_s1_write -> LEDS:write_n
 	wire  [31:0] mm_interconnect_0_leds_s1_writedata;                  // mm_interconnect_0:LEDS_s1_writedata -> LEDS:writedata
-	wire         mm_interconnect_0_changeswitch_s1_chipselect;         // mm_interconnect_0:ChangeSwitch_s1_chipselect -> ChangeSwitch:chipselect
-	wire  [31:0] mm_interconnect_0_changeswitch_s1_readdata;           // ChangeSwitch:readdata -> mm_interconnect_0:ChangeSwitch_s1_readdata
-	wire   [1:0] mm_interconnect_0_changeswitch_s1_address;            // mm_interconnect_0:ChangeSwitch_s1_address -> ChangeSwitch:address
-	wire         mm_interconnect_0_changeswitch_s1_write;              // mm_interconnect_0:ChangeSwitch_s1_write -> ChangeSwitch:write_n
-	wire  [31:0] mm_interconnect_0_changeswitch_s1_writedata;          // mm_interconnect_0:ChangeSwitch_s1_writedata -> ChangeSwitch:writedata
+	wire         mm_interconnect_0_piorightbutton_s1_chipselect;       // mm_interconnect_0:PioRightButton_s1_chipselect -> PioRightButton:chipselect
+	wire  [31:0] mm_interconnect_0_piorightbutton_s1_readdata;         // PioRightButton:readdata -> mm_interconnect_0:PioRightButton_s1_readdata
+	wire   [1:0] mm_interconnect_0_piorightbutton_s1_address;          // mm_interconnect_0:PioRightButton_s1_address -> PioRightButton:address
+	wire         mm_interconnect_0_piorightbutton_s1_write;            // mm_interconnect_0:PioRightButton_s1_write -> PioRightButton:write_n
+	wire  [31:0] mm_interconnect_0_piorightbutton_s1_writedata;        // mm_interconnect_0:PioRightButton_s1_writedata -> PioRightButton:writedata
+	wire         mm_interconnect_0_pioupbutton_s1_chipselect;          // mm_interconnect_0:PioUpButton_s1_chipselect -> PioUpButton:chipselect
+	wire  [31:0] mm_interconnect_0_pioupbutton_s1_readdata;            // PioUpButton:readdata -> mm_interconnect_0:PioUpButton_s1_readdata
+	wire   [1:0] mm_interconnect_0_pioupbutton_s1_address;             // mm_interconnect_0:PioUpButton_s1_address -> PioUpButton:address
+	wire         mm_interconnect_0_pioupbutton_s1_write;               // mm_interconnect_0:PioUpButton_s1_write -> PioUpButton:write_n
+	wire  [31:0] mm_interconnect_0_pioupbutton_s1_writedata;           // mm_interconnect_0:PioUpButton_s1_writedata -> PioUpButton:writedata
+	wire         mm_interconnect_0_piodownbutton_s1_chipselect;        // mm_interconnect_0:PioDownButton_s1_chipselect -> PioDownButton:chipselect
+	wire  [31:0] mm_interconnect_0_piodownbutton_s1_readdata;          // PioDownButton:readdata -> mm_interconnect_0:PioDownButton_s1_readdata
+	wire   [1:0] mm_interconnect_0_piodownbutton_s1_address;           // mm_interconnect_0:PioDownButton_s1_address -> PioDownButton:address
+	wire         mm_interconnect_0_piodownbutton_s1_write;             // mm_interconnect_0:PioDownButton_s1_write -> PioDownButton:write_n
+	wire  [31:0] mm_interconnect_0_piodownbutton_s1_writedata;         // mm_interconnect_0:PioDownButton_s1_writedata -> PioDownButton:writedata
+	wire         mm_interconnect_0_alarmactiveswitch_s1_chipselect;    // mm_interconnect_0:AlarmActiveSwitch_s1_chipselect -> AlarmActiveSwitch:chipselect
+	wire  [31:0] mm_interconnect_0_alarmactiveswitch_s1_readdata;      // AlarmActiveSwitch:readdata -> mm_interconnect_0:AlarmActiveSwitch_s1_readdata
+	wire   [1:0] mm_interconnect_0_alarmactiveswitch_s1_address;       // mm_interconnect_0:AlarmActiveSwitch_s1_address -> AlarmActiveSwitch:address
+	wire         mm_interconnect_0_alarmactiveswitch_s1_write;         // mm_interconnect_0:AlarmActiveSwitch_s1_write -> AlarmActiveSwitch:write_n
+	wire  [31:0] mm_interconnect_0_alarmactiveswitch_s1_writedata;     // mm_interconnect_0:AlarmActiveSwitch_s1_writedata -> AlarmActiveSwitch:writedata
+	wire         mm_interconnect_0_timeractiveswitch_s1_chipselect;    // mm_interconnect_0:TimerActiveSwitch_s1_chipselect -> TimerActiveSwitch:chipselect
+	wire  [31:0] mm_interconnect_0_timeractiveswitch_s1_readdata;      // TimerActiveSwitch:readdata -> mm_interconnect_0:TimerActiveSwitch_s1_readdata
+	wire   [1:0] mm_interconnect_0_timeractiveswitch_s1_address;       // mm_interconnect_0:TimerActiveSwitch_s1_address -> TimerActiveSwitch:address
+	wire         mm_interconnect_0_timeractiveswitch_s1_write;         // mm_interconnect_0:TimerActiveSwitch_s1_write -> TimerActiveSwitch:write_n
+	wire  [31:0] mm_interconnect_0_timeractiveswitch_s1_writedata;     // mm_interconnect_0:TimerActiveSwitch_s1_writedata -> TimerActiveSwitch:writedata
+	wire         mm_interconnect_0_editalarmswitch_s1_chipselect;      // mm_interconnect_0:EditAlarmSwitch_s1_chipselect -> EditAlarmSwitch:chipselect
+	wire  [31:0] mm_interconnect_0_editalarmswitch_s1_readdata;        // EditAlarmSwitch:readdata -> mm_interconnect_0:EditAlarmSwitch_s1_readdata
+	wire   [1:0] mm_interconnect_0_editalarmswitch_s1_address;         // mm_interconnect_0:EditAlarmSwitch_s1_address -> EditAlarmSwitch:address
+	wire         mm_interconnect_0_editalarmswitch_s1_write;           // mm_interconnect_0:EditAlarmSwitch_s1_write -> EditAlarmSwitch:write_n
+	wire  [31:0] mm_interconnect_0_editalarmswitch_s1_writedata;       // mm_interconnect_0:EditAlarmSwitch_s1_writedata -> EditAlarmSwitch:writedata
+	wire         mm_interconnect_0_pioleftbutton_s1_chipselect;        // mm_interconnect_0:PioLeftButton_s1_chipselect -> PioLeftButton:chipselect
+	wire  [31:0] mm_interconnect_0_pioleftbutton_s1_readdata;          // PioLeftButton:readdata -> mm_interconnect_0:PioLeftButton_s1_readdata
+	wire   [1:0] mm_interconnect_0_pioleftbutton_s1_address;           // mm_interconnect_0:PioLeftButton_s1_address -> PioLeftButton:address
+	wire         mm_interconnect_0_pioleftbutton_s1_write;             // mm_interconnect_0:PioLeftButton_s1_write -> PioLeftButton:write_n
+	wire  [31:0] mm_interconnect_0_pioleftbutton_s1_writedata;         // mm_interconnect_0:PioLeftButton_s1_writedata -> PioLeftButton:writedata
+	wire         mm_interconnect_0_edittimerswitch_s1_chipselect;      // mm_interconnect_0:EditTimerSwitch_s1_chipselect -> EditTimerSwitch:chipselect
+	wire  [31:0] mm_interconnect_0_edittimerswitch_s1_readdata;        // EditTimerSwitch:readdata -> mm_interconnect_0:EditTimerSwitch_s1_readdata
+	wire   [1:0] mm_interconnect_0_edittimerswitch_s1_address;         // mm_interconnect_0:EditTimerSwitch_s1_address -> EditTimerSwitch:address
+	wire         mm_interconnect_0_edittimerswitch_s1_write;           // mm_interconnect_0:EditTimerSwitch_s1_write -> EditTimerSwitch:write_n
+	wire  [31:0] mm_interconnect_0_edittimerswitch_s1_writedata;       // mm_interconnect_0:EditTimerSwitch_s1_writedata -> EditTimerSwitch:writedata
+	wire         mm_interconnect_0_edittimeswitch_s1_chipselect;       // mm_interconnect_0:EditTimeSwitch_s1_chipselect -> EditTimeSwitch:chipselect
+	wire  [31:0] mm_interconnect_0_edittimeswitch_s1_readdata;         // EditTimeSwitch:readdata -> mm_interconnect_0:EditTimeSwitch_s1_readdata
+	wire   [1:0] mm_interconnect_0_edittimeswitch_s1_address;          // mm_interconnect_0:EditTimeSwitch_s1_address -> EditTimeSwitch:address
+	wire         mm_interconnect_0_edittimeswitch_s1_write;            // mm_interconnect_0:EditTimeSwitch_s1_write -> EditTimeSwitch:write_n
+	wire  [31:0] mm_interconnect_0_edittimeswitch_s1_writedata;        // mm_interconnect_0:EditTimeSwitch_s1_writedata -> EditTimeSwitch:writedata
+	wire         mm_interconnect_0_saveswitch_s1_chipselect;           // mm_interconnect_0:SaveSwitch_s1_chipselect -> SaveSwitch:chipselect
+	wire  [31:0] mm_interconnect_0_saveswitch_s1_readdata;             // SaveSwitch:readdata -> mm_interconnect_0:SaveSwitch_s1_readdata
+	wire   [1:0] mm_interconnect_0_saveswitch_s1_address;              // mm_interconnect_0:SaveSwitch_s1_address -> SaveSwitch:address
+	wire         mm_interconnect_0_saveswitch_s1_write;                // mm_interconnect_0:SaveSwitch_s1_write -> SaveSwitch:write_n
+	wire  [31:0] mm_interconnect_0_saveswitch_s1_writedata;            // mm_interconnect_0:SaveSwitch_s1_writedata -> SaveSwitch:writedata
 	wire         mm_interconnect_0_uart_s1_chipselect;                 // mm_interconnect_0:UART_s1_chipselect -> UART:chipselect
 	wire  [15:0] mm_interconnect_0_uart_s1_readdata;                   // UART:readdata -> mm_interconnect_0:UART_s1_readdata
 	wire   [2:0] mm_interconnect_0_uart_s1_address;                    // mm_interconnect_0:UART_s1_address -> UART:address
@@ -112,14 +160,32 @@ module ProjectFile (
 	wire  [15:0] mm_interconnect_0_uart_s1_writedata;                  // mm_interconnect_0:UART_s1_writedata -> UART:writedata
 	wire         irq_mapper_receiver0_irq;                             // JTAG:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                             // Timer:irq -> irq_mapper:receiver1_irq
-	wire         irq_mapper_receiver2_irq;                             // PioButtom:irq -> irq_mapper:receiver2_irq
-	wire         irq_mapper_receiver3_irq;                             // ChangeSwitch:irq -> irq_mapper:receiver3_irq
-	wire         irq_mapper_receiver4_irq;                             // UART:irq -> irq_mapper:receiver4_irq
+	wire         irq_mapper_receiver2_irq;                             // PioRightButton:irq -> irq_mapper:receiver2_irq
+	wire         irq_mapper_receiver3_irq;                             // PioUpButton:irq -> irq_mapper:receiver3_irq
+	wire         irq_mapper_receiver4_irq;                             // PioDownButton:irq -> irq_mapper:receiver4_irq
+	wire         irq_mapper_receiver5_irq;                             // AlarmActiveSwitch:irq -> irq_mapper:receiver5_irq
+	wire         irq_mapper_receiver6_irq;                             // TimerActiveSwitch:irq -> irq_mapper:receiver6_irq
+	wire         irq_mapper_receiver7_irq;                             // EditAlarmSwitch:irq -> irq_mapper:receiver7_irq
+	wire         irq_mapper_receiver8_irq;                             // PioLeftButton:irq -> irq_mapper:receiver8_irq
+	wire         irq_mapper_receiver9_irq;                             // EditTimerSwitch:irq -> irq_mapper:receiver9_irq
+	wire         irq_mapper_receiver10_irq;                            // EditTimeSwitch:irq -> irq_mapper:receiver10_irq
+	wire         irq_mapper_receiver11_irq;                            // SaveSwitch:irq -> irq_mapper:receiver11_irq
+	wire         irq_mapper_receiver12_irq;                            // UART:irq -> irq_mapper:receiver12_irq
 	wire  [31:0] cpu_irq_irq;                                          // irq_mapper:sender_irq -> CPU:irq
-	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [CPU:reset_n, ChangeSwitch:reset_n, JTAG:rst_n, LEDS:reset_n, RAM:reset, SEG_1:reset_n, SEG_2:reset_n, SEG_3:reset_n, SEG_4:reset_n, SEG_5:reset_n, SEG_6:reset_n, Timer:reset_n, UART:reset_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [AlarmActiveSwitch:reset_n, CPU:reset_n, EditAlarmSwitch:reset_n, EditTimeSwitch:reset_n, EditTimerSwitch:reset_n, JTAG:rst_n, LEDS:reset_n, PioDownButton:reset_n, PioLeftButton:reset_n, PioRightButton:reset_n, PioUpButton:reset_n, RAM:reset, SEG_1:reset_n, SEG_2:reset_n, SEG_3:reset_n, SEG_4:reset_n, SEG_5:reset_n, SEG_6:reset_n, SaveSwitch:reset_n, Timer:reset_n, TimerActiveSwitch:reset_n, UART:reset_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                   // rst_controller:reset_req -> [CPU:reset_req, RAM:reset_req, rst_translator:reset_req_in]
-	wire         rst_controller_001_reset_out_reset;                   // rst_controller_001:reset_out -> [PioButtom:reset_n, mm_interconnect_0:PioButtom_reset_reset_bridge_in_reset_reset]
-	wire         cpu_debug_reset_request_reset;                        // CPU:debug_reset_request -> rst_controller_001:reset_in1
+
+	ProjectFile_AlarmActiveSwitch alarmactiveswitch (
+		.clk        (clk_clk),                                           //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                   //               reset.reset_n
+		.address    (mm_interconnect_0_alarmactiveswitch_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_alarmactiveswitch_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_alarmactiveswitch_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_alarmactiveswitch_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_alarmactiveswitch_s1_readdata),   //                    .readdata
+		.in_port    (alarm_active_switch_export),                        // external_connection.export
+		.irq        (irq_mapper_receiver5_irq)                           //                 irq.irq
+	);
 
 	ProjectFile_CPU cpu (
 		.clk                                 (clk_clk),                                           //                       clk.clk
@@ -138,7 +204,7 @@ module ProjectFile (
 		.i_readdata                          (cpu_instruction_master_readdata),                   //                          .readdata
 		.i_waitrequest                       (cpu_instruction_master_waitrequest),                //                          .waitrequest
 		.irq                                 (cpu_irq_irq),                                       //                       irq.irq
-		.debug_reset_request                 (cpu_debug_reset_request_reset),                     //       debug_reset_request.reset
+		.debug_reset_request                 (),                                                  //       debug_reset_request.reset
 		.debug_mem_slave_address             (mm_interconnect_0_cpu_debug_mem_slave_address),     //           debug_mem_slave.address
 		.debug_mem_slave_byteenable          (mm_interconnect_0_cpu_debug_mem_slave_byteenable),  //                          .byteenable
 		.debug_mem_slave_debugaccess         (mm_interconnect_0_cpu_debug_mem_slave_debugaccess), //                          .debugaccess
@@ -150,16 +216,40 @@ module ProjectFile (
 		.dummy_ci_port                       ()                                                   // custom_instruction_master.readra
 	);
 
-	ProjectFile_ChangeSwitch changeswitch (
-		.clk        (clk_clk),                                      //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),              //               reset.reset_n
-		.address    (mm_interconnect_0_changeswitch_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_changeswitch_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_changeswitch_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_changeswitch_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_changeswitch_s1_readdata),   //                    .readdata
-		.in_port    (hour_changer_export),                          // external_connection.export
-		.irq        (irq_mapper_receiver3_irq)                      //                 irq.irq
+	ProjectFile_AlarmActiveSwitch editalarmswitch (
+		.clk        (clk_clk),                                         //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                 //               reset.reset_n
+		.address    (mm_interconnect_0_editalarmswitch_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_editalarmswitch_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_editalarmswitch_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_editalarmswitch_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_editalarmswitch_s1_readdata),   //                    .readdata
+		.in_port    (edit_alarm_switch_export),                        // external_connection.export
+		.irq        (irq_mapper_receiver7_irq)                         //                 irq.irq
+	);
+
+	ProjectFile_AlarmActiveSwitch edittimeswitch (
+		.clk        (clk_clk),                                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                //               reset.reset_n
+		.address    (mm_interconnect_0_edittimeswitch_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_edittimeswitch_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_edittimeswitch_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_edittimeswitch_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_edittimeswitch_s1_readdata),   //                    .readdata
+		.in_port    (edit_time_switch_export),                        // external_connection.export
+		.irq        (irq_mapper_receiver10_irq)                       //                 irq.irq
+	);
+
+	ProjectFile_AlarmActiveSwitch edittimerswitch (
+		.clk        (clk_clk),                                         //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                 //               reset.reset_n
+		.address    (mm_interconnect_0_edittimerswitch_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_edittimerswitch_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_edittimerswitch_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_edittimerswitch_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_edittimerswitch_s1_readdata),   //                    .readdata
+		.in_port    (edit_timer_switch_export),                        // external_connection.export
+		.irq        (irq_mapper_receiver9_irq)                         //                 irq.irq
 	);
 
 	ProjectFile_JTAG jtag (
@@ -186,16 +276,52 @@ module ProjectFile (
 		.out_port   (leds_export)                           // external_connection.export
 	);
 
-	ProjectFile_ChangeSwitch piobuttom (
-		.clk        (clk_clk),                                   //                 clk.clk
-		.reset_n    (~rst_controller_001_reset_out_reset),       //               reset.reset_n
-		.address    (mm_interconnect_0_piobuttom_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_piobuttom_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_piobuttom_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_piobuttom_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_piobuttom_s1_readdata),   //                    .readdata
-		.in_port    (interrupbutton_export),                     // external_connection.export
-		.irq        (irq_mapper_receiver2_irq)                   //                 irq.irq
+	ProjectFile_AlarmActiveSwitch piodownbutton (
+		.clk        (clk_clk),                                       //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
+		.address    (mm_interconnect_0_piodownbutton_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_piodownbutton_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_piodownbutton_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_piodownbutton_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_piodownbutton_s1_readdata),   //                    .readdata
+		.in_port    (down_button_export),                            // external_connection.export
+		.irq        (irq_mapper_receiver4_irq)                       //                 irq.irq
+	);
+
+	ProjectFile_AlarmActiveSwitch pioleftbutton (
+		.clk        (clk_clk),                                       //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
+		.address    (mm_interconnect_0_pioleftbutton_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_pioleftbutton_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_pioleftbutton_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_pioleftbutton_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_pioleftbutton_s1_readdata),   //                    .readdata
+		.in_port    (left_button_export),                            // external_connection.export
+		.irq        (irq_mapper_receiver8_irq)                       //                 irq.irq
+	);
+
+	ProjectFile_AlarmActiveSwitch piorightbutton (
+		.clk        (clk_clk),                                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                //               reset.reset_n
+		.address    (mm_interconnect_0_piorightbutton_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_piorightbutton_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_piorightbutton_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_piorightbutton_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_piorightbutton_s1_readdata),   //                    .readdata
+		.in_port    (right_button_export),                            // external_connection.export
+		.irq        (irq_mapper_receiver2_irq)                        //                 irq.irq
+	);
+
+	ProjectFile_AlarmActiveSwitch pioupbutton (
+		.clk        (clk_clk),                                     //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),             //               reset.reset_n
+		.address    (mm_interconnect_0_pioupbutton_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_pioupbutton_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_pioupbutton_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_pioupbutton_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_pioupbutton_s1_readdata),   //                    .readdata
+		.in_port    (up_button_export),                            // external_connection.export
+		.irq        (irq_mapper_receiver3_irq)                     //                 irq.irq
 	);
 
 	ProjectFile_RAM ram (
@@ -278,6 +404,18 @@ module ProjectFile (
 		.out_port   (segment6_export)                        // external_connection.export
 	);
 
+	ProjectFile_AlarmActiveSwitch saveswitch (
+		.clk        (clk_clk),                                    //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address    (mm_interconnect_0_saveswitch_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_saveswitch_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_saveswitch_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_saveswitch_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_saveswitch_s1_readdata),   //                    .readdata
+		.in_port    (save_switch_export),                         // external_connection.export
+		.irq        (irq_mapper_receiver11_irq)                   //                 irq.irq
+	);
+
 	ProjectFile_Timer timer (
 		.clk        (clk_clk),                               //   clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),       // reset.reset_n
@@ -287,6 +425,18 @@ module ProjectFile (
 		.chipselect (mm_interconnect_0_timer_s1_chipselect), //      .chipselect
 		.write_n    (~mm_interconnect_0_timer_s1_write),     //      .write_n
 		.irq        (irq_mapper_receiver1_irq)               //   irq.irq
+	);
+
+	ProjectFile_AlarmActiveSwitch timeractiveswitch (
+		.clk        (clk_clk),                                           //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                   //               reset.reset_n
+		.address    (mm_interconnect_0_timeractiveswitch_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_timeractiveswitch_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_timeractiveswitch_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_timeractiveswitch_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_timeractiveswitch_s1_readdata),   //                    .readdata
+		.in_port    (timer_active_switch_export),                        // external_connection.export
+		.irq        (irq_mapper_receiver6_irq)                           //                 irq.irq
 	);
 
 	ProjectFile_UART uart (
@@ -301,115 +451,162 @@ module ProjectFile (
 		.readdata      (mm_interconnect_0_uart_s1_readdata),      //                    .readdata
 		.rxd           (uart_rxd),                                // external_connection.export
 		.txd           (uart_txd),                                //                    .export
-		.irq           (irq_mapper_receiver4_irq)                 //                 irq.irq
+		.irq           (irq_mapper_receiver12_irq)                //                 irq.irq
 	);
 
 	ProjectFile_mm_interconnect_0 mm_interconnect_0 (
-		.CLK_clk_clk                                 (clk_clk),                                              //                               CLK_clk.clk
-		.CPU_reset_reset_bridge_in_reset_reset       (rst_controller_reset_out_reset),                       //       CPU_reset_reset_bridge_in_reset.reset
-		.PioButtom_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                   // PioButtom_reset_reset_bridge_in_reset.reset
-		.CPU_data_master_address                     (cpu_data_master_address),                              //                       CPU_data_master.address
-		.CPU_data_master_waitrequest                 (cpu_data_master_waitrequest),                          //                                      .waitrequest
-		.CPU_data_master_byteenable                  (cpu_data_master_byteenable),                           //                                      .byteenable
-		.CPU_data_master_read                        (cpu_data_master_read),                                 //                                      .read
-		.CPU_data_master_readdata                    (cpu_data_master_readdata),                             //                                      .readdata
-		.CPU_data_master_write                       (cpu_data_master_write),                                //                                      .write
-		.CPU_data_master_writedata                   (cpu_data_master_writedata),                            //                                      .writedata
-		.CPU_data_master_debugaccess                 (cpu_data_master_debugaccess),                          //                                      .debugaccess
-		.CPU_instruction_master_address              (cpu_instruction_master_address),                       //                CPU_instruction_master.address
-		.CPU_instruction_master_waitrequest          (cpu_instruction_master_waitrequest),                   //                                      .waitrequest
-		.CPU_instruction_master_read                 (cpu_instruction_master_read),                          //                                      .read
-		.CPU_instruction_master_readdata             (cpu_instruction_master_readdata),                      //                                      .readdata
-		.ChangeSwitch_s1_address                     (mm_interconnect_0_changeswitch_s1_address),            //                       ChangeSwitch_s1.address
-		.ChangeSwitch_s1_write                       (mm_interconnect_0_changeswitch_s1_write),              //                                      .write
-		.ChangeSwitch_s1_readdata                    (mm_interconnect_0_changeswitch_s1_readdata),           //                                      .readdata
-		.ChangeSwitch_s1_writedata                   (mm_interconnect_0_changeswitch_s1_writedata),          //                                      .writedata
-		.ChangeSwitch_s1_chipselect                  (mm_interconnect_0_changeswitch_s1_chipselect),         //                                      .chipselect
-		.CPU_debug_mem_slave_address                 (mm_interconnect_0_cpu_debug_mem_slave_address),        //                   CPU_debug_mem_slave.address
-		.CPU_debug_mem_slave_write                   (mm_interconnect_0_cpu_debug_mem_slave_write),          //                                      .write
-		.CPU_debug_mem_slave_read                    (mm_interconnect_0_cpu_debug_mem_slave_read),           //                                      .read
-		.CPU_debug_mem_slave_readdata                (mm_interconnect_0_cpu_debug_mem_slave_readdata),       //                                      .readdata
-		.CPU_debug_mem_slave_writedata               (mm_interconnect_0_cpu_debug_mem_slave_writedata),      //                                      .writedata
-		.CPU_debug_mem_slave_byteenable              (mm_interconnect_0_cpu_debug_mem_slave_byteenable),     //                                      .byteenable
-		.CPU_debug_mem_slave_waitrequest             (mm_interconnect_0_cpu_debug_mem_slave_waitrequest),    //                                      .waitrequest
-		.CPU_debug_mem_slave_debugaccess             (mm_interconnect_0_cpu_debug_mem_slave_debugaccess),    //                                      .debugaccess
-		.JTAG_avalon_jtag_slave_address              (mm_interconnect_0_jtag_avalon_jtag_slave_address),     //                JTAG_avalon_jtag_slave.address
-		.JTAG_avalon_jtag_slave_write                (mm_interconnect_0_jtag_avalon_jtag_slave_write),       //                                      .write
-		.JTAG_avalon_jtag_slave_read                 (mm_interconnect_0_jtag_avalon_jtag_slave_read),        //                                      .read
-		.JTAG_avalon_jtag_slave_readdata             (mm_interconnect_0_jtag_avalon_jtag_slave_readdata),    //                                      .readdata
-		.JTAG_avalon_jtag_slave_writedata            (mm_interconnect_0_jtag_avalon_jtag_slave_writedata),   //                                      .writedata
-		.JTAG_avalon_jtag_slave_waitrequest          (mm_interconnect_0_jtag_avalon_jtag_slave_waitrequest), //                                      .waitrequest
-		.JTAG_avalon_jtag_slave_chipselect           (mm_interconnect_0_jtag_avalon_jtag_slave_chipselect),  //                                      .chipselect
-		.LEDS_s1_address                             (mm_interconnect_0_leds_s1_address),                    //                               LEDS_s1.address
-		.LEDS_s1_write                               (mm_interconnect_0_leds_s1_write),                      //                                      .write
-		.LEDS_s1_readdata                            (mm_interconnect_0_leds_s1_readdata),                   //                                      .readdata
-		.LEDS_s1_writedata                           (mm_interconnect_0_leds_s1_writedata),                  //                                      .writedata
-		.LEDS_s1_chipselect                          (mm_interconnect_0_leds_s1_chipselect),                 //                                      .chipselect
-		.PioButtom_s1_address                        (mm_interconnect_0_piobuttom_s1_address),               //                          PioButtom_s1.address
-		.PioButtom_s1_write                          (mm_interconnect_0_piobuttom_s1_write),                 //                                      .write
-		.PioButtom_s1_readdata                       (mm_interconnect_0_piobuttom_s1_readdata),              //                                      .readdata
-		.PioButtom_s1_writedata                      (mm_interconnect_0_piobuttom_s1_writedata),             //                                      .writedata
-		.PioButtom_s1_chipselect                     (mm_interconnect_0_piobuttom_s1_chipselect),            //                                      .chipselect
-		.RAM_s1_address                              (mm_interconnect_0_ram_s1_address),                     //                                RAM_s1.address
-		.RAM_s1_write                                (mm_interconnect_0_ram_s1_write),                       //                                      .write
-		.RAM_s1_readdata                             (mm_interconnect_0_ram_s1_readdata),                    //                                      .readdata
-		.RAM_s1_writedata                            (mm_interconnect_0_ram_s1_writedata),                   //                                      .writedata
-		.RAM_s1_byteenable                           (mm_interconnect_0_ram_s1_byteenable),                  //                                      .byteenable
-		.RAM_s1_chipselect                           (mm_interconnect_0_ram_s1_chipselect),                  //                                      .chipselect
-		.RAM_s1_clken                                (mm_interconnect_0_ram_s1_clken),                       //                                      .clken
-		.SEG_1_s1_address                            (mm_interconnect_0_seg_1_s1_address),                   //                              SEG_1_s1.address
-		.SEG_1_s1_write                              (mm_interconnect_0_seg_1_s1_write),                     //                                      .write
-		.SEG_1_s1_readdata                           (mm_interconnect_0_seg_1_s1_readdata),                  //                                      .readdata
-		.SEG_1_s1_writedata                          (mm_interconnect_0_seg_1_s1_writedata),                 //                                      .writedata
-		.SEG_1_s1_chipselect                         (mm_interconnect_0_seg_1_s1_chipselect),                //                                      .chipselect
-		.SEG_2_s1_address                            (mm_interconnect_0_seg_2_s1_address),                   //                              SEG_2_s1.address
-		.SEG_2_s1_write                              (mm_interconnect_0_seg_2_s1_write),                     //                                      .write
-		.SEG_2_s1_readdata                           (mm_interconnect_0_seg_2_s1_readdata),                  //                                      .readdata
-		.SEG_2_s1_writedata                          (mm_interconnect_0_seg_2_s1_writedata),                 //                                      .writedata
-		.SEG_2_s1_chipselect                         (mm_interconnect_0_seg_2_s1_chipselect),                //                                      .chipselect
-		.SEG_3_s1_address                            (mm_interconnect_0_seg_3_s1_address),                   //                              SEG_3_s1.address
-		.SEG_3_s1_write                              (mm_interconnect_0_seg_3_s1_write),                     //                                      .write
-		.SEG_3_s1_readdata                           (mm_interconnect_0_seg_3_s1_readdata),                  //                                      .readdata
-		.SEG_3_s1_writedata                          (mm_interconnect_0_seg_3_s1_writedata),                 //                                      .writedata
-		.SEG_3_s1_chipselect                         (mm_interconnect_0_seg_3_s1_chipselect),                //                                      .chipselect
-		.SEG_4_s1_address                            (mm_interconnect_0_seg_4_s1_address),                   //                              SEG_4_s1.address
-		.SEG_4_s1_write                              (mm_interconnect_0_seg_4_s1_write),                     //                                      .write
-		.SEG_4_s1_readdata                           (mm_interconnect_0_seg_4_s1_readdata),                  //                                      .readdata
-		.SEG_4_s1_writedata                          (mm_interconnect_0_seg_4_s1_writedata),                 //                                      .writedata
-		.SEG_4_s1_chipselect                         (mm_interconnect_0_seg_4_s1_chipselect),                //                                      .chipselect
-		.SEG_5_s1_address                            (mm_interconnect_0_seg_5_s1_address),                   //                              SEG_5_s1.address
-		.SEG_5_s1_write                              (mm_interconnect_0_seg_5_s1_write),                     //                                      .write
-		.SEG_5_s1_readdata                           (mm_interconnect_0_seg_5_s1_readdata),                  //                                      .readdata
-		.SEG_5_s1_writedata                          (mm_interconnect_0_seg_5_s1_writedata),                 //                                      .writedata
-		.SEG_5_s1_chipselect                         (mm_interconnect_0_seg_5_s1_chipselect),                //                                      .chipselect
-		.SEG_6_s1_address                            (mm_interconnect_0_seg_6_s1_address),                   //                              SEG_6_s1.address
-		.SEG_6_s1_write                              (mm_interconnect_0_seg_6_s1_write),                     //                                      .write
-		.SEG_6_s1_readdata                           (mm_interconnect_0_seg_6_s1_readdata),                  //                                      .readdata
-		.SEG_6_s1_writedata                          (mm_interconnect_0_seg_6_s1_writedata),                 //                                      .writedata
-		.SEG_6_s1_chipselect                         (mm_interconnect_0_seg_6_s1_chipselect),                //                                      .chipselect
-		.Timer_s1_address                            (mm_interconnect_0_timer_s1_address),                   //                              Timer_s1.address
-		.Timer_s1_write                              (mm_interconnect_0_timer_s1_write),                     //                                      .write
-		.Timer_s1_readdata                           (mm_interconnect_0_timer_s1_readdata),                  //                                      .readdata
-		.Timer_s1_writedata                          (mm_interconnect_0_timer_s1_writedata),                 //                                      .writedata
-		.Timer_s1_chipselect                         (mm_interconnect_0_timer_s1_chipselect),                //                                      .chipselect
-		.UART_s1_address                             (mm_interconnect_0_uart_s1_address),                    //                               UART_s1.address
-		.UART_s1_write                               (mm_interconnect_0_uart_s1_write),                      //                                      .write
-		.UART_s1_read                                (mm_interconnect_0_uart_s1_read),                       //                                      .read
-		.UART_s1_readdata                            (mm_interconnect_0_uart_s1_readdata),                   //                                      .readdata
-		.UART_s1_writedata                           (mm_interconnect_0_uart_s1_writedata),                  //                                      .writedata
-		.UART_s1_begintransfer                       (mm_interconnect_0_uart_s1_begintransfer),              //                                      .begintransfer
-		.UART_s1_chipselect                          (mm_interconnect_0_uart_s1_chipselect)                  //                                      .chipselect
+		.CLK_clk_clk                           (clk_clk),                                              //                         CLK_clk.clk
+		.CPU_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                       // CPU_reset_reset_bridge_in_reset.reset
+		.CPU_data_master_address               (cpu_data_master_address),                              //                 CPU_data_master.address
+		.CPU_data_master_waitrequest           (cpu_data_master_waitrequest),                          //                                .waitrequest
+		.CPU_data_master_byteenable            (cpu_data_master_byteenable),                           //                                .byteenable
+		.CPU_data_master_read                  (cpu_data_master_read),                                 //                                .read
+		.CPU_data_master_readdata              (cpu_data_master_readdata),                             //                                .readdata
+		.CPU_data_master_write                 (cpu_data_master_write),                                //                                .write
+		.CPU_data_master_writedata             (cpu_data_master_writedata),                            //                                .writedata
+		.CPU_data_master_debugaccess           (cpu_data_master_debugaccess),                          //                                .debugaccess
+		.CPU_instruction_master_address        (cpu_instruction_master_address),                       //          CPU_instruction_master.address
+		.CPU_instruction_master_waitrequest    (cpu_instruction_master_waitrequest),                   //                                .waitrequest
+		.CPU_instruction_master_read           (cpu_instruction_master_read),                          //                                .read
+		.CPU_instruction_master_readdata       (cpu_instruction_master_readdata),                      //                                .readdata
+		.AlarmActiveSwitch_s1_address          (mm_interconnect_0_alarmactiveswitch_s1_address),       //            AlarmActiveSwitch_s1.address
+		.AlarmActiveSwitch_s1_write            (mm_interconnect_0_alarmactiveswitch_s1_write),         //                                .write
+		.AlarmActiveSwitch_s1_readdata         (mm_interconnect_0_alarmactiveswitch_s1_readdata),      //                                .readdata
+		.AlarmActiveSwitch_s1_writedata        (mm_interconnect_0_alarmactiveswitch_s1_writedata),     //                                .writedata
+		.AlarmActiveSwitch_s1_chipselect       (mm_interconnect_0_alarmactiveswitch_s1_chipselect),    //                                .chipselect
+		.CPU_debug_mem_slave_address           (mm_interconnect_0_cpu_debug_mem_slave_address),        //             CPU_debug_mem_slave.address
+		.CPU_debug_mem_slave_write             (mm_interconnect_0_cpu_debug_mem_slave_write),          //                                .write
+		.CPU_debug_mem_slave_read              (mm_interconnect_0_cpu_debug_mem_slave_read),           //                                .read
+		.CPU_debug_mem_slave_readdata          (mm_interconnect_0_cpu_debug_mem_slave_readdata),       //                                .readdata
+		.CPU_debug_mem_slave_writedata         (mm_interconnect_0_cpu_debug_mem_slave_writedata),      //                                .writedata
+		.CPU_debug_mem_slave_byteenable        (mm_interconnect_0_cpu_debug_mem_slave_byteenable),     //                                .byteenable
+		.CPU_debug_mem_slave_waitrequest       (mm_interconnect_0_cpu_debug_mem_slave_waitrequest),    //                                .waitrequest
+		.CPU_debug_mem_slave_debugaccess       (mm_interconnect_0_cpu_debug_mem_slave_debugaccess),    //                                .debugaccess
+		.EditAlarmSwitch_s1_address            (mm_interconnect_0_editalarmswitch_s1_address),         //              EditAlarmSwitch_s1.address
+		.EditAlarmSwitch_s1_write              (mm_interconnect_0_editalarmswitch_s1_write),           //                                .write
+		.EditAlarmSwitch_s1_readdata           (mm_interconnect_0_editalarmswitch_s1_readdata),        //                                .readdata
+		.EditAlarmSwitch_s1_writedata          (mm_interconnect_0_editalarmswitch_s1_writedata),       //                                .writedata
+		.EditAlarmSwitch_s1_chipselect         (mm_interconnect_0_editalarmswitch_s1_chipselect),      //                                .chipselect
+		.EditTimerSwitch_s1_address            (mm_interconnect_0_edittimerswitch_s1_address),         //              EditTimerSwitch_s1.address
+		.EditTimerSwitch_s1_write              (mm_interconnect_0_edittimerswitch_s1_write),           //                                .write
+		.EditTimerSwitch_s1_readdata           (mm_interconnect_0_edittimerswitch_s1_readdata),        //                                .readdata
+		.EditTimerSwitch_s1_writedata          (mm_interconnect_0_edittimerswitch_s1_writedata),       //                                .writedata
+		.EditTimerSwitch_s1_chipselect         (mm_interconnect_0_edittimerswitch_s1_chipselect),      //                                .chipselect
+		.EditTimeSwitch_s1_address             (mm_interconnect_0_edittimeswitch_s1_address),          //               EditTimeSwitch_s1.address
+		.EditTimeSwitch_s1_write               (mm_interconnect_0_edittimeswitch_s1_write),            //                                .write
+		.EditTimeSwitch_s1_readdata            (mm_interconnect_0_edittimeswitch_s1_readdata),         //                                .readdata
+		.EditTimeSwitch_s1_writedata           (mm_interconnect_0_edittimeswitch_s1_writedata),        //                                .writedata
+		.EditTimeSwitch_s1_chipselect          (mm_interconnect_0_edittimeswitch_s1_chipselect),       //                                .chipselect
+		.JTAG_avalon_jtag_slave_address        (mm_interconnect_0_jtag_avalon_jtag_slave_address),     //          JTAG_avalon_jtag_slave.address
+		.JTAG_avalon_jtag_slave_write          (mm_interconnect_0_jtag_avalon_jtag_slave_write),       //                                .write
+		.JTAG_avalon_jtag_slave_read           (mm_interconnect_0_jtag_avalon_jtag_slave_read),        //                                .read
+		.JTAG_avalon_jtag_slave_readdata       (mm_interconnect_0_jtag_avalon_jtag_slave_readdata),    //                                .readdata
+		.JTAG_avalon_jtag_slave_writedata      (mm_interconnect_0_jtag_avalon_jtag_slave_writedata),   //                                .writedata
+		.JTAG_avalon_jtag_slave_waitrequest    (mm_interconnect_0_jtag_avalon_jtag_slave_waitrequest), //                                .waitrequest
+		.JTAG_avalon_jtag_slave_chipselect     (mm_interconnect_0_jtag_avalon_jtag_slave_chipselect),  //                                .chipselect
+		.LEDS_s1_address                       (mm_interconnect_0_leds_s1_address),                    //                         LEDS_s1.address
+		.LEDS_s1_write                         (mm_interconnect_0_leds_s1_write),                      //                                .write
+		.LEDS_s1_readdata                      (mm_interconnect_0_leds_s1_readdata),                   //                                .readdata
+		.LEDS_s1_writedata                     (mm_interconnect_0_leds_s1_writedata),                  //                                .writedata
+		.LEDS_s1_chipselect                    (mm_interconnect_0_leds_s1_chipselect),                 //                                .chipselect
+		.PioDownButton_s1_address              (mm_interconnect_0_piodownbutton_s1_address),           //                PioDownButton_s1.address
+		.PioDownButton_s1_write                (mm_interconnect_0_piodownbutton_s1_write),             //                                .write
+		.PioDownButton_s1_readdata             (mm_interconnect_0_piodownbutton_s1_readdata),          //                                .readdata
+		.PioDownButton_s1_writedata            (mm_interconnect_0_piodownbutton_s1_writedata),         //                                .writedata
+		.PioDownButton_s1_chipselect           (mm_interconnect_0_piodownbutton_s1_chipselect),        //                                .chipselect
+		.PioLeftButton_s1_address              (mm_interconnect_0_pioleftbutton_s1_address),           //                PioLeftButton_s1.address
+		.PioLeftButton_s1_write                (mm_interconnect_0_pioleftbutton_s1_write),             //                                .write
+		.PioLeftButton_s1_readdata             (mm_interconnect_0_pioleftbutton_s1_readdata),          //                                .readdata
+		.PioLeftButton_s1_writedata            (mm_interconnect_0_pioleftbutton_s1_writedata),         //                                .writedata
+		.PioLeftButton_s1_chipselect           (mm_interconnect_0_pioleftbutton_s1_chipselect),        //                                .chipselect
+		.PioRightButton_s1_address             (mm_interconnect_0_piorightbutton_s1_address),          //               PioRightButton_s1.address
+		.PioRightButton_s1_write               (mm_interconnect_0_piorightbutton_s1_write),            //                                .write
+		.PioRightButton_s1_readdata            (mm_interconnect_0_piorightbutton_s1_readdata),         //                                .readdata
+		.PioRightButton_s1_writedata           (mm_interconnect_0_piorightbutton_s1_writedata),        //                                .writedata
+		.PioRightButton_s1_chipselect          (mm_interconnect_0_piorightbutton_s1_chipselect),       //                                .chipselect
+		.PioUpButton_s1_address                (mm_interconnect_0_pioupbutton_s1_address),             //                  PioUpButton_s1.address
+		.PioUpButton_s1_write                  (mm_interconnect_0_pioupbutton_s1_write),               //                                .write
+		.PioUpButton_s1_readdata               (mm_interconnect_0_pioupbutton_s1_readdata),            //                                .readdata
+		.PioUpButton_s1_writedata              (mm_interconnect_0_pioupbutton_s1_writedata),           //                                .writedata
+		.PioUpButton_s1_chipselect             (mm_interconnect_0_pioupbutton_s1_chipselect),          //                                .chipselect
+		.RAM_s1_address                        (mm_interconnect_0_ram_s1_address),                     //                          RAM_s1.address
+		.RAM_s1_write                          (mm_interconnect_0_ram_s1_write),                       //                                .write
+		.RAM_s1_readdata                       (mm_interconnect_0_ram_s1_readdata),                    //                                .readdata
+		.RAM_s1_writedata                      (mm_interconnect_0_ram_s1_writedata),                   //                                .writedata
+		.RAM_s1_byteenable                     (mm_interconnect_0_ram_s1_byteenable),                  //                                .byteenable
+		.RAM_s1_chipselect                     (mm_interconnect_0_ram_s1_chipselect),                  //                                .chipselect
+		.RAM_s1_clken                          (mm_interconnect_0_ram_s1_clken),                       //                                .clken
+		.SaveSwitch_s1_address                 (mm_interconnect_0_saveswitch_s1_address),              //                   SaveSwitch_s1.address
+		.SaveSwitch_s1_write                   (mm_interconnect_0_saveswitch_s1_write),                //                                .write
+		.SaveSwitch_s1_readdata                (mm_interconnect_0_saveswitch_s1_readdata),             //                                .readdata
+		.SaveSwitch_s1_writedata               (mm_interconnect_0_saveswitch_s1_writedata),            //                                .writedata
+		.SaveSwitch_s1_chipselect              (mm_interconnect_0_saveswitch_s1_chipselect),           //                                .chipselect
+		.SEG_1_s1_address                      (mm_interconnect_0_seg_1_s1_address),                   //                        SEG_1_s1.address
+		.SEG_1_s1_write                        (mm_interconnect_0_seg_1_s1_write),                     //                                .write
+		.SEG_1_s1_readdata                     (mm_interconnect_0_seg_1_s1_readdata),                  //                                .readdata
+		.SEG_1_s1_writedata                    (mm_interconnect_0_seg_1_s1_writedata),                 //                                .writedata
+		.SEG_1_s1_chipselect                   (mm_interconnect_0_seg_1_s1_chipselect),                //                                .chipselect
+		.SEG_2_s1_address                      (mm_interconnect_0_seg_2_s1_address),                   //                        SEG_2_s1.address
+		.SEG_2_s1_write                        (mm_interconnect_0_seg_2_s1_write),                     //                                .write
+		.SEG_2_s1_readdata                     (mm_interconnect_0_seg_2_s1_readdata),                  //                                .readdata
+		.SEG_2_s1_writedata                    (mm_interconnect_0_seg_2_s1_writedata),                 //                                .writedata
+		.SEG_2_s1_chipselect                   (mm_interconnect_0_seg_2_s1_chipselect),                //                                .chipselect
+		.SEG_3_s1_address                      (mm_interconnect_0_seg_3_s1_address),                   //                        SEG_3_s1.address
+		.SEG_3_s1_write                        (mm_interconnect_0_seg_3_s1_write),                     //                                .write
+		.SEG_3_s1_readdata                     (mm_interconnect_0_seg_3_s1_readdata),                  //                                .readdata
+		.SEG_3_s1_writedata                    (mm_interconnect_0_seg_3_s1_writedata),                 //                                .writedata
+		.SEG_3_s1_chipselect                   (mm_interconnect_0_seg_3_s1_chipselect),                //                                .chipselect
+		.SEG_4_s1_address                      (mm_interconnect_0_seg_4_s1_address),                   //                        SEG_4_s1.address
+		.SEG_4_s1_write                        (mm_interconnect_0_seg_4_s1_write),                     //                                .write
+		.SEG_4_s1_readdata                     (mm_interconnect_0_seg_4_s1_readdata),                  //                                .readdata
+		.SEG_4_s1_writedata                    (mm_interconnect_0_seg_4_s1_writedata),                 //                                .writedata
+		.SEG_4_s1_chipselect                   (mm_interconnect_0_seg_4_s1_chipselect),                //                                .chipselect
+		.SEG_5_s1_address                      (mm_interconnect_0_seg_5_s1_address),                   //                        SEG_5_s1.address
+		.SEG_5_s1_write                        (mm_interconnect_0_seg_5_s1_write),                     //                                .write
+		.SEG_5_s1_readdata                     (mm_interconnect_0_seg_5_s1_readdata),                  //                                .readdata
+		.SEG_5_s1_writedata                    (mm_interconnect_0_seg_5_s1_writedata),                 //                                .writedata
+		.SEG_5_s1_chipselect                   (mm_interconnect_0_seg_5_s1_chipselect),                //                                .chipselect
+		.SEG_6_s1_address                      (mm_interconnect_0_seg_6_s1_address),                   //                        SEG_6_s1.address
+		.SEG_6_s1_write                        (mm_interconnect_0_seg_6_s1_write),                     //                                .write
+		.SEG_6_s1_readdata                     (mm_interconnect_0_seg_6_s1_readdata),                  //                                .readdata
+		.SEG_6_s1_writedata                    (mm_interconnect_0_seg_6_s1_writedata),                 //                                .writedata
+		.SEG_6_s1_chipselect                   (mm_interconnect_0_seg_6_s1_chipselect),                //                                .chipselect
+		.Timer_s1_address                      (mm_interconnect_0_timer_s1_address),                   //                        Timer_s1.address
+		.Timer_s1_write                        (mm_interconnect_0_timer_s1_write),                     //                                .write
+		.Timer_s1_readdata                     (mm_interconnect_0_timer_s1_readdata),                  //                                .readdata
+		.Timer_s1_writedata                    (mm_interconnect_0_timer_s1_writedata),                 //                                .writedata
+		.Timer_s1_chipselect                   (mm_interconnect_0_timer_s1_chipselect),                //                                .chipselect
+		.TimerActiveSwitch_s1_address          (mm_interconnect_0_timeractiveswitch_s1_address),       //            TimerActiveSwitch_s1.address
+		.TimerActiveSwitch_s1_write            (mm_interconnect_0_timeractiveswitch_s1_write),         //                                .write
+		.TimerActiveSwitch_s1_readdata         (mm_interconnect_0_timeractiveswitch_s1_readdata),      //                                .readdata
+		.TimerActiveSwitch_s1_writedata        (mm_interconnect_0_timeractiveswitch_s1_writedata),     //                                .writedata
+		.TimerActiveSwitch_s1_chipselect       (mm_interconnect_0_timeractiveswitch_s1_chipselect),    //                                .chipselect
+		.UART_s1_address                       (mm_interconnect_0_uart_s1_address),                    //                         UART_s1.address
+		.UART_s1_write                         (mm_interconnect_0_uart_s1_write),                      //                                .write
+		.UART_s1_read                          (mm_interconnect_0_uart_s1_read),                       //                                .read
+		.UART_s1_readdata                      (mm_interconnect_0_uart_s1_readdata),                   //                                .readdata
+		.UART_s1_writedata                     (mm_interconnect_0_uart_s1_writedata),                  //                                .writedata
+		.UART_s1_begintransfer                 (mm_interconnect_0_uart_s1_begintransfer),              //                                .begintransfer
+		.UART_s1_chipselect                    (mm_interconnect_0_uart_s1_chipselect)                  //                                .chipselect
 	);
 
 	ProjectFile_irq_mapper irq_mapper (
-		.clk           (clk_clk),                        //       clk.clk
-		.reset         (rst_controller_reset_out_reset), // clk_reset.reset
-		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
-		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
-		.receiver2_irq (irq_mapper_receiver2_irq),       // receiver2.irq
-		.receiver3_irq (irq_mapper_receiver3_irq),       // receiver3.irq
-		.receiver4_irq (irq_mapper_receiver4_irq),       // receiver4.irq
-		.sender_irq    (cpu_irq_irq)                     //    sender.irq
+		.clk            (clk_clk),                        //        clk.clk
+		.reset          (rst_controller_reset_out_reset), //  clk_reset.reset
+		.receiver0_irq  (irq_mapper_receiver0_irq),       //  receiver0.irq
+		.receiver1_irq  (irq_mapper_receiver1_irq),       //  receiver1.irq
+		.receiver2_irq  (irq_mapper_receiver2_irq),       //  receiver2.irq
+		.receiver3_irq  (irq_mapper_receiver3_irq),       //  receiver3.irq
+		.receiver4_irq  (irq_mapper_receiver4_irq),       //  receiver4.irq
+		.receiver5_irq  (irq_mapper_receiver5_irq),       //  receiver5.irq
+		.receiver6_irq  (irq_mapper_receiver6_irq),       //  receiver6.irq
+		.receiver7_irq  (irq_mapper_receiver7_irq),       //  receiver7.irq
+		.receiver8_irq  (irq_mapper_receiver8_irq),       //  receiver8.irq
+		.receiver9_irq  (irq_mapper_receiver9_irq),       //  receiver9.irq
+		.receiver10_irq (irq_mapper_receiver10_irq),      // receiver10.irq
+		.receiver11_irq (irq_mapper_receiver11_irq),      // receiver11.irq
+		.receiver12_irq (irq_mapper_receiver12_irq),      // receiver12.irq
+		.sender_irq     (cpu_irq_irq)                     //     sender.irq
 	);
 
 	altera_reset_controller #(
@@ -444,69 +641,6 @@ module ProjectFile (
 		.reset_req      (rst_controller_reset_out_reset_req), //          .reset_req
 		.reset_req_in0  (1'b0),                               // (terminated)
 		.reset_in1      (1'b0),                               // (terminated)
-		.reset_req_in1  (1'b0),                               // (terminated)
-		.reset_in2      (1'b0),                               // (terminated)
-		.reset_req_in2  (1'b0),                               // (terminated)
-		.reset_in3      (1'b0),                               // (terminated)
-		.reset_req_in3  (1'b0),                               // (terminated)
-		.reset_in4      (1'b0),                               // (terminated)
-		.reset_req_in4  (1'b0),                               // (terminated)
-		.reset_in5      (1'b0),                               // (terminated)
-		.reset_req_in5  (1'b0),                               // (terminated)
-		.reset_in6      (1'b0),                               // (terminated)
-		.reset_req_in6  (1'b0),                               // (terminated)
-		.reset_in7      (1'b0),                               // (terminated)
-		.reset_req_in7  (1'b0),                               // (terminated)
-		.reset_in8      (1'b0),                               // (terminated)
-		.reset_req_in8  (1'b0),                               // (terminated)
-		.reset_in9      (1'b0),                               // (terminated)
-		.reset_req_in9  (1'b0),                               // (terminated)
-		.reset_in10     (1'b0),                               // (terminated)
-		.reset_req_in10 (1'b0),                               // (terminated)
-		.reset_in11     (1'b0),                               // (terminated)
-		.reset_req_in11 (1'b0),                               // (terminated)
-		.reset_in12     (1'b0),                               // (terminated)
-		.reset_req_in12 (1'b0),                               // (terminated)
-		.reset_in13     (1'b0),                               // (terminated)
-		.reset_req_in13 (1'b0),                               // (terminated)
-		.reset_in14     (1'b0),                               // (terminated)
-		.reset_req_in14 (1'b0),                               // (terminated)
-		.reset_in15     (1'b0),                               // (terminated)
-		.reset_req_in15 (1'b0)                                // (terminated)
-	);
-
-	altera_reset_controller #(
-		.NUM_RESET_INPUTS          (2),
-		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
-		.SYNC_DEPTH                (2),
-		.RESET_REQUEST_PRESENT     (0),
-		.RESET_REQ_WAIT_TIME       (1),
-		.MIN_RST_ASSERTION_TIME    (3),
-		.RESET_REQ_EARLY_DSRT_TIME (1),
-		.USE_RESET_REQUEST_IN0     (0),
-		.USE_RESET_REQUEST_IN1     (0),
-		.USE_RESET_REQUEST_IN2     (0),
-		.USE_RESET_REQUEST_IN3     (0),
-		.USE_RESET_REQUEST_IN4     (0),
-		.USE_RESET_REQUEST_IN5     (0),
-		.USE_RESET_REQUEST_IN6     (0),
-		.USE_RESET_REQUEST_IN7     (0),
-		.USE_RESET_REQUEST_IN8     (0),
-		.USE_RESET_REQUEST_IN9     (0),
-		.USE_RESET_REQUEST_IN10    (0),
-		.USE_RESET_REQUEST_IN11    (0),
-		.USE_RESET_REQUEST_IN12    (0),
-		.USE_RESET_REQUEST_IN13    (0),
-		.USE_RESET_REQUEST_IN14    (0),
-		.USE_RESET_REQUEST_IN15    (0),
-		.ADAPT_RESET_REQUEST       (0)
-	) rst_controller_001 (
-		.reset_in0      (~reset_reset_n),                     // reset_in0.reset
-		.reset_in1      (cpu_debug_reset_request_reset),      // reset_in1.reset
-		.clk            (clk_clk),                            //       clk.clk
-		.reset_out      (rst_controller_001_reset_out_reset), // reset_out.reset
-		.reset_req      (),                                   // (terminated)
-		.reset_req_in0  (1'b0),                               // (terminated)
 		.reset_req_in1  (1'b0),                               // (terminated)
 		.reset_in2      (1'b0),                               // (terminated)
 		.reset_req_in2  (1'b0),                               // (terminated)

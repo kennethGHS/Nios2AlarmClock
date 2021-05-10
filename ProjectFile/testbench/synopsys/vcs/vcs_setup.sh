@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 20.1 720 win32 2021.05.04.19:50:28
+# ACDS 20.1 720 win32 2021.05.09.22:41:07
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 20.1 720 win32 2021.05.04.19:50:28
+# ACDS 20.1 720 win32 2021.05.09.22:41:07
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="ProjectFile_tb"
@@ -139,6 +139,7 @@ if [ $SKIP_FILE_COPY -eq 0 ]; then
   cp -f $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_rf_ram_b.dat ./
   cp -f $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_rf_ram_b.hex ./
   cp -f $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_rf_ram_b.mif ./
+  cp -f $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.hex ./
 fi
 
 vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS \
@@ -191,14 +192,13 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v \
-  $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_ChangeSwitch.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v \
-  $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0004.sv \
+  $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_AlarmActiveSwitch.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0002.sv \
-  $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm.sv \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv \
+  $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm.sv \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile.v \
   $QSYS_SIMDIR/ProjectFile_tb/simulation/ProjectFile_tb.v \
   -top $TOP_LEVEL_NAME

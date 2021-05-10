@@ -92,6 +92,7 @@ ELF := alarm-clock.elf
 C_SRCS += hello_world_small.c
 C_SRCS += segment_display.c
 C_SRCS += uart.c
+C_SRCS += clock.c
 CXX_SRCS :=
 ASM_SRCS :=
 

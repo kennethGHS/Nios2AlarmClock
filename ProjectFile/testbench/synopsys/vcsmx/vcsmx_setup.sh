@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 20.1 720 win32 2021.05.04.19:50:28
+# ACDS 20.1 720 win32 2021.05.09.22:41:07
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 20.1 720 win32 2021.05.04.19:50:28
+# ACDS 20.1 720 win32 2021.05.09.22:41:07
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="ProjectFile_tb"
@@ -177,14 +177,13 @@ mkdir -p ./libraries/SEG_1/
 mkdir -p ./libraries/RAM/
 mkdir -p ./libraries/LEDS/
 mkdir -p ./libraries/JTAG/
-mkdir -p ./libraries/ChangeSwitch/
 mkdir -p ./libraries/CPU/
-mkdir -p ./libraries/ProjectFile_inst_uart_bfm/
+mkdir -p ./libraries/AlarmActiveSwitch/
 mkdir -p ./libraries/ProjectFile_inst_segment1_bfm/
 mkdir -p ./libraries/ProjectFile_inst_reset_bfm/
 mkdir -p ./libraries/ProjectFile_inst_leds_bfm/
-mkdir -p ./libraries/ProjectFile_inst_hour_changer_bfm/
 mkdir -p ./libraries/ProjectFile_inst_clk_bfm/
+mkdir -p ./libraries/ProjectFile_inst_alarm_active_switch_bfm/
 mkdir -p ./libraries/ProjectFile_inst/
 mkdir -p ./libraries/altera_ver/
 mkdir -p ./libraries/lpm_ver/
@@ -207,6 +206,7 @@ if [ $SKIP_FILE_COPY -eq 0 ]; then
   cp -f $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_rf_ram_b.dat ./
   cp -f $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_rf_ram_b.hex ./
   cp -f $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_rf_ram_b.mif ./
+  cp -f $QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.hex ./
 fi
 
 # ----------------------------------------
@@ -229,56 +229,55 @@ fi
 # ----------------------------------------
 # compile design files in correct order
 if [ $SKIP_COM -eq 0 ]; then
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/verbosity_pkg.sv"                                                   -work altera_common_sv_packages            
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv" -work error_adapter_0                      
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_avalon_st_adapter.v"                  -work avalon_st_adapter                    
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_mux_001.sv"                       -work rsp_mux_001                          
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_mux_001                          
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_mux.sv"                           -work rsp_mux                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_mux                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_demux_003.sv"                     -work rsp_demux_003                        
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_demux.sv"                         -work rsp_demux                            
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_mux_003.sv"                       -work cmd_mux_003                          
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_mux_003                          
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_mux.sv"                           -work cmd_mux                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_mux                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_demux_001.sv"                     -work cmd_demux_001                        
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_demux.sv"                         -work cmd_demux                            
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router_005.sv"                        -work router_005                           
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router_002.sv"                        -work router_002                           
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router_001.sv"                        -work router_001                           
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router.sv"                            -work router                               
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                            -work JTAG_avalon_jtag_slave_agent_rsp_fifo
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                       -work JTAG_avalon_jtag_slave_agent         
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                                -work JTAG_avalon_jtag_slave_agent         
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_master_agent.sv"                                      -work CPU_data_master_agent                
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_slave_translator.sv"                                  -work JTAG_avalon_jtag_slave_translator    
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_master_translator.sv"                                 -work CPU_data_master_translator           
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu.v"                                              -work cpu                                  
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_sysclk.v"                           -work cpu                                  
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_tck.v"                              -work cpu                                  
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_wrapper.v"                          -work cpu                                  
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_test_bench.v"                                   -work cpu                                  
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_reset_controller.v"                                          -work rst_controller                       
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                       
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_irq_mapper.sv"                                          -work irq_mapper                           
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0.v"                                    -work mm_interconnect_0                    
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v"                                                 -work UART                                 
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v"                                                -work Timer                                
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_SEG_1.v"                                                -work SEG_1                                
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v"                                                  -work RAM                                  
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v"                                                 -work LEDS                                 
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v"                                                 -work JTAG                                 
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_ChangeSwitch.v"                                         -work ChangeSwitch                         
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v"                                                  -work CPU                                  
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0004.sv"                                         -work ProjectFile_inst_uart_bfm            
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv"                                         -work ProjectFile_inst_segment1_bfm        
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv"                                      -work ProjectFile_inst_reset_bfm           
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0002.sv"                                         -work ProjectFile_inst_leds_bfm            
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm.sv"                                              -work ProjectFile_inst_hour_changer_bfm    
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv"                                      -work ProjectFile_inst_clk_bfm             
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile.v"                                                      -work ProjectFile_inst                     
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/ProjectFile_tb.v"                                                                                                         
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/verbosity_pkg.sv"                                                   -work altera_common_sv_packages               
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv" -work error_adapter_0                         
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_avalon_st_adapter.v"                  -work avalon_st_adapter                       
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_mux_001.sv"                       -work rsp_mux_001                             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_mux_001                             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_mux.sv"                           -work rsp_mux                                 
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_mux                                 
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_demux_003.sv"                     -work rsp_demux_003                           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_rsp_demux.sv"                         -work rsp_demux                               
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_mux_003.sv"                       -work cmd_mux_003                             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_mux_003                             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_mux.sv"                           -work cmd_mux                                 
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_mux                                 
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_demux_001.sv"                     -work cmd_demux_001                           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_cmd_demux.sv"                         -work cmd_demux                               
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router_005.sv"                        -work router_005                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router_002.sv"                        -work router_002                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router_001.sv"                        -work router_001                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0_router.sv"                            -work router                                  
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                            -work JTAG_avalon_jtag_slave_agent_rsp_fifo   
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                       -work JTAG_avalon_jtag_slave_agent            
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                                -work JTAG_avalon_jtag_slave_agent            
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_master_agent.sv"                                      -work CPU_data_master_agent                   
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_slave_translator.sv"                                  -work JTAG_avalon_jtag_slave_translator       
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_merlin_master_translator.sv"                                 -work CPU_data_master_translator              
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu.v"                                              -work cpu                                     
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_sysclk.v"                           -work cpu                                     
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_tck.v"                              -work cpu                                     
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_debug_slave_wrapper.v"                          -work cpu                                     
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU_cpu_test_bench.v"                                   -work cpu                                     
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_reset_controller.v"                                          -work rst_controller                          
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                          
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_irq_mapper.sv"                                          -work irq_mapper                              
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_mm_interconnect_0.v"                                    -work mm_interconnect_0                       
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_UART.v"                                                 -work UART                                    
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_Timer.v"                                                -work Timer                                   
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_SEG_1.v"                                                -work SEG_1                                   
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_RAM.v"                                                  -work RAM                                     
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_LEDS.v"                                                 -work LEDS                                    
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_JTAG.v"                                                 -work JTAG                                    
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_CPU.v"                                                  -work CPU                                     
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile_AlarmActiveSwitch.v"                                    -work AlarmActiveSwitch                       
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0003.sv"                                         -work ProjectFile_inst_segment1_bfm           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_reset_source.sv"                                      -work ProjectFile_inst_reset_bfm              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm_0002.sv"                                         -work ProjectFile_inst_leds_bfm               
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_avalon_clock_source.sv"                                      -work ProjectFile_inst_clk_bfm                
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/altera_conduit_bfm.sv"                                              -work ProjectFile_inst_alarm_active_switch_bfm
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/submodules/ProjectFile.v"                                                      -work ProjectFile_inst                        
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/ProjectFile_tb/simulation/ProjectFile_tb.v"                                                                                                            
 fi
 
 # ----------------------------------------

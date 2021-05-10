@@ -45,5 +45,11 @@ void decrement_selected(_clock* clock);
 void print_clock(_clock* clock);
 bool times_are_equal(_time* time_1, _time* time_2);
 bool time_is_zero(_time* time_1);
+void reset_clock(_clock* clock);
+_time* get_display_time(_clock* clock);
+
+void print_time(_time* time);
+void print_two_digits(int num);
+void print_digit(int number);
 
 #endif /* CLOCK_H_ */

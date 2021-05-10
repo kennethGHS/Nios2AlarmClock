@@ -32,23 +32,16 @@ void add_pio_interrupt(int pio_base,alt_u32 ic_id,
 		 alt_isr_func isr,
 		 void *isr_context);
 
+volatile int * displays[] = {(int *) SEG_1_BASE, (int *) SEG_2_BASE, (int *) SEG_3_BASE, (int *) SEG_4_BASE, (int *) SEG_5_BASE, (int *) SEG_6_BASE};
 
 int main()
 {
-	printf("Hello from Nios II!\n");
-	volatile int * displays[] = {(int *) SEG_1_BASE, (int *) SEG_2_BASE, (int *) SEG_3_BASE, (int *) SEG_4_BASE, (int *) SEG_5_BASE, (int *) SEG_6_BASE};
 
-  // Set the 7-segment displays
-	two_digit_conversion(56, displays[5], displays[4]);
-	two_digit_conversion(78, displays[3], displays[2]);
-	two_digit_conversion(90, displays[1], displays[0]);
+	clock = clock_constructor();
+	reset_clock(clock);
+	update_displays();
 
 	init_interrupts();
-	_clock* clock = clock_constructor();
-	set_clock_state(clock, editing_alarm);
-	select_next_element(clock);
-	increment_selected(clock);
-	set_clock_state(clock, none);
 
 	/* Event loop never exits. */
 	while (1);
@@ -123,12 +116,20 @@ int main()
  }
 
 void handle_timer_interrupt(){
-	  alt_printf("%s\n","Executed interruption");
+	  alt_putstr("Executed interruption \n");
 	  IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0);
 	  //Do things
 	  tick(clock);
-
+	  update_displays();
 }
+
+void update_displays(){
+	_time* display_time = get_display_time(clock);
+	two_digit_conversion(display_time->hours, displays[5], displays[4]);
+	two_digit_conversion(display_time->minutes, displays[3], displays[2]);
+	two_digit_conversion(display_time->seconds, displays[1], displays[0]);
+}
+
 void handle_up_button_interrupt(void* context){
 	alt_putstr("Executed interruption up button \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;

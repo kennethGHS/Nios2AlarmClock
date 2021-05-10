@@ -136,7 +136,7 @@ void add_pio_interrupt(int pio_base, alt_u32 ic_id, alt_u32 irq,
 }
 
 void handle_timer_interrupt() {
-	alt_putstr("Executed interruption \n");
+//	alt_putstr("Executed interruption \n");
 	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0);
 	//Do things
 	tick(clock);
@@ -151,7 +151,7 @@ void update_displays() {
 }
 
 void handle_up_button_interrupt(void* context) {
-	alt_putstr("Executed interruption up button \n");
+//	alt_putstr("Executed interruption up button \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;
 	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(PIOUPBUTTON_BASE);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIOUPBUTTON_BASE, 0);
@@ -162,7 +162,7 @@ void handle_up_button_interrupt(void* context) {
 }
 
 void handle_down_button_interrupt(void* context) {
-	alt_putstr("Executed interruption down button \n");
+//	alt_putstr("Executed interruption down button \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;
 	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(PIODOWNBUTTON_BASE);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIODOWNBUTTON_BASE, 0);
@@ -172,7 +172,7 @@ void handle_down_button_interrupt(void* context) {
 }
 
 void handle_left_button_interrupt(void* context) {
-	alt_putstr("Executed interruption down button \n");
+//	alt_putstr("Executed interruption down button \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;
 	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(PIOLEFTBUTTON_BASE);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIOLEFTBUTTON_BASE, 0);
@@ -182,7 +182,7 @@ void handle_left_button_interrupt(void* context) {
 }
 
 void handle_right_button_interrupt(void* context) {
-	alt_putstr("Executed interruption down button \n");
+//	alt_putstr("Executed interruption down button \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;
 	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(PIORIGHTBUTTON_BASE);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIORIGHTBUTTON_BASE, 0);
@@ -192,7 +192,7 @@ void handle_right_button_interrupt(void* context) {
 }
 
 void handle_alarm_active_switch_interrupt(void* context) {
-	alt_putstr("Executed interruption alarm active switch \n");
+//	alt_putstr("Executed interruption alarm active switch \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;
 	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(ALARMACTIVESWITCH_BASE);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(ALARMACTIVESWITCH_BASE, 0);
@@ -202,7 +202,7 @@ void handle_alarm_active_switch_interrupt(void* context) {
 }
 
 void handle_timer_active_switch_interrupt(void* context) {
-	alt_putstr("Executed interruption timer active switch \n");
+//	alt_putstr("Executed interruption timer active switch \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;
 	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(TIMERACTIVESWITCH_BASE);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(TIMERACTIVESWITCH_BASE, 0);
@@ -212,7 +212,7 @@ void handle_timer_active_switch_interrupt(void* context) {
 }
 
 void handle_alarm_editing_switch_interrupt(void* context) {
-	alt_putstr("Executed interruption alarm editing switch \n");
+//	alt_putstr("Executed interruption alarm editing switch \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;
 	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(EDITALARMSWITCH_BASE);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(EDITALARMSWITCH_BASE, 0);
@@ -222,7 +222,7 @@ void handle_alarm_editing_switch_interrupt(void* context) {
 }
 
 void handle_timer_editing_switch_interrupt(void* context) {
-	alt_putstr("Executed interruption timer editing switch \n");
+//	alt_putstr("Executed interruption timer editing switch \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;
 	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(EDITTIMERSWITCH_BASE);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(EDITTIMERSWITCH_BASE, 0);
@@ -232,7 +232,7 @@ void handle_timer_editing_switch_interrupt(void* context) {
 }
 
 void handle_time_editing_switch_interrupt(void* context) {
-	alt_putstr("Executed interruption time editing switch \n");
+//	alt_putstr("Executed interruption time editing switch \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;
 	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(EDITTIMESWITCH_BASE);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(EDITTIMESWITCH_BASE, 0);
@@ -242,7 +242,7 @@ void handle_time_editing_switch_interrupt(void* context) {
 }
 
 void handle_save_switch_interrupt(void* context) {
-	alt_putstr("Executed interruption save switch \n");
+//	alt_putstr("Executed interruption save switch \n");
 	volatile int* edge_capture_ptr = (volatile int*) context;
 	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(SAVESWITCH_BASE);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(SAVESWITCH_BASE, 0);
